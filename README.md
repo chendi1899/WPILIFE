@@ -1,4 +1,5 @@
 WPILIFE
 =======
 
-A life service website For WPI Student
+A life service website For WPI Student   
+http://wpilife.org
