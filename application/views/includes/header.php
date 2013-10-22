@@ -22,8 +22,8 @@
 
 			<!-- Social Icons -->
 			<ul class="social-icons">
-				<li class="weibo"><a href="#">Weibo</a></li>
-				<li class="renren"><a href="#">Renren</a></li>		
+				<li class="weibo"><a href="http://www.weibo.com/u/2693929980">Weibo</a></li>
+				<li class="renren"><a href="http://page.renren.com/601536817">Renren</a></li>		
 			</ul>
 			
 			<div class="clearfix"></div>
@@ -93,8 +93,8 @@
 				<h5>Features Under Construction</h5>
 				<ol>
 					<!--<li><a href="<?php echo base_url(); ?>wpilife">House Find & Demand</a></li>-->
-					<li><a href="<?php echo base_url(); ?>wpilife/shop">Shop</a></li>
-					<li><a href="<?php echo base_url(); ?>wpilife/pohs">Pohs</a></li>
+					<li><a href="<?php echo base_url(); ?>wpilife/shop">Sell List</a></li>
+					<li><a href="<?php echo base_url(); ?>wpilife/pohs">Demand List</a></li>
 				</ol>
 			</li>
 			<li class="col1">
@@ -159,7 +159,8 @@
 	</li>
 	<li><a href="<?php echo base_url(); ?>about/cssa" class="about_cssa_tab"><i class="halflings white star"></i>About CSSA</a>
 		<ul>
-			<li><a href="javascript:void(0)">Introduction</a></li>
+			<li><a href="<?php echo base_url(); ?>about/cssa">Introduction</a></li>
+			<li><a href="javascript:void(0)">Officers</a></li>
 			<li><a href="javascript:void(0)">Committee</a></li>
 			<li><a href="javascript:void(0)">Subscription</a></li>
 		</ul>

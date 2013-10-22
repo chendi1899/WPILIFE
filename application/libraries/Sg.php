@@ -93,6 +93,20 @@ class Sg
 		$this->CI->db->update('suvival_guide', $dataArray);
 	}
 
+	function get_country()
+	{
+		$this->CI->db->select('countries_name');
+		$query = $this->CI->db->get('countries');
+		if ($query->num_rows() > 0)
+		{
+			$result = $query->result(); 
+			return $result; 
+		}		
+		else
+		{
+			return false;
+		}	
+	}
 }
 
 ?>

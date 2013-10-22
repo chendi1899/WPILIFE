@@ -76,15 +76,6 @@
 		<div class="team-name"><h5>Tianyu Wei</h5> </div>
 		<div class="team-about"><p>Want to change your photo? OK, just send me yours with size 300*200! Haha, before you send me your photo, this will remain!</p></div>
 	</div>
-
-	<!-- About -->
-	<div class="one-third column">
-		<img src="<?php echo base_url();?>images/avatar/peizhang.jpg" alt=""/>
-		<div class="team-name"><h5>Pei Zhang</h5> </div>
-		<div class="team-about"><p>Website developing assistant.<br/> You can contact me at: <a href="mailto:pzhang@wpi.edu">pzhang@wpi.edu</a></p></div>
-	</div>
-	<div class="clearfix"></div>
-	<br/>
 	
 	<!-- About -->
 	<div class="one-third column">
@@ -94,6 +85,7 @@
 		<div class="team-name"><h5>Crazy Egg</h5> </div>
 		<div class="team-about"><p>Thanks for my girlfriend, as you never show up to me(even I am trying to show up to you), then I can "waste" my time on this website.<br/> You can contact me at: <a href="mailto:zhouhao@wpilife.org">zhouhao@wpilife.org</a></p></div>
 	</div>
+	<br/>
 </div>
 <!-- 960 Container / End -->
 

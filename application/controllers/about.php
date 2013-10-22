@@ -23,6 +23,7 @@ class About extends CI_Controller
 	{
 		$data['title'] = "About Website";
 		$data['content'] = "Yes, I am the content for About Website";
+		//$data['country'] = $this->sg->get_country();
 		$this->load->view('about/website',$data);
 	}	
 	function us()
