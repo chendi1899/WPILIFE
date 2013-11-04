@@ -3,4 +3,4 @@ bug/
 cssa/
 stats/
 user_guide/
-application/config/database.php
+*/database.php
