@@ -12,3 +12,8 @@ So, if you want to keep this theme, you'd better buy it. $15, it deserves, I thi
 ###How to install:
 1. Setup database with wpilife.sql in `WPILIFE/DB_Scripts/`   
 2. Modify `application/config/database.php` with your MySQL info  
+3. Change line 69 in `/application/controllers/signup.php`, as now only the users with wpi.edu email can sign up    
+
+
+###What will I do next
+[ ] Add vote page for singers   
