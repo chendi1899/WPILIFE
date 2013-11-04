@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://wpilife.org/';
+$config['base_url']	= 'http://zhouhao.wpilife.org/WPILIFE/';
 
 /*
 |--------------------------------------------------------------------------
