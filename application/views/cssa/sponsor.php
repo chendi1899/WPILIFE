@@ -2,8 +2,15 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title><?php echo $title;?></title>
+	<title><?php echo $title;?> | WPILIFE</title>
 	<?php $this->load->view('includes/import');?>
+	<script type="text/javascript">
+		$(document).ready(function() 
+		{
+			$('.sponsor_tab').attr('id', 'current');
+		});
+		
+	</script>
 </head>
 <body>
 <!-- Wrapper / Start -->
@@ -17,7 +24,7 @@
 
 	<div class="sixteen floated page-title">
 
-		<h2><?php echo $string;?></h2>
+		<h2><?php echo $title;?> </h2>
 
 	</div>
 
@@ -33,12 +40,7 @@
 
 		<!-- Sixteen Columns -->
 		<div class="sixteen columns">
-
-			<section id="not-found">
-				<h2>I am Hao!</h2>
-
-				<table><tr><td>name</td><td><?php echo $array['name']; ?></td></tr><tr><td>gender</td><td><?php echo $array['gender']; ?></td></tr></table>
-			</section>
+		<?php echo $content;?>
 
 		</div>
 
