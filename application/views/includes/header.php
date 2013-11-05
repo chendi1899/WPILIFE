@@ -165,8 +165,10 @@
 			<li><a href="javascript:void(0)">Subscription</a></li>
 		</ul>
 	</li>
-	
-	<li><a href="<?php echo base_url(); ?>about" class="about_tab"><i class="halflings white bookmark"></i> About</a>
+		
+	</li>
+	<li><a href="<?php echo base_url(); ?>sponsor" class="sponsor_tab"><i class="halflings white envelope"></i> Sponsor</a></li>
+	<li><a href="<?php echo base_url(); ?>contact" class="contact_tab"><i class="halflings white envelope"></i> Contact</a>
 		<!-- Second Level / Start -->
 		<ul>
 			<li><a href="<?php echo base_url(); ?>about/website">About Website</a></li>
@@ -175,8 +177,6 @@
 		</ul>
 		<!-- Second Level / End -->
 	</li>
-	<li><a href="<?php echo base_url(); ?>sponsor" class="sponsor_tab"><i class="halflings white envelope"></i> Sponsor</a></li>
-	<li><a href="<?php echo base_url(); ?>contact" class="contact_tab"><i class="halflings white envelope"></i> Contact</a></li>
 </ul>
 </nav>
 <div class="clearfix"></div>

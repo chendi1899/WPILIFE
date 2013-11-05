@@ -63,11 +63,6 @@
 
 <!-- 960 Container -->
 <div class="container">
-	<br/>
-	<div class="notification closeable warning">
-		<p><h3> This website is not launched now! Just take some wait, but you can register for it now </h3></p>
-		<a class="close" href="#"><i class="icon-remove"></i></a>
-	</div>
 <?php 
 	//echo $this->session->userdata('users_firstname');
 	if($this->session->userdata('users_id') != null && $this->session->userdata('users_firstname') == 'member')

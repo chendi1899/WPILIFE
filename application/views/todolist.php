@@ -7,7 +7,7 @@
 	<script type="text/javascript">
 		$(document).ready(function() 
 		{
-			$('.todolist_tab').attr('id', 'current');
+			$('.contact_tab').attr('id', 'current');
 		});
 		
 	</script>
