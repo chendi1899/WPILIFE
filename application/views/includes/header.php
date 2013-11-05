@@ -78,7 +78,7 @@
 		<ul>
 			<li><a href="<?php echo base_url(); ?>cssa/activity_list">Activity</a></li>
 			<li><a href="<?php echo base_url(); ?>cssa/blog_list">Blog</a></li>
-			<li><a href="<?php echo base_url(); ?>cssa/photograph">Photograph</a></li>
+			<!--<li><a href="<?php echo base_url(); ?>cssa/photograph">Photograph</a></li>-->
 		</ul>
 		<!-- Second Level / End -->
 	</li>
