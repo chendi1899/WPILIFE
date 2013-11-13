@@ -72,8 +72,9 @@
 
 			?>
 			<!-- 1/4 Column -->
-			<div class="four columns isotope-item <?php echo $singer->users_gender; ?> technology">
-				<a class="portfolio-item isotope woocommerce-main-image zoom"  href="<?php echo base_url();?>images/portfolio/portfolio-01.jpg" rel="fancybox-gallery" title="Time Is Running Out">
+			<div class="portfolio type-portfolio status-publish hentry one-third column isotope-item <?php echo $singer->users_gender; ?> technology">
+				<a class="portfolio-item isotope woocommerce-main-image zoom fancybox fancybox.iframe"  href="<?php echo base_url();?>events/singerInfo/<?php echo $singer->singerID;?>" rel="fancybox-gallery" title="Second Karaoke Competition | CSSA
+">
 					<figure>
 						<img src="<?php echo base_url();?>images/portfolio/portfolio-01.jpg" alt=""/>
 						<figcaption class="item-description">
@@ -90,7 +91,32 @@
 				}
 			?>
 			
+			<?php 
+				if($singers)
+				{
+					foreach($singers as $singer)
+					{
 
+			?>
+			<!-- 1/4 Column -->
+			<div class="portfolio type-portfolio status-publish hentry one-third column isotope-item <?php echo $singer->users_gender; ?> technology">
+				<a class="portfolio-item isotope woocommerce-main-image zoom fancybox fancybox.iframe"  href="<?php echo base_url();?>events/singerInfo/<?php echo $singer->singerID;?>" rel="fancybox-gallery" title="Second Karaoke Competition | CSSA
+">
+					<figure>
+						<img src="<?php echo base_url();?>images/portfolio/portfolio-01.jpg" alt=""/>
+						<figcaption class="item-description">
+							<h5><?php echo $singer->song; ?></h5>
+							<span><?php echo $singer->users_firstname." ".$singer->users_lastname; ?></span><br/>
+							<span><?php echo $singer->count; ?></span>
+						</figcaption>
+					</figure>
+				</a>
+			</div>
+
+			<?php 
+					}
+				}
+			?>
 
 		</div>
 		<!-- Portfolio Content / End -->

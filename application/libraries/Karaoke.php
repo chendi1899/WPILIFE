@@ -31,37 +31,14 @@ class Karaoke
 		
 	}
 
-	/*
-	public function get_faq_type()
+	public function get_singer_info($singerID = 0)
 	{
-		$query = $this->CI->db->get('faq_type');
-		if ($query->num_rows() > 0)
-		{
-			$result = $query->result(); 
-			return $result; 
-		}		
-		else
-		{
-			return false;
-		}					   
-		
-	}
+		$this->CI->db->select('singer2013.singerID, singer2013.song, singer2013.des, users.users_firstname, users.users_lastname');
+		$this->CI->db->from('singer2013');
+		$this->CI->db->join('users', 'singer2013.singerID = users.users_id');
+		$this->CI->db->where('singer2013.singerID', $singerID); 
+		$query = $this->CI->db->get();
 
-	public function faq_type_update($id, $dataArray)
-	{
-		$this->CI->db->where('id', $id);
-		$this->CI->db->update('faq_type', $dataArray);
-	}
-	
-	public function faq_type_add($dataArray)
-	{
-		$this->CI->db->insert('faq_type', $dataArray);
-	}
-
-	public function get_faq_by_ID($id)
-	{
-		$this->CI->db->where('faq_id', $id);
-		$query = $this->CI->db->get('faq');
 		if ($query->num_rows() > 0)
 		{
 			$result = $query->row_array(); 
@@ -73,33 +50,7 @@ class Karaoke
 		}					   
 		
 	}
+
 	
-	public function faq_update($id, $dataArray)
-	{
-		$this->CI->db->where('faq_id', $id);
-		$this->CI->db->update('faq', $dataArray);
-	}
-
-	public function faq_add($dataArray)
-	{
-		$this->CI->db->insert('faq',$dataArray);
-	}
-
-	public function get_faq_by_type($type)
-	{
-		$type =  $this->CI->security->xss_clean($type);
-		$this->CI->db->where('faq_type', $type);
-		$query = $this->CI->db->get('faq');
-		if ($query->num_rows() > 0)
-		{
-			$result = $query->result(); 
-			return $result; 
-		}		
-		else
-		{
-			return false;
-		}
-	}
-	*/
 }
 ?>

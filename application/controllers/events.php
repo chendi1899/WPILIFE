@@ -16,14 +16,27 @@ class Events extends CI_Controller
 		
 	}
 	
-	function activity_list($page = 1)
+	function singerInfo($singerID = 0)
 	{
-		$data['title'] = "Activities List | CSSA";
-		$pageSize = 10;
-		$listCount = $this->activitycssalib->get_list_count();
-		$data['activity_list'] = $this->activitycssalib->get_activity_list_with_content($pageSize*($page-1),$pageSize);
-		$data['pagination'] = $this->paginationlib->get_pagination(base_url().'cssa/activity_list/', $listCount, $pageSize);
-		$this->load->view('cssa/activity_list',$data);
+		if($singerID < 1)
+		{
+			redirect('events/','refresh');
+		}
+		else
+		{
+			$data['singer'] = $this->karaoke->get_singer_info($singerID);
+			if($data['singer'])
+			{
+				//var_dump($data['singer']);
+				$this->load->view('events/personalDes',$data);
+			}
+			else
+			{
+				redirect('events/','refresh');
+			}
+			
+		}
+		
 	}
 
 	function activity_archives($year=0, $month='')
