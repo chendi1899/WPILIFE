@@ -7,6 +7,7 @@ class Events extends CI_Controller
 	{
  		parent::__construct();
  		$this->load->library('Karaoke');
+ 		$this->load->helper('form');
 	}	
 	function index()
 	{	

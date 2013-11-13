@@ -53,10 +53,10 @@ class Karaoke
 
 	public function get_voting_count($singerID = 0)
 	{
-		$this->CI->db->select('karaoke2013.singerID, count(*) as count');
-		$this->CI->db->group_by("karaoke2013.singerID"); 
+		$this->CI->db->select('singerID, count(*) as count');
+		$this->CI->db->group_by("singerID"); 
 		$this->CI->db->from('karaoke2013');
-		$this->CI->db->where('singer2013.singerID', $singerID); 
+		$this->CI->db->where('singerID', $singerID); 
 		$query = $this->CI->db->get();
 
 		if ($query->num_rows() > 0)
