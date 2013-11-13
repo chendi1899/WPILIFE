@@ -33,7 +33,7 @@ class Karaoke
 
 	public function get_singer_info($singerID = 0)
 	{
-		$this->CI->db->select('singer2013.singerID, singer2013.song, singer2013.des, users.users_firstname, users.users_lastname');
+		$this->CI->db->select('singer2013.singerID, singer2013.songlink, singer2013.song, singer2013.des, users.users_firstname, users.users_lastname');
 		$this->CI->db->from('singer2013');
 		$this->CI->db->join('users', 'singer2013.singerID = users.users_id');
 		$this->CI->db->where('singer2013.singerID', $singerID); 

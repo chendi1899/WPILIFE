@@ -1,5 +1,12 @@
 <div class="ajax-text-and-image white-popup-block">
 	<style>
+	a {
+		color: #169fe6;
+		text-decoration: none;
+		outline: 0;
+		-webkit-transition: color 0.1s ease-in-out;
+		-moz-transition: color 0.1s ease-in-out;
+	}
 	.ajax-text-and-image {
 		max-width:800px; margin: 20px auto; background: #FFF; padding: 0; line-height: 0;
 	}
@@ -29,7 +36,7 @@
 	<div class="ajcol" style="line-height: 1.231;">
 		<div style="padding: 1em">
 			<h1><?php echo $singer['users_firstname']." ".$singer['users_lastname']; ?></h1>
-			<span><?php echo $singer["song"]; ?></span><br/>
+			<span><a href="<?php echo $singer['songlink'];?>" title="Click to listen"  target="_blank" ><?php echo $singer["song"]; ?></a></span><br/>
 		    <p><?php echo $singer['des']; ?></p>
 		</div>
 	</div>
