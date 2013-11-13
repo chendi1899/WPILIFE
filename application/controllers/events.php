@@ -28,6 +28,7 @@ class Events extends CI_Controller
 			if($data['singer'])
 			{
 				//var_dump($data['singer']);
+				$data['count'] = $this->karaoke->get_voting_count($singerID);
 				$this->load->view('events/personalDes',$data);
 			}
 			else
