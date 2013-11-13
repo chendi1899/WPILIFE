@@ -5,6 +5,7 @@ class Karaoke
 	public $CI = NULL;
 	public function __construct()
 	{	
+		date_default_timezone_set('America/New_York');
 		$this->CI =& get_instance();
 		$this->CI->load->helper('security');
 	}
@@ -71,6 +72,26 @@ class Karaoke
 		
 	}
 
+	public function times_voting_today($userID)
+	{
+		$this->CI->db->select('voterID, count(*) as count');
+		$this->CI->db->group_by("voterID"); 
+		$this->CI->db->from('karaoke2013');
+		$this->CI->db->where('voterID', $userID); 
+		$this->CI->db->where('date', date("Y-m-d")); 
+		//var_dump($this->CI->db->_compile_select()); 
+		$query = $this->CI->db->get();
+		//var_dump($this->CI->db->last_query()); 
+		if ($query->num_rows() > 0)
+		{
+			$result = $query->row_array(); 
+			return (int)$result['count']; 
+		}		
+		else
+		{
+			return false;
+		}		
+	}
 	
 }
 ?>
