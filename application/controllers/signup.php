@@ -6,6 +6,7 @@ class Signup extends CI_Controller
 	function __construct()
 	{
  		parent::__construct();
+ 		date_default_timezone_set('America/New_York');
 		$this->load->library('form_validation');
 		$this->load->library('email');
 		$this->load->helper('form');
