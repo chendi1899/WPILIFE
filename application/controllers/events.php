@@ -57,7 +57,7 @@ class Events extends CI_Controller
 		if($voterID != null && $singerID != null && $this->karaoke->times_voting_today($voterID) < 3)
 		{
 			
-			var_dump($voterID);
+			//var_dump($voterID);
 			if($this->karaoke->Is_voted_for_this_singer_today($voterID, $singerID) == false)
 			{
 				$dataArray = array(
