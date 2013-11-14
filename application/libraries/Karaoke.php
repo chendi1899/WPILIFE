@@ -92,6 +92,27 @@ class Karaoke
 			return false;
 		}		
 	}
+
+	public function Is_voted_for_this_singer_today($voterID, $singerID)
+	{
+		$this->CI->db->select('id');
+		$this->CI->db->from('karaoke2013');
+		$this->CI->db->where('voterID', $userID); 
+		$this->CI->db->where('singerID', $singerID); 
+		$this->CI->db->where('date', date("Y-m-d")); 
+		//var_dump($this->CI->db->_compile_select()); 
+		$query = $this->CI->db->get();
+		//var_dump($this->CI->db->last_query()); 
+		if ($query->num_rows() > 0)
+		{
+			
+			return true; 
+		}		
+		else
+		{
+			return false;
+		}		
+	}
 	
 }
 ?>

@@ -76,7 +76,7 @@
 				<a class="portfolio-item isotope woocommerce-main-image zoom fancybox fancybox.iframe"  href="<?php echo base_url();?>events/singerInfo/<?php echo $singer->singerID;?>" rel="fancybox-gallery" title="Second Karaoke Competition | CSSA
 ">
 					<figure>
-						<img src="<?php echo base_url();?>images/portfolio/portfolio-01.jpg" alt=""/>
+						<img src="<?php echo base_url();?>images/events/karaoke2013/<?php echo $singer->singerID; ?>.png" alt=""/>
 						<figcaption class="item-description">
 							<h5><?php echo $singer->song; ?></h5>
 							<span><?php echo $singer->users_firstname." ".$singer->users_lastname; ?></span><br/>
@@ -103,7 +103,7 @@
 				<a class="portfolio-item isotope woocommerce-main-image zoom fancybox fancybox.iframe"  href="<?php echo base_url();?>events/singerInfo/<?php echo $singer->singerID;?>" rel="fancybox-gallery" title="Second Karaoke Competition | CSSA
 ">
 					<figure>
-						<img src="<?php echo base_url();?>images/portfolio/portfolio-01.jpg" alt=""/>
+						<img src="<?php echo base_url();?>images/events/karaoke2013/<?php echo $singer->singerID; ?>.png" alt=""/>
 						<figcaption class="item-description">
 							<h5><?php echo $singer->song; ?></h5>
 							<span><?php echo $singer->users_firstname." ".$singer->users_lastname; ?></span><br/>

@@ -19,7 +19,7 @@ class Events extends CI_Controller
 	
 	function singerInfo($singerID = 0)
 	{
-		$voteID = $this->session->userdata('users_id');
+		
 		if($singerID < 1)
 		{
 			redirect('events/','refresh');
@@ -31,7 +31,13 @@ class Events extends CI_Controller
 			{
 				//var_dump($data['singer']);
 				$data['count'] = $this->karaoke->get_voting_count($singerID);
-				$data['remain'] = 3 - $this->karaoke->times_voting_today($voteID);
+				if($this->session->userdata('users_id') != null)
+				{
+					$voteID = $this->session->userdata('users_id');
+					$timeLeft = 3 - $this->karaoke->times_voting_today($voteID);
+					$data['remain'] = "<br/><p>Voting times left of you: " . $timeLeft . "</p>";
+				}
+				
 				$this->load->view('events/personalDes',$data);
 			}
 			else
@@ -45,9 +51,10 @@ class Events extends CI_Controller
 
 	function voting()
 	{
-		if($this->session->userdata('users_id') != null)
+		$voteID = $this->session->userdata('users_id');
+		if($voteID != null && $this->karaoke->times_voting_today($voteID) < 3)
 		{
-			$voteID = $this->session->userdata('users_id');
+			
 			var_dump($voteID);
 			$singerID = $this->input->post('singerID');
 			//'blogs_date' 	=> date("Y-m-d H:i:s"),

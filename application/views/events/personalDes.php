@@ -34,7 +34,7 @@
 					echo form_hidden('singerID',  $singer['singerID']);
 					echo form_submit('submit', "Vote : ".$count["count"], 'class="button medium color" style="margin-top: 20px;float: none;width: 200px;height: 50px;"');
 					echo "</form>";
-					echo "<br/><p>Voting times left of you: " . $remain . "</p>";
+					echo $remain;
 		    	}
 		    	else
 		    	{
