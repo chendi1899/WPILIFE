@@ -52,28 +52,30 @@ class Events extends CI_Controller
 
 	function voting()
 	{
-		$voteID = $this->session->userdata('users_id');
+		$voterID = $this->session->userdata('users_id');
 		$singerID = $this->input->post('singerID');
-		if($voteID != null && $singerID != null && $this->karaoke->times_voting_today($voteID) < 3)
+		if($voterID != null && $singerID != null && $this->karaoke->times_voting_today($voterID) < 3)
 		{
 			
-			var_dump($voteID);
-			if($this->karaoke->Is_voted_for_this_singer_today($voteID, $singerID) == false)
+			var_dump($voterID);
+			if($this->karaoke->Is_voted_for_this_singer_today($voterID, $singerID) == false)
 			{
-
+				$dataArray = array(
+									'voterID'   => $voterID,
+									'singerID' => $singerID,
+									'date' 	   => date("Y-m-d"),
+								  );
+				$this->karaoke->voting($dataArray);
+				redirect('events/singerInfo/'.$singerID,'refresh');
 			}
-			//'blogs_date' 	=> date("Y-m-d H:i:s"),
-			/*
-			$dataArray = array(
-						'blogs_title' 	=> $this->input->post('blogs_title', TRUE),
-						'blogs_content' => $this->input->post('content', TRUE),
-						'blogs_year'	=> date("Y"),
-						'blogs_month'	=> date("F"),
-						'blogs_day'		=> date("d"),
-						'date' 	=> date("Y-m-d"),
-							);
-							*/ 
-			var_dump($this->karaoke->times_voting_today($voteID));
+			else
+			{
+				redirect('events/','refresh');
+			}
+
+			
+							
+			//var_dump($this->karaoke->times_voting_today($voterID));
 		}
 		else
 		{

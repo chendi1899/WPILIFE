@@ -114,5 +114,9 @@ class Karaoke
 		}		
 	}
 	
+	public function voting($dataArray)
+	{
+		$this->CI->db->insert('karaoke2013',$dataArray);
+	}
 }
 ?>
