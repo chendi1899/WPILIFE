@@ -1436,7 +1436,7 @@ p.margin { margin: 0 0 5px 0; }
 .fancybox-nav {
 	position: absolute;
 	top: 0;
-	width: 30%;
+	width: 20%;
 	height: 100%;
 	cursor: pointer;
 	text-decoration: none;

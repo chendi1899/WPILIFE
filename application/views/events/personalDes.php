@@ -29,16 +29,23 @@
 		    <?php
 		    	if($this->session->userdata('users_id') != null)
 		    	{
-		    		$attibutes = array('id'=>'voting', 'name'=>'voting');
-					echo form_open('events/voting',$attibutes);
-					echo form_hidden('singerID',  $singer['singerID']);
-					echo form_submit('submit', "Vote : ".$count["count"], 'class="button medium color" style="margin-top: 20px;float: none;width: 200px;height: 50px;"');
-					echo "</form>";
+		    		if($IsVotedToday == false)
+		    		{
+			    		$attibutes = array('id'=>'voting', 'name'=>'voting');
+						echo form_open('events/voting',$attibutes);
+						echo form_hidden('singerID',  $singer['singerID']);
+						echo form_submit('submit', "Vote : ".$count["count"], 'class="button medium color" style="margin-top: 20px;float: none;width: 200px;height: 50px;"');
+						echo "</form>";
+					}
+					else
+					{
+						echo "<a href='javascript:void(0)' target='_blank' class='button medium light' style='text-align:center; line-height: 50px;float: none;width: 200px;height: 50px;'> Already Voted Today :  ".$count["count"] ."</a>";
+					}
 					echo $remain;
 		    	}
 		    	else
 		    	{
-					echo anchor('signup', "Login to Vote :  ".$count["count"], 'target="_blank" class="button medium light" style="text-align:center; line-height: 50px;float: none;width: 200px;height: 50px;"');
+					echo anchor('login', "Login to Vote :  ".$count["count"], 'target="_blank" class="button medium light" style="text-align:center; line-height: 50px;float: none;width: 200px;height: 50px;"');
 		    	}
 
 		    	

@@ -97,7 +97,7 @@ class Karaoke
 	{
 		$this->CI->db->select('id');
 		$this->CI->db->from('karaoke2013');
-		$this->CI->db->where('voterID', $userID); 
+		$this->CI->db->where('voterID', $voterID); 
 		$this->CI->db->where('singerID', $singerID); 
 		$this->CI->db->where('date', date("Y-m-d")); 
 		//var_dump($this->CI->db->_compile_select()); 

@@ -34,6 +34,7 @@ class Events extends CI_Controller
 				if($this->session->userdata('users_id') != null)
 				{
 					$voteID = $this->session->userdata('users_id');
+					$data['IsVotedToday'] = $this->karaoke->Is_voted_for_this_singer_today($voteID, $singerID);
 					$timeLeft = 3 - $this->karaoke->times_voting_today($voteID);
 					$data['remain'] = "<br/><p>Voting times left of you: " . $timeLeft . "</p>";
 				}
@@ -52,11 +53,15 @@ class Events extends CI_Controller
 	function voting()
 	{
 		$voteID = $this->session->userdata('users_id');
-		if($voteID != null && $this->karaoke->times_voting_today($voteID) < 3)
+		$singerID = $this->input->post('singerID');
+		if($voteID != null && $singerID != null && $this->karaoke->times_voting_today($voteID) < 3)
 		{
 			
 			var_dump($voteID);
-			$singerID = $this->input->post('singerID');
+			if($this->karaoke->Is_voted_for_this_singer_today($voteID, $singerID) == false)
+			{
+
+			}
 			//'blogs_date' 	=> date("Y-m-d H:i:s"),
 			/*
 			$dataArray = array(
@@ -65,8 +70,7 @@ class Events extends CI_Controller
 						'blogs_year'	=> date("Y"),
 						'blogs_month'	=> date("F"),
 						'blogs_day'		=> date("d"),
-						'blogs_date' 	=> date("Y-m-d H:i:s"),
-						'blogs_author' 	=>$this->session->userdata('users_id'),
+						'date' 	=> date("Y-m-d"),
 							);
 							*/ 
 			var_dump($this->karaoke->times_voting_today($voteID));
