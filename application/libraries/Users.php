@@ -20,7 +20,8 @@ class Users
 		$query = $this->CI->db->query("SELECT users_id, users_firstname
 									   FROM users 
 									   WHERE users_email_address = '". $email ."' and 
-									   		 users_password = '". $password ."'");
+									   		 users_password = '". $password ."' and 
+									   		 users_activated = 1 ");
 
 		if ($query->num_rows() > 0)
 		{

@@ -23,8 +23,8 @@
 	</div>
 	<div class="ajcol" style="line-height: 1.231;">
 		<div style="padding: 1em">
-			<h1><?php echo $singer['users_firstname']." ".$singer['users_lastname']; ?></h1>
-			<span><a href="<?php echo $singer['songlink'];?>" title="Click to listen"  target="_blank" ><?php echo $singer["song"]; ?></a></span><br/>
+			<h1><?php echo $singer['users_lastname']." ".$singer['users_firstname']; ?></h1>
+			<span style="font-size:16px;"><a href="<?php echo $singer['songlink'];?>" title="Click to listen"  target="_blank" ><?php echo $singer["song"]; ?>[点击试听]</a></span><br/>
 		    <p><?php echo $singer['des']; ?></p>
 		    <?php
 		    	if($this->session->userdata('users_id') != null)
@@ -45,7 +45,7 @@
 		    	}
 		    	else
 		    	{
-					echo anchor('login', "Login to Vote :  ".$count["count"], 'target="_blank" class="button medium light" style="text-align:center; line-height: 50px;float: none;width: 200px;height: 50px;"');
+					echo anchor('login/quickLogin?ref=events/singerInfo/'.$singer['singerID'], "Login to Vote :  ".$count["count"], 'class="button medium light" style="text-align:center; line-height: 50px;float: none;width: 200px;height: 50px;"');
 		    	}
 
 		    	

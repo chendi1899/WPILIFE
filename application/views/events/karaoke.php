@@ -41,9 +41,13 @@
 
 <!-- Page Content -->
 <div class="page-content portfolio">
-
+	
 	<!-- 960 Container -->
 	<div class="container">
+		<div class="notification closeable warning">
+			<p> <b>Warning</b>: <br/>Account must be activated by email before you vote. Life takes more fun with rules :-) <br/> If you lost your activation link, just use your WPI email send "activate me" to <a href="mailto:hzhou@wpi.edu">hzhou@wpi.edu</a><br/>
+			Sorry for this inconvenience!<a class="close" href="#"><i class="icon-remove"></i></a>
+		</div>
 		<div class="sixteen columns">
 
 			<!-- Filters -->
@@ -79,7 +83,7 @@
 						<img src="<?php echo base_url();?>images/events/karaoke2013/<?php echo $singer->singerID; ?>.png" alt=""/>
 						<figcaption class="item-description">
 							<h5><?php echo $singer->song; ?></h5>
-							<span><?php echo $singer->users_firstname." ".$singer->users_lastname; ?></span><br/>
+							<span><?php echo $singer->users_lastname." ".$singer->users_firstname; ?></span><br/>
 							<span><?php echo $singer->count; ?></span>
 						</figcaption>
 					</figure>
@@ -91,32 +95,6 @@
 				}
 			?>
 			
-			<?php 
-				if($singers)
-				{
-					foreach($singers as $singer)
-					{
-
-			?>
-			<!-- 1/4 Column -->
-			<div class="portfolio type-portfolio status-publish hentry one-third column isotope-item <?php echo $singer->users_gender; ?> technology">
-				<a class="portfolio-item isotope woocommerce-main-image zoom fancybox fancybox.iframe"  href="<?php echo base_url();?>events/singerInfo/<?php echo $singer->singerID;?>" rel="fancybox-gallery" title="Second Karaoke Competition | CSSA
-">
-					<figure>
-						<img src="<?php echo base_url();?>images/events/karaoke2013/<?php echo $singer->singerID; ?>.png" alt=""/>
-						<figcaption class="item-description">
-							<h5><?php echo $singer->song; ?></h5>
-							<span><?php echo $singer->users_firstname." ".$singer->users_lastname; ?></span><br/>
-							<span><?php echo $singer->count; ?></span>
-						</figcaption>
-					</figure>
-				</a>
-			</div>
-
-			<?php 
-					}
-				}
-			?>
 
 		</div>
 		<!-- Portfolio Content / End -->

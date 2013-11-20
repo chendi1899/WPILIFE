@@ -79,7 +79,9 @@ class Events extends CI_Controller
 		}
 		else
 		{
-			redirect('events/','refresh');
+			//redirect('events/','refresh');
+			echo "<script>alert('You have used all your voting times today, or you have logged out!');</script>";
+			echo "<script> window.top.location.href = 'http://wpilife.org/events';</script>";
 		}
 
 	}
