@@ -16,4 +16,9 @@ So, if you want to keep this theme, you'd better buy it. $15, it deserves, I thi
 
 
 ###What will I do next
-[ ] Add vote page for singers   
+[x] Add vote page for singers     
+**Voting rules:**     
+1. Each account can vote three times per day    
+2. Each account cannot vote the same singer more than one time in the same day     
+3. Singer can vote himself/herself    
+
