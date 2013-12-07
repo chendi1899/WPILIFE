@@ -24,7 +24,15 @@
 
 	<div class="sixteen floated page-title">
 
-		<h2><?php echo $title;?> </h2>
+		<h2>Sponsor</h2>
+
+		<nav id="breadcrumbs">
+			<ul>
+				<li>You are here:</li>
+				<li><a href="<?php echo base_url(); ?>">Home</a></li>
+				<li>Sponsor</li>
+			</ul>
+		</nav>
 
 	</div>
 
@@ -32,27 +40,26 @@
 <!-- 960 Container / End -->
 
 
-<!-- Page Content -->
-<div class="page-content">
-
-	<!-- 960 Container -->
-	<div class="container">
-
-		<!-- Sixteen Columns -->
-		<div class="sixteen columns">
-		<?php echo $content;?>
-
-		</div>
-
+<!-- 960 Container -->
+<div class="container floated">
+	<?php $this->load->view('includes/sponsor_left_menu');?>
+	<!-- Page Content -->
+	<div class="eleven floated right">
+		<section class="page-content">
+			<article>
+				<?php echo $content; ?>
+			</article>
+		</section>
 	</div>
-	<!-- 960 Container / End -->
+	<!-- Page Content / End -->
 
 </div>
-<!-- Page Content / End -->
+<!-- 960 Container / End -->
 
 
 </div>
 </div>
 <?php $this->load->view('includes/footer');?>
+
 </body>
 </html>

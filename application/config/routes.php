@@ -38,6 +38,7 @@
 |
 */
 $route['survivalGuide/(:any)'] = "survivalGuide/get_content/$1";
+$route['sponsor/(:any)'] = "sponsor/get_content/$1";
 $route['wpilife/shop/(:num)'] = "wpilife/shop/index/$1";
 $route['wpilife/pohs/(:num)'] = "wpilife/pohs/index/$1";
 
