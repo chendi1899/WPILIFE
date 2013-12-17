@@ -18,6 +18,7 @@ So, if you want to keep this theme, you'd better buy it. $15, it deserves, I thi
 ###What will I do next
 [x] Add vote page for singers     
 [ ] temporary house provide to live for new students       
+[ ] Add officers info.     
 
 
 ###Note:
