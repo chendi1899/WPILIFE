@@ -1,1 +1,8 @@
 images/events/
+phpmyadmin
+application/cache/*
+application/controllers/emailTest.php
+stats/
+avatar/*
+kindeditor/attached/
+application/config/database.php

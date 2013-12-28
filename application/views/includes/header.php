@@ -78,6 +78,7 @@
 		<ul>
 			<li><a href="<?php echo base_url(); ?>cssa/activity_list">Activity</a></li>
 			<li><a href="<?php echo base_url(); ?>cssa/blog_list">Blog</a></li>
+			<li><a href="<?php echo base_url(); ?>events">卡拉OK大赛</a></li>
 			<!--<li><a href="<?php echo base_url(); ?>cssa/photograph">Photograph</a></li>-->
 		</ul>
 		<!-- Second Level / End -->
@@ -167,7 +168,7 @@
 	</li>
 		
 	</li>
-	<li><a href="<?php echo base_url(); ?>sponsor" class="sponsor_tab"><i class="halflings white envelope"></i> Sponsor</a></li>
+	<li><a href="<?php echo base_url(); ?>sponsor" class="sponsor_tab"><i class="halflings white bookmark"></i> Sponsor</a></li>
 	<li><a href="<?php echo base_url(); ?>contact" class="contact_tab"><i class="halflings white envelope"></i> Contact</a>
 		<!-- Second Level / Start -->
 		<ul>
@@ -177,6 +178,7 @@
 		</ul>
 		<!-- Second Level / End -->
 	</li>
+	
 </ul>
 </nav>
 <div class="clearfix"></div>

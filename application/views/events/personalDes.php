@@ -27,8 +27,10 @@
 			<span style="font-size:16px;"><a href="<?php echo $singer['songlink'];?>" title="Click to listen"  target="_blank" ><?php echo $singer["song"]; ?>[点击试听]</a></span><br/>
 		    <p><?php echo $singer['des']; ?></p>
 		    <?php
+		    /*
 		    	if($this->session->userdata('users_id') != null)
 		    	{
+		    		
 		    		if($IsVotedToday == false)
 		    		{
 			    		$attibutes = array('id'=>'voting', 'name'=>'voting');
@@ -39,7 +41,9 @@
 					}
 					else
 					{
-						echo "<a href='javascript:void(0)' target='_blank' class='button medium light' style='text-align:center; line-height: 50px;float: none;width: 200px;height: 50px;'> Already Voted Today :  ".$count["count"] ."</a>";
+						*/
+						echo "<a href='javascript:void(0)' target='_blank' class='button medium light' style='text-align:center; line-height: 50px;float: none;width: 200px;height: 50px;'> Final Voting :  ".$count["count"] ."</a><br/><br/>Thanks for your participance";
+					/*
 					}
 					echo $remain;
 		    	}
@@ -47,7 +51,7 @@
 		    	{
 					echo anchor('login/quickLogin?ref=events/singerInfo/'.$singer['singerID'], "Login to Vote :  ".$count["count"], 'class="button medium light" style="text-align:center; line-height: 50px;float: none;width: 200px;height: 50px;"');
 		    	}
-
+				*/
 		    	
 			?>
 		</div>

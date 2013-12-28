@@ -8,10 +8,12 @@ class Events extends CI_Controller
  		parent::__construct();
  		$this->load->library('Karaoke');
  		$this->load->helper('form');
+ 		$this->output->cache(17);
 	}	
 	function index()
 	{	
 		$data['singers'] = $this->karaoke->get_distinct_singerID_with_vote_count();
+		$data['singers_not_win'] = $this->karaoke->get_distinct_singerID_with_vote_count_not_win();
 		//var_dump($data['singers']);
 		$this->load->view('events/karaoke',$data);
 		

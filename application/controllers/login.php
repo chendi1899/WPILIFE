@@ -33,8 +33,51 @@ class Login extends CI_Controller
 					       	'users_password' => $password
 						);
 			$this->users->generate_session($form_data);
-
-			redirect(base_url(),'refresh');
+			if($this->session->userdata('users_id') != null)
+			{
+				redirect(base_url(),'refresh');
+			}
+			else
+			{
+				echo "<script>alert('Account not Activated or  not Exist! :-)');</script>";
+				echo "<script>location.reload();</script>";
+				//redirect('login/quickLogin?ref=' + $ref,'refresh');
+			}
+			
+		}
+	}
+	function quickLogin()
+	{
+		$this->form_validation->set_rules('users_email_address', 'users_email_address', 'valid_email|max_length[96]');				
+		$this->form_validation->set_rules('users_password', 'users_password', 'required|xss_clean|max_length[40]');			
+		$this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
+	
+		if ($this->form_validation->run() == FALSE) // validation hasn't been passed
+		{
+			$data['title'] = "WPILIFE | EXTEND YOUR LIFE IN WPI";
+			$data['show_form'] = true;
+			$this->load->view('quicklogin',$data);
+		}
+		else // passed validation proceed to post success logic
+		{
+			$ref = $this->input->get("ref");
+			$password = do_hash(set_value('users_password'), 'md5'); // MD5
+			$form_data = array(
+					       	'users_email_address' => set_value('users_email_address'),
+					       	'users_password' => $password
+						);
+			$this->users->generate_session($form_data);
+			if($this->session->userdata('users_id') != null)
+			{
+				redirect($ref,'refresh');
+			}
+			else
+			{
+				echo "<script>alert('Account not Activated or  not Exist! :-)');</script>";
+				echo "<script>location.reload();</script>";
+				//redirect('login/quickLogin?ref=' + $ref,'refresh');
+			}
+			
 		}
 	}
 	function activation($activation_string)

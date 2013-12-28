@@ -40,6 +40,7 @@
 </div>
 <!-- 960 Container / End -->
 
+</head>
 <!-- 960 Container -->
 <div class="container floated">
 	<?php $this->load->view('includes/survivalGuide_left_menu');?>

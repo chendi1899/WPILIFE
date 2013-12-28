@@ -53,7 +53,7 @@
         {
         ?>
         <div style="width:800px; margin:30px auto; text-align: center;">
-        	<h2>Congratulations! We have send your email, which contains the activation link, please click here to launch: <a href="https://exchange.wpi.edu/owa/">WPI Email</a></h2>
+        	<h2>Congratulations! We have send your email, which contains the activation link(If you do not get this in 5 minutes, just send <b>"activate  me"</b> to <a href=""mailto:hzhou@wpi.edu">hzhou@wpi.edu</a>), please click here to launch: <a href="https://exchange.wpi.edu/owa/">WPI Email</a></h2>
         </div>
         <?php 
         }

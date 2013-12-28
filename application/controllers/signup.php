@@ -36,6 +36,8 @@ class Signup extends CI_Controller
 					       	'users_password' => $password
 						);
 			$this->send_actvation_email(set_value('users_email_address'), $password);
+
+			
 			$data['title'] = "Activate your account";
 
 			// run insert model to write data to db
@@ -65,6 +67,8 @@ class Signup extends CI_Controller
 	//
 	function email_check($str)
 	{
+		//return true;
+
 		$emai_subfix = explode("@", $str);
 		//check whether it is a wpi email address
 		if($emai_subfix[1] != 'wpi.edu')
@@ -109,6 +113,10 @@ class Signup extends CI_Controller
 					";
 		$this->email->message($message);	
 		$this->email->send();
+		/*
+		echo $this->email->print_debugger();
+		die("121212");
+		*/
 	}
 		
 }

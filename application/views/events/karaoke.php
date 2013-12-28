@@ -44,9 +44,20 @@
 	
 	<!-- 960 Container -->
 	<div class="container">
-		<div class="notification closeable warning">
+		<!--<div class="notification closeable warning">
 			<p> <b>Warning</b>: <br/>Account must be activated by email before you vote. Life takes more fun with rules :-) <br/> If you lost your activation link, just use your WPI email send "activate me" to <a href="mailto:hzhou@wpi.edu">hzhou@wpi.edu</a><br/>
 			Sorry for this inconvenience!<a class="close" href="#"><i class="icon-remove"></i></a>
+		</div>-->
+		<div class="notification closeable notice">
+			<p> <b>Congratulations</b>: <br/>
+			These guys in FINALIST section will take the last competition on Saturday. (Only the voting before 12:00AM of 11/20 is taken effect, voting after that isn't) :-) </br>
+			The result is combined with voting and judges' opinion
+			</p><a class="close" href="#"><i class="icon-remove"></i></a>
+		</div>
+
+		<div class="notification closeable error">
+			<p> Thanks for the voters and singers!
+			</p><a class="close" href="#"><i class="icon-remove"></i></a>
 		</div>
 		<div class="sixteen columns">
 
@@ -65,7 +76,7 @@
 
 	<!-- 960 Container -->
 	<div class="container">
-
+	<h1 style="margin-top: -15px">FINALIST</h1>
 		<!-- Portfolio Content -->
 		<div id="portfolio-wrapper">
 			<?php 
@@ -100,6 +111,43 @@
 		<!-- Portfolio Content / End -->
 		<!-- Divider -->
 		<br/>
+		<div class="line"></div>
+		<br/>
+		<h1 style="margin-top: -15px">Other Singers</h1>
+				<!-- Portfolio Content -->
+		<div id="portfolio-wrapper">
+			<?php 
+				if($singers_not_win)
+				{
+					foreach($singers_not_win as $singer)
+					{
+
+			?>
+			<!-- 1/4 Column -->
+			<div class="portfolio type-portfolio status-publish hentry one-third column isotope-item <?php echo $singer->users_gender; ?> technology">
+				<a class="portfolio-item isotope woocommerce-main-image zoom fancybox fancybox.iframe"  href="<?php echo base_url();?>events/singerInfo/<?php echo $singer->singerID;?>" rel="fancybox-gallery" title="Second Karaoke Competition | CSSA
+">
+					<figure>
+						<img src="<?php echo base_url();?>images/events/karaoke2013/<?php echo $singer->singerID; ?>.png" alt=""/>
+						<figcaption class="item-description">
+							<h5><?php echo $singer->song; ?></h5>
+							<span><?php echo $singer->users_lastname." ".$singer->users_firstname; ?></span><br/>
+							<span><?php echo $singer->count; ?></span>
+						</figcaption>
+					</figure>
+				</a>
+			</div>
+
+			<?php 
+					}
+				}
+			?>
+			
+
+		</div>
+		<!-- Portfolio Content / End -->
+		<!-- Divider -->
+		<div class="clearfix"></div>
 		<div class="line"></div>
 		<!-- Comments -->
 		<section class="comments-sec">
