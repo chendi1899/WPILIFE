@@ -52,8 +52,8 @@ class Contact extends CI_Controller
 	function send_email($form_data)
 	{
 		//https://exchange.wpi.edu/owa/
-		$this->email->from('zhouhao@wpilife.org', 'WPILIFE');
-		$this->email->to('wpilife@gmail.com'); 
+		$this->email->from('wpilife@gmail.com', 'WPILIFE');
+		$this->email->to('zhouhao@wpilife.org'); 
 		$this->email->subject('Comments | WPILIFE');
 		$message = "Hi my Lord,<br/>
 					Comment is coming as below:<br/>
