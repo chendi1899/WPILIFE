@@ -7,7 +7,7 @@ class Cssa extends CI_Controller
 	{
  		parent::__construct();
  		$this->load->library('paginationlib');
- 		$this->load->library('Officerscssalib');
+ 		$this->load->library('officerscssalib');
 	}	
 	function index()
 	{	
@@ -127,6 +127,7 @@ class Cssa extends CI_Controller
 	function officers()
 	{
 		$data['title'] = "Officers For CSSA";
+		$data['titleList'] = $this->officerscssalib->get_lastest_years();
 		$this->load->view('cssa/officers',$data);
 	}
 	
