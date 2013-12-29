@@ -2,7 +2,6 @@
 	<div class="four floated sidebar left">
 		<aside class="sidebar padding-reset">
 			<div class="widget">
-				<h4>Index:</h4>
 				<ul class="list" style="font-family:Microsoft YaHei,Verdana,sans-serif;">
 				<?php 
 					foreach($index as $row)
