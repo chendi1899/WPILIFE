@@ -254,13 +254,13 @@ K.options = {
 	minChangeSize : 50,
 	zIndex : 811213,
 	items : [
-		'source', '|', 'undo', 'redo', '|', 'preview', 'template', 'code', 'cut', 'copy', 'paste',
+		'source', '|', 'undo', 'redo', '|', 'code', 'cut', 'copy', 'paste',
 		'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
 		'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
-		'superscript', 'clearhtml', 'quickformat', '|', 'fullscreen', '/',
-		'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+		'superscript', '|',  
+		'formatblock', 'fontname', 'fontsize', '|', '/', 'forecolor', 'hilitecolor', 'bold',
 		'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 
-		'insertfile', 'table', 'hr', 'emoticons', 'map', 'anchor', 'link', 'unlink', '|', 'about'
+		'insertfile', 'table', 'hr', 'map', 'link', 'unlink', '|', 'about'
 	],
 	noDisableItems : ['source', 'fullscreen'],
 	colorTable : [
