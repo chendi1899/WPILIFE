@@ -167,7 +167,7 @@
 	<li><a href="<?php echo base_url(); ?>about/cssa" class="about_cssa_tab"><i class="halflings white star"></i>About CSSA</a>
 		<ul>
 			<li><a href="<?php echo base_url(); ?>about/cssa">Introduction</a></li>
-			<li><a href="javascript:void(0)">Officers</a></li>
+			<li><a href="<?php echo base_url(); ?>cssa/officers">Officers</a></li>
 			<li><a href="javascript:void(0)">Committee</a></li>
 			<li><a href="javascript:void(0)">Subscription</a></li>
 		</ul>
@@ -195,8 +195,10 @@
 		<!-- Second Level / Start -->
 		<ul>
 			<li><a href="<?php echo base_url(); ?>about/website">About Website</a></li>
+			<!--
 			<li><a href="<?php echo base_url(); ?>about/us">About Us</a></li>
 			<li><a href="<?php echo base_url(); ?>todolist">TO-DO List</a></li>
+			-->
 		</ul>
 		<!-- Second Level / End -->
 	</li>
