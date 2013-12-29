@@ -100,7 +100,8 @@
 				<ol>
 					<!--<li><a href="<?php echo base_url(); ?>wpilife">House Find & Demand</a></li>-->
 					<li><a href="<?php echo base_url(); ?>wpilife/shop">Shop</a></li>
-					<!--<li><a href="<?php echo base_url(); ?>wpilife/pohs">Demand List</a></li>-->
+					<li><a href="<?php echo base_url(); ?>wpilife/house">House</a></li>
+					<li><a href="<?php echo base_url(); ?>wpilife/recs">Recommendation</a></li>
 				</ol>
 			</li>
 			<li class="col1">

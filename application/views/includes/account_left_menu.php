@@ -21,8 +21,9 @@
 				<ul class="sign-list">
 					<li>Publish New Article
 						<ul class="sign-list">
-							<li><?php echo anchor('manage/shop','Post Items you want to sell'); ?></li>
-							<li><?php echo anchor('manage/pohs','Post Items you want to buy'); ?></li>
+							<li><?php echo anchor('manage/shop','Post Items to Sell'); ?></li>
+							<li><?php echo anchor('manage/pohs','Post Items to Buy'); ?></li>
+							<li><?php echo anchor('manage/house','Post House Resource'); ?></li>
 						</ul>
 					</li>
 					<li>Manage your Articles
