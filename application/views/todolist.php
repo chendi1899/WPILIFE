@@ -47,7 +47,7 @@
 		<hr style="border-top: 2px solid #000;">
 		<h2>Account Module</h2>
 		<ol>
-		<li>Fast signing up only with your <a class="highlight light tooltip" data-original-title="Only WPI Email address are allowed when signing up">WPI email</a> (sure, password is also needed [MD5 Encryption -- Don't worry about your account security, it's our job])</li>
+		<li>Fast signing up only with your <a class="highlight light tooltip" data-original-title="Only WPI Email address are allowed when signing up">WPI email</a> (sure, password is also needed)</li>
 		<li>You can update your personal information when login, and in Version 1.0, this website will collect the following information from each member:
 			<ol>
 			<li>First Name</li>
