@@ -260,7 +260,7 @@ K.options = {
 		'superscript', '|',  
 		'formatblock', 'fontname', 'fontsize', '|', '/', 'forecolor', 'hilitecolor', 'bold',
 		'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 
-		'insertfile', 'table', 'hr', 'map', 'link', 'unlink', '|', 'about'
+		'table', 'hr', 'map', 'link', 'unlink', '|', 'about'
 	],
 	noDisableItems : ['source', 'fullscreen'],
 	colorTable : [

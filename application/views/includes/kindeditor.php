@@ -12,7 +12,7 @@
 				cssPath : '<?php echo base_url(); ?>kindeditor/plugins/code/prettify.css',
 				uploadJson : '<?php echo base_url(); ?>kindeditor/php/upload_json.php',
 				fileManagerJson : '<?php echo base_url(); ?>kindeditor/php/file_manager_json.php',
-				allowFileManager : true,
+				allowFileManager : false,
 				afterCreate : function() {
 					var self = this;
 					K.ctrl(document, 13, function() {
