@@ -4,6 +4,7 @@ application/cache/*
 application/controllers/emailTest.php
 stats/
 avatar/wpilife*.jpg
+images/officers/*
 kindeditor/attached/
 application/config/database.php
 10a4d5d0d9.txt
