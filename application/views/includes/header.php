@@ -83,6 +83,7 @@
 				<li><a href="<?php echo base_url(); ?>events">卡拉OK大赛</a></li>
 				</ul>
 			</li>
+			<li><a href="<?php echo base_url(); ?>cssa/photograph">Photo</a></li>
 			<!--<li><a href="<?php echo base_url(); ?>cssa/photograph">Photograph</a></li>-->
 		</ul>
 		<!-- Second Level / End -->
