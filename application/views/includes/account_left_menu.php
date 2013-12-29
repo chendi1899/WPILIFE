@@ -15,7 +15,25 @@
 			<?php
 			}
 			?>
-
+			
+			<div class="widget">
+				<h4>Menu for Blogs:</h4>
+				<ul class="sign-list">
+					<li>Publish New Article
+						<ul class="sign-list">
+							<li><?php echo anchor('manage/shop','Post Items you want to sell'); ?></li>
+							<li><?php echo anchor('manage/pohs','Post Items you want to buy'); ?></li>
+						</ul>
+					</li>
+					<li>Manage your Articles
+						<ul class="sign-list">
+							<li><?php echo anchor('manage/shop/myList','Your Sell List'); ?></li>
+							<li><?php echo anchor('manage/pohs/myList','Your Buy List'); ?></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			
 			<?php
 			if($this->session->userdata('cssa_id')!=null)
 			{
@@ -40,23 +58,6 @@
 				</ul>
 			</div>
 			
-			<div class="widget">
-				<h4>Menu for Blogs:</h4>
-				<ul class="sign-list">
-					<li>Publish New Article
-						<ul class="sign-list">
-							<li><?php echo anchor('manage/shop','Post Items you want to sell'); ?></li>
-							<li><?php echo anchor('manage/pohs','Post Items you want to buy'); ?></li>
-						</ul>
-					</li>
-					<li>Manage your Articles
-						<ul class="sign-list">
-							<li><?php echo anchor('manage/shop/myList','Your Sell List'); ?></li>
-							<li><?php echo anchor('manage/pohs/myList','Your Buy List'); ?></li>
-						</ul>
-					</li>
-				</ul>
-			</div>
 			<div class="widget">
 				<h4>Logout:</h4>
 				<ul class="check-list">
