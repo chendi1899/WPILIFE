@@ -2,8 +2,9 @@ WPILIFE
 =======
 
 A life service website For WPI Student   
-http://wpilife.org
+http://wpilife.org    
 
+Project page: http://wpilife.github.io/WPILIFE/     
 
 ###Attention:   
 The theme of this website is bought here: http://themeforest.net/item/nevia-responsive-html5-template/3708895, and I am just taking and modifying the pages, which are useful for me.     

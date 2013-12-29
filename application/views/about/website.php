@@ -48,8 +48,6 @@
 			}
 		?>, nice to see you. Actually, this is just a website, a very simple website. And I wish it could help you. </p>
 		<p>I have made this website open source at Github: <a href="https://github.com/WPILIFE/WPILIFE" target="_blank">https://github.com/WPILIFE/WPILIFE</a>
-		<br/>
-		I will keep it updated as quick as possible. (I cannot make "git push" on Godaddy shared host, due to keyword "shared")
 		</p>
 		<p><h3>I highly recommend you browse this website with <a href="https://www.google.com/intl/en/chrome/browser/" title="Click to download Chrome"><span style="color:red;">Chrome</span></a> or <a href="http://www.mozilla.org/en-US/firefox/new/" title="Click to download Firefox"><span style="color:red;">Firefox</span></a>! </h3></p>
 		<p>If you have any question or need get some help, please contact me: <br/><?php echo safe_mailto('hzhou@wpi.edu', 'hzhou[at]wpi.edu');?> or <?php echo safe_mailto('zhouhao@mit.edu', 'zhouhao[at]mit.edu');?></p>
