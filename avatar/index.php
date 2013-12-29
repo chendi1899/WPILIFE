@@ -18,20 +18,25 @@ function avatar_success()
 </head>
  
 <body>
-<embed src="face.swf" quality="high" wmode="opaque" FlashVars="defaultImg=1_120.jpg?id=<?=create_password(6)?>" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="530" height="480"></embed><br />
 <?php
+	session_start(); 
+	function create_password($pw_length = 8)
+	{
+	    $randpwd = '';
+	    for ($i = 0; $i < $pw_length; $i++) 
+	    {
+	        $randpwd .= chr(mt_rand(33, 126));
+	    }
+	    return $randpwd;
+	} 
 
-function create_password($pw_length = 8)
-{
-    $randpwd = '';
-    for ($i = 0; $i < $pw_length; $i++) 
-    {
-        $randpwd .= chr(mt_rand(33, 126));
-    }
-    return $randpwd;
-} 
-
+	function currentAvatar()
+	{
+		return $_SESSION['avatar'];
+	}
 ?>
+<embed src="face.swf" quality="high" wmode="opaque" FlashVars="defaultImg=<?=currentAvatar()?>?id=<?=create_password(6)?>" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="530" height="480"></embed><br />
+
 </body>
 </html>
 

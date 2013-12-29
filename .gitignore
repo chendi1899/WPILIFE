@@ -3,6 +3,6 @@ phpmyadmin
 application/cache/*
 application/controllers/emailTest.php
 stats/
-avatar/*
+avatar/wpilife*.jpg
 kindeditor/attached/
 application/config/database.php

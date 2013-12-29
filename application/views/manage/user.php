@@ -204,8 +204,10 @@
 					<?php
 						break;
 					case 3:
-						$_SESSION['id']=$this->session->userdata('users_id');
+						$_SESSION['id'] = $this->session->userdata('users_id');
+						$_SESSION['avatar'] = $this->session->userdata('users_avatar');
 					?>
+
 						<iframe src="<?php echo base_url(); ?>avatar/index.php" width="600px" height="600px"></iframe>
 					<?php
 						break;

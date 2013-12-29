@@ -17,7 +17,7 @@ class Users
 	{
 		$email = $form_data['users_email_address'];
 		$password = $form_data['users_password'];
-		$query = $this->CI->db->query("SELECT users_id, users_firstname
+		$query = $this->CI->db->query("SELECT users_id, users_firstname, users_photo 
 									   FROM users 
 									   WHERE users_email_address = '". $email ."' and 
 									   		 users_password = '". $password ."' and 
@@ -31,6 +31,7 @@ class Users
 			$this->CI->session->set_userdata('users_email', $email);
 			$this->CI->session->set_userdata('users_id', $row['users_id']);
 			$this->CI->session->set_userdata('users_firstname', $row['users_firstname']);
+			$this->CI->session->set_userdata('users_avatar', $row['users_photo']);
 			
 			//generate session for CSSA officer_title_update
 			$cssa_query = $this->CI->db->query("SELECT id 
