@@ -121,7 +121,7 @@
 		<!-- Mega Menu / End -->
 	</li>
 	
-	<li><a href="<?php echo base_url(); ?>about/cssa" class="new_students_tab"><i class="halflings white plane"></i>New Students</a>
+	<li><a href="<?php echo base_url(); ?>survivalGuide" class="new_students_tab"><i class="halflings white plane"></i>New Students</a>
 		<!-- Second Level / Start -->
 		<ul>
 			<li><a href="<?php echo base_url(); ?>survivalGuide">新生手册</a>
