@@ -174,7 +174,23 @@
 	</li>
 		
 	</li>
-	<li><a href="<?php echo base_url(); ?>sponsor" class="sponsor_tab"><i class="halflings white bookmark"></i> Sponsor</a></li>
+	<li><a href="<?php echo base_url(); ?>sponsor" class="sponsor_tab"><i class="halflings white bookmark"></i> Sponsor</a>
+		<!-- Second Level / Start -->
+		<?php 
+			$sponsor_list = $this->sponsorlib->get_name();
+			if($sponsor_list)
+			{
+				echo "<ul>";
+				foreach($sponsor_list as $item)
+				{
+					echo "<li><a href='".base_url()."sponsor/".$item->id."'>".$item->name."</a></li>";
+				}
+				echo "</ul>";
+			}
+		
+		?>
+		<!-- Second Level / End -->
+	</li>
 	<li><a href="<?php echo base_url(); ?>contact" class="contact_tab"><i class="halflings white envelope"></i> Contact</a>
 		<!-- Second Level / Start -->
 		<ul>

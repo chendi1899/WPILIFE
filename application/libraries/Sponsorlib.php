@@ -41,6 +41,21 @@ class Sponsorlib
 		
 	}
 
+	public function get_name()
+	{
+		$query =  $this->CI->db->query('SELECT id, name FROM sponsor ORDER BY type');
+		if ($query->num_rows() > 0)
+		{
+
+			$result = $query->result();
+			return $result; 
+		}		
+		else
+		{
+			return false;
+		}					   
+		
+	}
 	
 
 	function get_content($id)
