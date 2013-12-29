@@ -76,9 +76,13 @@
 	<li><a href="<?php echo base_url(); ?>cssa" class="cssa_tab"><i class="halflings white file"></i> News&Events </a>
 		<!-- Second Level / Start -->
 		<ul>
-			<li><a href="<?php echo base_url(); ?>cssa/activity_list">Activity</a></li>
+			<!--<li><a href="<?php echo base_url(); ?>cssa/activity_list">Activity</a></li>-->
 			<li><a href="<?php echo base_url(); ?>cssa/blog_list">Blog</a></li>
-			<li><a href="<?php echo base_url(); ?>events">卡拉OK大赛</a></li>
+			<li><a href="<?php echo base_url(); ?>events">Event</a>
+				<ul>
+				<li><a href="<?php echo base_url(); ?>events">卡拉OK大赛</a></li>
+				</ul>
+			</li>
 			<!--<li><a href="<?php echo base_url(); ?>cssa/photograph">Photograph</a></li>-->
 		</ul>
 		<!-- Second Level / End -->
@@ -91,15 +95,15 @@
 				<h4>We will provide interesting features one by one</h4>
 			</li>
 			<li class="col1">
-				<h5>Features Under Construction</h5>
+				<h5>Under Construction</h5>
 				<ol>
 					<!--<li><a href="<?php echo base_url(); ?>wpilife">House Find & Demand</a></li>-->
-					<li><a href="<?php echo base_url(); ?>wpilife/shop">Sell List</a></li>
-					<li><a href="<?php echo base_url(); ?>wpilife/pohs">Demand List</a></li>
+					<li><a href="<?php echo base_url(); ?>wpilife/shop">Shop</a></li>
+					<!--<li><a href="<?php echo base_url(); ?>wpilife/pohs">Demand List</a></li>-->
 				</ol>
 			</li>
 			<li class="col1">
-				<h5>Features Under Consideration</h5>
+				<h5>Under Consideration</h5>
 				<ol>
 					<li><a href="#">Rider</a></li>
 					<li><a href="#">Reminder</a></li>
@@ -108,7 +112,7 @@
 				</ol>
 			</li>
 			<li class="col1">
-				<h5>We want U</h5>
+				<h5>Feel Interested</h5>
 				<p>Do you want to make some contributions to this website? <br/>Please contact <a href="mailto:wpilife@gmail.com">wpilife@gmail.com</a></p>
 			</li>
 		</ul>

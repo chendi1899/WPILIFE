@@ -194,7 +194,7 @@
 	<!-- Recent News -->
 	<div class="eight columns index_list">
 
-		<a href="<?php echo base_url();?>cssa/activity_list"><h3 class="margin-1">Recent Activity / CSSA <span>more</span></h3></a>
+		<a href="<?php echo base_url();?>cssa/activity_list"><h3 class="margin-1">Recent Events / CSSA <span>more</span></h3></a>
 		<?php
 		if($activity_list)
 		{
@@ -222,7 +222,7 @@
 	<!-- Testimonials -->
 	<div class="eight columns index_list">
 
-		<a href="<?php echo base_url();?>cssa/blog_list"><h3 class="margin-1">Recent Blog / CSSA <span>more</span></h3></a>
+		<a href="<?php echo base_url();?>cssa/blog_list"><h3 class="margin-1">Recent Blogs / CSSA <span>more</span></h3></a>
 		<?php
 		if($blog_list)
 		{
