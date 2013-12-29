@@ -46,9 +46,27 @@
 	<!-- Page Content -->
 	<div class="eleven floated right">
 		<section class="page-content">
-			<article>
-				<?php echo $content; ?>
-			</article>
+			<!-- Contact Form -->
+			<section id="suvivalCover">
+				<section id="coverHeader">
+					<article>
+						2013 - 2014<br/><br/><h1 style="font-size:60px; color:#FFF; ">Sponsors</h1>
+					</article>
+				
+				</section>
+				<section id="coverBody">
+				Chinese Student & Scholars Association
+				</section>
+				<section id="coverFoot">
+					<table width="100%">
+						<tr>
+							<td>Worcester Polytechnic Institute <br/></td>
+							<td><img src="<?php echo base_url();?>images/wpilife/wpilife.png" alt="wpilife suvival guide"></td>
+						</tr>
+					</table>
+					<hr/>
+				</section>
+			</section>
 		</section>
 	</div>
 	<!-- Page Content / End -->
