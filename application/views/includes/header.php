@@ -122,7 +122,7 @@
 	<li><a href="<?php echo base_url(); ?>about/cssa" class="new_students_tab"><i class="halflings white plane"></i>New Students</a>
 		<!-- Second Level / Start -->
 		<ul>
-			<li><a href="<?php echo base_url(); ?>survivalGuide">Survival Guide</a>
+			<li><a href="<?php echo base_url(); ?>survivalGuide">新生手册</a>
 				<!-- Second Level / Start -->
 				<?php 
 					$root_list = $this->sg->get_root_index();
