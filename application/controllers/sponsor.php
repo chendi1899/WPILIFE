@@ -11,9 +11,8 @@ class Sponsor extends CI_Controller
 	{	
 		$data['index'] = $this->sponsorlib->get_index();
 
-		$data['title'] = "Sponsor";
-		$data['content'] = "<h1>Yes, I am the content for sponsor Cover page</h1>";
-		$this->load->view('cssa/sponsor',$data);
+		$data['title'] = "Sponsor | WPI CSSA";
+		$this->load->view('cssa/sponsor_cover',$data);
 		
 	}
 
@@ -21,7 +20,7 @@ class Sponsor extends CI_Controller
 	{
 		//echo $index;
 		$data['index'] = $this->sponsorlib->get_index();
-		$data['title'] = "Sponsor";
+		$data['title'] = "Sponsor | WPI CSSA";
 		$data['content'] = $this->sponsorlib->get_content($index);
 		$this->load->view('cssa/sponsor',$data);
 	}
