@@ -1,3 +1,9 @@
+	
+	<meta name="keywords" content="WPILIFE, WPI CSSA, CSSA" />
+	<meta name="description" content="WPILIFE-EXTEND YOUR LIFE IN WPI" />
+	<base href="<?php echo base_url(); ?>" />
+
+
 	<!-- CSS
 	================================================== -->
 	<link rel="icon" href="<?php echo base_url(); ?>favicon.ico" type="image/x-icon">
