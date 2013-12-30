@@ -18,12 +18,31 @@ class Officerscssalib
 		if($year)
 		{
 
-			$this->CI->db->select('title');
+			$this->CI->db->select('title, director');
+			$this->CI->db->where('year', $year);
+			$this->CI->db->where('director !=', "");
 			$this->CI->db->order_by("sort_order", "asc"); 
 			$query = $this->CI->db->get('cssa_officers_list');
 			if ($query->num_rows() > 0)
 			{
 				$result = $query->result(); 
+				foreach($result as $row)
+				{
+					$directors = array();
+					$directors_id = explode(",", $row->director);
+					foreach($directors_id as $id)
+					{
+						$this->CI->db->select('id,name,photo,major,email,des');
+						$this->CI->db->where('id', $id);
+						$sub_query = $this->CI->db->get('cssa_officers_info');
+						if ($sub_query->num_rows() > 0)
+						{
+							array_push($directors, $sub_query->result());
+						}
+					}
+					$row->directors = $directors;
+					unset($directors);
+				}
 				return $result; 
 			}	
 		}	
@@ -64,43 +83,5 @@ class Officerscssalib
 			return false;
 		}					   	
 	}
-
-	public function get_officer_list_with_content($from=0, $size=20)
-	{
-		$query = $this->CI->db->query("SELECT id, officers_title, officers_content, officers_year, officers_month, officers_day, 
-											  users_firstname, users_lastname
-									   FROM cssa_officers cb left join users on (cb.officers_author = users.users_id) 
-									   ORDER BY id DESC 
-									   limit ".$from.",".$size);
-		if ($query->num_rows() > 0)
-		{
-			$result = $query->result(); 
-			return $result; 
-		}		
-		else
-		{
-			return false;
-		}					   
-		
-	}
-
-
-	public function get_list_count()
-	{
-		return $this->CI->db->count_all('cssa_officers');
-	}
-
-	
-	public function officer_update($id, $dataArray)
-	{
-		$this->CI->db->where('id', $id);
-		$this->CI->db->update('cssa_officers', $dataArray);
-	}
-
-	public function officer_add($dataArray)
-	{
-		$this->CI->db->insert('cssa_officers',$dataArray);
-	}
-
 }
 ?>

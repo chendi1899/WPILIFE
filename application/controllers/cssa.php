@@ -124,10 +124,20 @@ class Cssa extends CI_Controller
 		$this->load->view('cssa/photograph',$data);
 	}
 
-	function officers()
+	function officers($year = 0)
 	{
-		$data['title'] = "Officers For CSSA";
-		$data['titleList'] = $this->officerscssalib->get_lastest_years();
+		
+		if($year == 0)
+		{
+			$year = $this->officerscssalib->get_lastest_years();
+		}
+
+		$data['title'] = "Officers For CSSA | $year";
+		$data['officers'] = $this->officerscssalib->get_officers($year);
+		if($data['officers'] == false)
+		{
+			$data['officers'] = $this->officerscssalib->get_officers($this->officerscssalib->get_lastest_years());
+		}
 		$this->load->view('cssa/officers',$data);
 	}
 	

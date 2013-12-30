@@ -32,19 +32,39 @@
 <!-- 960 Container / End -->
 
 
+
 <!-- Page Content -->
 <div class="page-content">
 
-	<!-- 960 Container -->
-	<div class="container">
-
-		<!-- Sixteen Columns -->
-		<div class="sixteen columns">
-212121
-		</div>
-
+<!-- 960 Container -->
+<div class="container">
+	<?php
+	if($officers)
+	{
+		foreach($officers as $officer)
+		{
+			//print_r($officer->directors);
+			foreach($officer->directors as $director)
+			{
+	?>
+	<!-- About -->
+	<div class="one-third column">
+		<img src="<?php echo base_url();?>images/officers/<?php echo $director[0]->photo;?>" alt=""/>
+		<div class="team-name"><h5><?php echo $director[0]->name;?></h5><span><?php echo $officer->title;?></span></div>
+		<div class="team-about"><p><?php echo $director[0]->des;?></p></div>
 	</div>
-	<!-- 960 Container / End -->
+
+	<?php
+			}
+		}
+
+	}
+	?>
+</div>
+<!-- 960 Container / End -->
+
+</div>
+<!-- Page Content / End -->
 
 </div>
 <!-- Page Content / End -->
