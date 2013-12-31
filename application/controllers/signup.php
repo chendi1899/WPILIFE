@@ -12,6 +12,7 @@ class Signup extends CI_Controller
 		$this->load->helper('form');
 		$this->load->helper('security');
 		$this->load->model('signup_model');
+		$this->load->library('parser');
 	}	
 	function index()
 	{	
@@ -103,14 +104,21 @@ class Signup extends CI_Controller
 		//https://exchange.wpi.edu/owa/
 		$this->email->from('zhouhao@wpilife.org', 'WPILIFE');
 		$this->email->to($to_email); 
-		$this->email->subject('Activate You Accont Now | WPILIFE');
-		$message = "Hi,<br/>
+		$this->email->subject('Activate You Account Now | WPILIFE');
+
+		$data = array(
+            'email' => $to_email,
+            'activationLink' => base_url() ."login/activation/".$to_email."_".$password_md5
+            );
+		$message = $this->parser->parse('templates/activationEmail', $data, TRUE);
+					/*"Hi,<br/>
 					Thanks for register as an user of WPILIFE, below is the activation link for your account:<br/>
 					<a href='http://wpilife.org/login/activation/".$to_email."_".$password_md5."'><h2 style='color:blue;'>Click Me to Activate Your Account</h2></a><br/><br/>
 					If this link if not clickable, just copy this URL to your browser: http://wpilife.org/login/activation/".$to_email."_".$password_md5."<br/><br/>
 					If you have any question, please reply this email. And if you want to do some help, reply it too.<br/>
 					Thanks!<br/>=)
 					";
+					*/
 		$this->email->message($message);	
 		$this->email->send();
 		/*
