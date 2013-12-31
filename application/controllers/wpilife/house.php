@@ -11,33 +11,33 @@ class House extends CI_Controller
 	
 	public function index($page = 1)
 	{
-		$data['title'] = "Recommendation | WPILIFE";
+		$data['title'] = "House | WPILIFE";
 		$pageSize = 10;
-		$listCount = $this->houselib->get_list_count('SELL');
-		$data['blog_list'] = $this->bloglib->get_blog_list('SELL',true, $pageSize*($page-1),$pageSize);
-		$data['pagination'] = $this->paginationlib->get_pagination(base_url().'wpilife/shop/', $listCount, $pageSize);
-		$this->load->view('wpilife/shop',$data);
+		$listCount = $this->houselib->get_list_count();
+		$data['house_list'] = $this->houselib->get_house_list($pageSize*($page-1),$pageSize);
+		$data['pagination'] = $this->paginationlib->get_pagination(base_url().'wpilife/house/', $listCount, $pageSize);
+		$this->load->view('wpilife/house',$data);
 	}
 
-	public function product($id)
+	public function getHouse($id)
 	{
 		if(is_numeric($id))
 		{
-			$data['title'] = "WPILIFE | EXTEND YOUR LIFE IN WPI";
-			$data['product'] = $this->bloglib->get_blog_by_ID($id, 'SELL');
-			if($data['product'] == false)
+			$data['title'] = "House | WPILIFE";
+			$data['house'] = $this->houselib->get_house_by_ID($id);
+			if($data['house'] == false)
 			{
-				redirect('wpilife/shop','refresh');
+				redirect('wpilife/house','refresh');
 			}
 			else
 			{
-				$this->load->view('wpilife/product',$data);
+				$this->load->view('wpilife/house_des',$data);
 			}
 			
 		}
 		else
 		{
-			redirect('wpilife/shop','refresh');
+			redirect('wpilife/house','refresh');
 		}
 		
 	}
@@ -50,7 +50,7 @@ class House extends CI_Controller
 			redirect('wpilife/shop','refresh');
 		}
 		$data['title'] = "Products List for Keyword: <span style='color:#169fe6;'> ".$keyword." </span>| WPILIFE";
-		$data['blog_list'] = $this->shoplib->get_products_list_by_keyword($keyword);
+		$data['house_list'] = $this->shoplib->get_products_list_by_keyword($keyword);
 		$data['pagination'] = "";
 		$this->load->view('wpilife/shop',$data);
 	}
