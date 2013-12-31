@@ -41,6 +41,7 @@ $route['survivalGuide/(:any)'] = "survivalGuide/get_content/$1";
 $route['sponsor/(:any)'] = "sponsor/get_content/$1";
 $route['wpilife/shop/(:num)'] = "wpilife/shop/index/$1";
 $route['wpilife/pohs/(:num)'] = "wpilife/pohs/index/$1";
+$route['wpilife/house/(:num)'] = "wpilife/house/getHouse/$1";
 
 $route['default_controller'] = "welcome";
 $route['404_override'] = 'error404';
