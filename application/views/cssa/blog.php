@@ -56,7 +56,6 @@
 				<header class="meta">
 					<h2><?php echo $blog['blogs_title'];?></h2>
 					<span><i class="halflings user"></i>By <?php echo $blog['users_firstname']." ".$blog['users_lastname']; ?></span>
-					<span><i class="halflings comments"></i>With 0 Comments</span>
 				</header>
 
 				<?php echo $blog['blogs_content']; ?>
