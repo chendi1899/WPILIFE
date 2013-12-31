@@ -111,19 +111,12 @@ class Signup extends CI_Controller
             'activationLink' => base_url() ."login/activation/".$to_email."_".$password_md5
             );
 		$message = $this->parser->parse('templates/activationEmail', $data, TRUE);
-					/*"Hi,<br/>
-					Thanks for register as an user of WPILIFE, below is the activation link for your account:<br/>
-					<a href='http://wpilife.org/login/activation/".$to_email."_".$password_md5."'><h2 style='color:blue;'>Click Me to Activate Your Account</h2></a><br/><br/>
-					If this link if not clickable, just copy this URL to your browser: http://wpilife.org/login/activation/".$to_email."_".$password_md5."<br/><br/>
-					If you have any question, please reply this email. And if you want to do some help, reply it too.<br/>
-					Thanks!<br/>=)
-					";
-					*/
+
 		$this->email->message($message);	
 		$this->email->send();
 		/*
 		echo $this->email->print_debugger();
-		die("121212");
+		die("");
 		*/
 	}
 		
