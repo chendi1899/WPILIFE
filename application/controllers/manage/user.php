@@ -33,7 +33,6 @@ class User extends CI_Controller
 		
 		$this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
 
-		//var_dump($this->form_validation->run());
 		if ($this->form_validation->run() == FALSE) // validation hasn't been passed
 		{
 			$data = $this->users->get_user_info($this->session->userdata('users_id'));
