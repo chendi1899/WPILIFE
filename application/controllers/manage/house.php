@@ -32,7 +32,7 @@ class House extends CI_Controller
 				'houses_title' 		=> $this->input->post('houses_title'),
 				'houses_price' 		=> $this->input->post('houses_price'),
 				'houses_content' 	=> $this->input->post('content'),
-				'houses_author'		=> $this->session->userdata('users_id'),
+				'user_id'		=> $this->session->userdata('users_id'),
 				'houses_image_cover'	=> $image,
 				'houses_year'	=> date("Y"),
 				'houses_month'	=> date("F"),
@@ -78,7 +78,7 @@ class House extends CI_Controller
 
 	function item_updates()
 	{
-		$houses_id = $this->input->post('house_id');
+		$house_id = $this->input->post('house_id');
 		$dataArray = array(
 			'addr' 					=> $this->input->post('addr'),
 			'month_rent' 			=> $this->input->post('monthRent'),
@@ -88,41 +88,32 @@ class House extends CI_Controller
 			'heat_included' 		=> $this->input->post('heater') == null ? 0 : 1,
 			'des' 					=> $this->input->post('content', TRUE),
 		);
-		$this->houselib->house_update($houses_id, $dataArray);
-		redirect('manage/house/myList','refresh');
+		$this->houselib->house_update($house_id, $this->session->userdata('users_id'), $dataArray);
+		redirect('manage/house/item_update/'.$house_id,'refresh');
 	}
 	
 	
-	function item_delete($houses_id)
+	function item_delete($house_id)
 	{
-		if(is_numeric($houses_id))
+		if(is_numeric($house_id))
 		{
-			$dataArray = array('houses_id' => $houses_id, 'houses_author' => $this->session->userdata('users_id'));
-			$image =  $this->houselib->get_image($dataArray);
-			//die($image);
-			if($this->db->delete('houses', $dataArray))
-			{
-				//delete the previous image for this product (and thumb)
-				unlink($_SERVER['DOCUMENT_ROOT'].'/images/house/'.$image);
-				unlink($_SERVER['DOCUMENT_ROOT'].'/images/house/'.substr_replace($image, '_small', -4, 0));
-			}
+			$dataArray = array('house_id' => $house_id, 'user_id' => $this->session->userdata('users_id'));
+			$this->db->delete('house', $dataArray);
 		}
 		redirect('manage/house/myList','refresh');
 	}
 
-	function item_close($houses_id)
+	function item_close($house_id)
 	{
-		$whereArray = array('houses_id' => $houses_id, 'houses_author' => $this->session->userdata('users_id'));
-		$dataArray = array('houses_available' => 0);
-		$this->houselib->house_available($whereArray, $dataArray);
+		$dataArray = array('isAvailable' => 0);
+		$this->houselib->house_update($house_id, $this->session->userdata('users_id'), $dataArray);
 		redirect('manage/house/myList','refresh');
 	}
 
-	function item_open($houses_id)
+	function item_open($house_id)
 	{
-		$whereArray = array('houses_id' => $houses_id, 'houses_author' => $this->session->userdata('users_id'));
-		$dataArray = array('houses_available' => 1);
-		$this->houselib->house_available($whereArray, $dataArray);
+		$dataArray = array('isAvailable' => 1);
+		$this->houselib->house_update($house_id, $this->session->userdata('users_id'), $dataArray);
 		redirect('manage/house/myList','refresh');
 	}
 

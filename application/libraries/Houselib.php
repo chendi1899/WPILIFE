@@ -127,10 +127,16 @@ class Houselib
 		}	
 	}
 
-	public function house_update($id, $dataArray)
+	public function house_update($house_id, $user_id, $dataArray)
 	{
-		$this->CI->db->where('house_id', $id);
+		$this->CI->db->where('house_id', $house_id);
+		$this->CI->db->where('user_id', $user_id);
 		$this->CI->db->update('house', $dataArray);
+	}
+
+	public function house_add($dataArray)
+	{
+		$this->CI->db->insert('house',$dataArray);
 	}
 }
 ?>
