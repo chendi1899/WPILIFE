@@ -27,6 +27,26 @@ class Houselib
 		
 	}
 
+	public function get_house_by_houseID($id)
+	{
+		$this->CI->db->where('house.house_id', $id);
+		$this->CI->db->select('house.*, users.users_firstname, users.users_lastname, users_telephone, users_qq, users_email_address');
+		$this->CI->db->from('house');
+		$this->CI->db->join('users', 'house.user_id = users.users_id');
+
+		$query = $this->CI->db->get();
+
+		if ($query->num_rows() > 0)
+		{
+			$result = $query->row_array();
+			return $result; 
+		}		
+		else
+		{
+			return false;
+		}
+	}
+
 	public function get_house_by_userID($id)
 	{
 		$this->CI->db->where('user_id', $id);
@@ -89,6 +109,28 @@ class Houselib
 		$query = $this->CI->db->get('house');
 		$result = $query->row_array();
 		return $result['count'];
+	}
+
+	public function get_house_by_two_ID($house_id, $users_id)
+	{
+		$this->CI->db->where('house_id', $house_id);
+		$this->CI->db->where('user_id', $users_id);
+		$query = $this->CI->db->get('house');
+		if ($query->num_rows() > 0)
+		{
+			$result = $query->row_array(); 
+			return $result; 
+		}		
+		else
+		{
+			return false;
+		}	
+	}
+
+	public function house_update($id, $dataArray)
+	{
+		$this->CI->db->where('house_id', $id);
+		$this->CI->db->update('house', $dataArray);
 	}
 }
 ?>

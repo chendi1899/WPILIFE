@@ -60,40 +60,34 @@ class House extends CI_Controller
 	{
 		if(is_numeric($id))
 		{
-			$data['product'] = $this->houselib->get_house_by_two_ID($id, $this->session->userdata('users_id'));
-			//print_r($data['product']);
-			$this->load->view('manage/wpilife_house_update',$data);
+			$data['house'] = $this->houselib->get_house_by_two_ID($id, $this->session->userdata('users_id'));
+			if($data['house'] != false)
+			{
+				$this->load->view('manage/wpilife_house_update',$data);
+			}
+			else
+			{
+				redirect('manage/house/myList','refresh');
+			}
+		}
+		else
+		{
+			redirect('manage/house/myList','refresh');
 		}
 	}
 
 	function item_updates()
 	{
-		$houses_id = $this->input->post('houses_id');
-		$this->load->library('imglib');
-		$returnInfo = $this->imglib->ImageUpload();
-		if($returnInfo['key'] == true)
-		{
-			//delete the previous image for this product (and thumb)
-			unlink($_SERVER['DOCUMENT_ROOT'].'/images/house/'.$this->input->post('houses_image_cover'));
-			unlink($_SERVER['DOCUMENT_ROOT'].'/images/house/'.substr_replace($this->input->post('houses_image_cover'), '_small', -4, 0));
-			$image = $returnInfo['data']['file_name'];
-			$thumbImage = $this->imglib->createThumb($image, '/images/house/', 400, 325);
-			$dataArray = array(
-				'houses_title' 		=> $this->input->post('houses_title'),
-				'houses_price' 		=> $this->input->post('houses_price'),
-				'houses_content' 	=> $this->input->post('content'),
-				'houses_image_cover'	=> $image,
-
-			);
-		}
-		else
-		{
-			$dataArray = array(
-				'houses_title' 		=> $this->input->post('houses_title'),
-				'houses_price' 		=> $this->input->post('houses_price'),
-				'houses_content' 	=> $this->input->post('content'),
-			);
-		}
+		$houses_id = $this->input->post('house_id');
+		$dataArray = array(
+			'addr' 					=> $this->input->post('addr'),
+			'month_rent' 			=> $this->input->post('monthRent'),
+			'bedrooms_count' 		=> $this->input->post('bedroomCount'),
+			'water_included' 		=> $this->input->post('water') == null ? 0 : 1,
+			'electricity_included' 	=> $this->input->post('electricity') == null ? 0 : 1,
+			'heat_included' 		=> $this->input->post('heater') == null ? 0 : 1,
+			'des' 					=> $this->input->post('content', TRUE),
+		);
 		$this->houselib->house_update($houses_id, $dataArray);
 		redirect('manage/house/myList','refresh');
 	}

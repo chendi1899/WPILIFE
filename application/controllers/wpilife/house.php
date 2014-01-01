@@ -24,13 +24,14 @@ class House extends CI_Controller
 		if(is_numeric($id))
 		{
 			$data['title'] = "House | WPILIFE";
-			$data['house'] = $this->houselib->get_house_by_ID($id);
+			$data['house'] = $this->houselib->get_house_by_houseID($id);
 			if($data['house'] == false)
 			{
 				redirect('wpilife/house','refresh');
 			}
 			else
 			{
+
 				$this->load->view('wpilife/house_des',$data);
 			}
 			
