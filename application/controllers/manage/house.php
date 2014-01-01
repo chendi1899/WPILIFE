@@ -19,34 +19,25 @@ class House extends CI_Controller
 		
 	}	
 
-	function upload()
+	function item_adds()
 	{
-		$this->load->library('imglib');
-		$returnInfo = $this->imglib->ImageUpload();
-		if($returnInfo['key'] == true)
-		{
-			$image = $returnInfo['data']['file_name'];
-			$thumbImage = $this->imglib->createThumb($image, '/images/house/', 400, 325);
-			$dataArray = array(
-				'houses_type'		=> $this->input->post('houses_type'),
-				'houses_title' 		=> $this->input->post('houses_title'),
-				'houses_price' 		=> $this->input->post('houses_price'),
-				'houses_content' 	=> $this->input->post('content'),
-				'user_id'		=> $this->session->userdata('users_id'),
-				'houses_image_cover'	=> $image,
-				'houses_year'	=> date("Y"),
-				'houses_month'	=> date("F"),
-				'houses_day'		=> date("d"),
-				'houses_date' 	=> date("Y-m-d H:i:s"),
-			);
 
-			$this->houselib->house_add($dataArray);
-			redirect('manage/house/myList','refresh');
-		}
-		else
-		{
-			redirect('manage/house/myList','refresh');
-		}
+		$dataArray = array(
+			'user_id'				=> $this->session->userdata('users_id'),
+			'addr' 					=> $this->input->post('addr'),
+			'month_rent' 			=> $this->input->post('monthRent'),
+			'bedrooms_count' 		=> $this->input->post('bedroomCount'),
+			'water_included' 		=> $this->input->post('water') == null ? 0 : 1,
+			'electricity_included' 	=> $this->input->post('electricity') == null ? 0 : 1,
+			'heat_included' 		=> $this->input->post('heater') == null ? 0 : 1,
+			'des' 					=> $this->input->post('content', TRUE),
+			'available_date'		=> date("Y-m-d", strtotime($this->input->post('availableDate'))),
+			'post_time' 			=> date("Y-m-d H:i:s"),
+		);
+		//var_dump($dataArray);
+		$this->houselib->house_add($dataArray);
+		redirect('manage/house/myList','refresh');
+
 		
 	}
 	
@@ -87,6 +78,7 @@ class House extends CI_Controller
 			'electricity_included' 	=> $this->input->post('electricity') == null ? 0 : 1,
 			'heat_included' 		=> $this->input->post('heater') == null ? 0 : 1,
 			'des' 					=> $this->input->post('content', TRUE),
+			'available_date'		=> date("Y-m-d", strtotime($this->input->post('availableDate'))),
 		);
 		$this->houselib->house_update($house_id, $this->session->userdata('users_id'), $dataArray);
 		redirect('manage/house/item_update/'.$house_id,'refresh');

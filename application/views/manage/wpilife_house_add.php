@@ -2,21 +2,22 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>HOUSE | WPILIFE</title>
+	<title>House | WPILIFE</title>
 	<?php $this->load->view('includes/import');?>
 	<?php $this->load->view('includes/kindeditor');?>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 	<style>
-    .label-success {
-	    padding: 2px 5px;
-	    color:#fff;
+	.label-success {
+		padding: 2px 5px;
+		color:#fff;
 		background-color: #169fe6;
 	}
 	.label-important {
 		padding: 2px 5px;
-	    color:#fff;
+		color:#fff;
 		background-color: #b94a48;
 	}
-    </style>
+	</style>
 </head>
 <body>
 <!-- Wrapper / Start -->
@@ -30,13 +31,13 @@
 
 	<div class="sixteen floated page-title">
 
-		<h2>Account Center</h2>
+		<h2>house Center</h2>
 
 		<nav id="breadcrumbs">
 			<ul>
 				<li>You are here:</li>
 				<li><a href="<?php echo base_url(); ?>">Home</a></li>
-				<li>Account Center</li>
+				<li>house Center</li>
 			</ul>
 		</nav>
 
@@ -52,7 +53,7 @@
 	<!-- Page Content -->
 	<div class="eleven floated right">
 		<section class="page-content">
-			<h3 class="margin">Submit the house info </h3>
+			<h3 class="margin">Add new house info</h3>
 
 				<!-- Contact Form -->
 				<section id="account">
@@ -60,19 +61,38 @@
 					<!-- Form for Basic Information-->
 					<?php 
 						$attibutes = array('id'=>'kindeditor', 'name'=>'kindeditor');
-						echo form_open_multipart('manage/house/upload',$attibutes);
-						echo form_hidden('blogs_type', 'SELL');
+						echo form_open('manage/house/item_adds',$attibutes);
 					?>
 						<fieldset>
 						<table width="100%">
 							<tr>
 								<td>
-									<input type="text" name="blogs_title" id="blogs_title" maxlength="50" placeholder="Item Name, such as bike, desk lamp..." style="width:632px;" />
+									<input type="text" name="addr" id="addr" maxlength="128" placeholder="House address" style="width:632px;" />
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<input type="text" name="blogs_price" id="blogs_price" maxlength="20" placeholder="Give a price if you can, which will make other know your item better, such as $45, $23~$111..." style="width:632px;" />
+									<input type="text" name="monthRent" id="monthRent" maxlength="20" placeholder="Give a month rent($), such as 800, 1200..." style="width:632px;" />
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="text" name="availableDate" id="availableDate" placeholder="Pick a house available date">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<select name="bedroomCount" id="bedroomCount" style="display:inline;">
+										<option value="1"> 1 bedroom</option>
+										<option value="2"> 2 bedrooms</option>
+										<option selected="" value="3"> 3 bedrooms</option>
+										<option value="4"> 4 bedrooms</option>
+										<option value="5"> 5 bedrooms</option>
+									</select>
+									&nbsp;&nbsp;&nbsp;&nbsp;
+									<input type="checkbox" name="water" id="water" checked=""  /> Hot Water
+									<input type="checkbox" name="electricity" id="electricity" /> Electricity
+									<input type="checkbox" name="heater" id="heater" /> Heater
 								</td>
 							</tr>
 							<tr>
@@ -102,26 +122,35 @@
 </div>
 <?php $this->load->view('includes/footer');?>
 
-    <script src="<?echo base_url();?>scripts/bootstrap.min.js"></script>
-    <script src="<?echo base_url();?>scripts/bootstrap-maxlength.min.js"></script>
-    <script>
+	<script src="<?echo base_url();?>scripts/bootstrap.min.js"></script>
+	<script src="<?echo base_url();?>scripts/bootstrap-maxlength.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places" type="text/javascript"></script>
+	<script type="text/javascript">
 	$(document).ready(function(){
-        $('input#defaultconfig').maxlength()
+		$('input#defaultconfig').maxlength()
 
-		$('input#blogs_title').maxlength({
+		$('input#addr').maxlength({
 					alwaysShow: true,
-		            warningClass: "label label-success",
-		            limitReachedClass: "label label-important",
-		            placement: 'left'
+					warningClass: "label label-success",
+					limitReachedClass: "label label-important",
+					placement: 'left'
 			});
 
-		$('input#blogs_price').maxlength({
-					alwaysShow: true,
-		            warningClass: "label label-success",
-		            limitReachedClass: "label label-important",
-		            placement: 'left'
-			});
+		$("#availableDate" ).datepicker();
 	});
+
+
+	// for google API : address auto complete
+	function initialize() 
+	{
+		var mapOptions = {
+			center: new google.maps.LatLng(-33.8688, 151.2195),
+		};
+		var input = document.getElementById('addr');
+		var autocomplete = new google.maps.places.Autocomplete(input);
+	  }
+	  google.maps.event.addDomListener(window, 'load', initialize);
 	</script>
 </body>
 </html>

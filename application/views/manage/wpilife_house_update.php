@@ -5,6 +5,7 @@
 	<title>House | WPILIFE</title>
 	<?php $this->load->view('includes/import');?>
 	<?php $this->load->view('includes/kindeditor');?>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 	<style>
 	.label-success {
 		padding: 2px 5px;
@@ -77,6 +78,11 @@
 							</tr>
 							<tr>
 								<td>
+									<input type="text" name="availableDate" id="availableDate" value="<?php echo date("m/d/y", strtotime($house['available_date'])); ?>" placeholder="Pick a house available date">
+								</td>
+							</tr>
+							<tr>
+								<td>
 									<select name="bedroomCount" id="bedroomCount" style="display:inline;">
 										<option <?php if($house['bedrooms_count'] == 1) echo "selected";?> value="1"> 1 bedroom</option>
 										<option <?php if($house['bedrooms_count'] == 2) echo "selected";?> value="2"> 2 bedrooms</option>
@@ -119,6 +125,7 @@
 
 	<script src="<?echo base_url();?>scripts/bootstrap.min.js"></script>
 	<script src="<?echo base_url();?>scripts/bootstrap-maxlength.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places" type="text/javascript"></script>
 	<script type="text/javascript">
 	$(document).ready(function(){
@@ -131,6 +138,7 @@
 					placement: 'left'
 			});
 
+		$("#availableDate" ).datepicker();
 	});
 
 	// for google API : address auto complete
