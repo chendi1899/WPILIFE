@@ -28,8 +28,9 @@
 					</li>
 					<li>Manage your Articles
 						<ul class="sign-list">
-							<li><?php echo anchor('manage/shop/myList','Your Sell List'); ?></li>
-							<li><?php echo anchor('manage/pohs/myList','Your Buy List'); ?></li>
+							<li><?php echo anchor('manage/shop/myList','Sell List'); ?></li>
+							<li><?php echo anchor('manage/pohs/myList','Buy List'); ?></li>
+							<li><?php echo anchor('manage/house/myList','house List'); ?></li>
 						</ul>
 					</li>
 				</ul>
