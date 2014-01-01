@@ -11,7 +11,7 @@ The theme of this website is bought here: http://themeforest.net/item/nevia-resp
 So, if you want to keep this theme, you'd better buy it. $15, it deserves, I think.   
 
 ###How to install:
-1. Setup database with wpilife.sql in `WPILIFE/DB_Scripts/`   
+1. Setup database with wpilife.sql in `WPILIFE/DB_Scripts/` [Maybe out-of-date, and I will keep updating manually!]   
 2. Modify `application/config/database_Example.php` with your MySQL info, and rename it with `database.php`     
 3. Change line 69 in `/application/controllers/signup.php`, as now only the users with `wpi.edu` email can sign up    
 
