@@ -16,7 +16,6 @@ class About extends CI_Controller
 	function cssa()
 	{
 		$data['title'] = "About CSSA";
-		$data['content'] = "Yes, I am the content for About CSSA";
 		$this->load->view('about/cssa',$data);
 	}
 	function website()
