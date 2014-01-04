@@ -125,7 +125,7 @@ class Imglib
 	
 
 	
-	function addWaterMarking($imagePath, $waterMarkingPath )
+	function addWaterMarking($imagePath)
 	{
 		$imagePath = $_SERVER['DOCUMENT_ROOT'].'/elfinder/files/2014/360wallpaper (3).jpg';
 		$waterMarkingPath = $_SERVER['DOCUMENT_ROOT']."/images/logo_waterMark.png";
@@ -147,7 +147,7 @@ class Imglib
 	}
 
 	
-/*
+
 	function getImagesFromFolder()
 	{
 		$imageList = array();
@@ -177,6 +177,5 @@ class Imglib
 			closedir($handle);
 		}
 	}
-	*/
 }
 ?>

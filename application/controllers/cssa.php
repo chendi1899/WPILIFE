@@ -8,7 +8,7 @@ class Cssa extends CI_Controller
  		parent::__construct();
  		$this->load->library('paginationlib');
  		$this->load->library('officerscssalib');
- 		//$this->load->library('imglib');
+ 		
 	}	
 	function index()
 	{	
@@ -122,10 +122,8 @@ class Cssa extends CI_Controller
 	function photograph()
 	{
 		$data['title'] = "Photograph | CSSA";
-
-		echo "1";
-		$this->imglib->addWaterMarking("1", "2");
-		echo "2";
+		$this->load->library('imglib');
+		$this->imglib->addWaterMarking("1");
 		
 		$this->load->view('cssa/photograph',$data);
 	}
