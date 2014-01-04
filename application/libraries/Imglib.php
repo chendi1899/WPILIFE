@@ -124,11 +124,11 @@ class Imglib
 	}
 	
 
-	/*
+	
 	function addWaterMarking($imagePath, $waterMarkingPath )
 	{
-		$imagePath = $_SERVER['DOCUMENT_ROOT'].'/elfinder/files/2014/71909-106.jpg';
-		$waterMarkingPath = $_SERVER['DOCUMENT_ROOT']."/images/logo_waterMark.png"
+		$imagePath = $_SERVER['DOCUMENT_ROOT'].'/elfinder/files/2014/360wallpaper (3).jpg';
+		$waterMarkingPath = $_SERVER['DOCUMENT_ROOT']."/images/logo_waterMark.png";
 		$config['source_image']	= $imagePath;
 		$config['wm_overlay_path'] = $waterMarkingPath;
 		$config['wm_type'] = 'overlay';
@@ -137,7 +137,7 @@ class Imglib
 		$config['wm_y_transp'] = 4;
 		$config['wm_vrt_alignment'] = 'bottom';
 		$config['wm_hor_alignment'] = 'right';
-		$config['wm_padding'] = '20';
+		//$config['padding'] = '20';
 
 		$this->CI->load->library('image_lib', $config); 
 		$this->CI->image_lib->initialize($config);
@@ -146,7 +146,7 @@ class Imglib
 
 	}
 
-	*/
+	
 /*
 	function getImagesFromFolder()
 	{
