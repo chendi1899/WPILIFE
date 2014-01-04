@@ -139,7 +139,6 @@ class Imglib
 		$config['wm_hor_alignment'] = 'right';
 		$config['wm_padding'] = '20';
 
-		//$this->image_lib->initialize($config); 
 		$this->CI->load->library('image_lib', $config); 
 		$this->CI->image_lib->initialize($config);
 
