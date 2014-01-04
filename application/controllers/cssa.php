@@ -123,8 +123,8 @@ class Cssa extends CI_Controller
 	{
 		$data['title'] = "Photograph | CSSA";
 		$this->load->library('imglib');
-		$this->imglib->addWaterMarking("1");
-		
+		//$this->imglib->addWaterMarking("1");
+		$data['images'] = $this->imglib->getImagesFromFolder();
 		$this->load->view('cssa/photograph',$data);
 	}
 

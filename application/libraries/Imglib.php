@@ -158,14 +158,15 @@ class Imglib
 			{
 				if ($folder[0] != "." ) 
 				{
-					echo "$folder<br/>";
+					//echo "$folder<br/>";
 					//$imageList
 					if($dir = opendir($_SERVER['DOCUMENT_ROOT'].'/elfinder/files/'.$folder))
 					while (false !== ($img = readdir($dir))) 
 					{
 						if ($img[0] != "." ) 
 						{
-							echo "$img<br/>";
+							array_push($imageList, $img);
+							//echo "$img<br/>";
 						}
 						
 					}
@@ -176,6 +177,7 @@ class Imglib
 			}
 			closedir($handle);
 		}
+		return $imageList;
 	}
 }
 ?>
