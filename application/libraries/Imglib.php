@@ -123,8 +123,12 @@ class Imglib
 		
 	}
 	
-	function addWaterMarking($imagePath, $waterMarkingPath)
+
+	/*
+	function addWaterMarking($imagePath, $waterMarkingPath )
 	{
+		$imagePath = $_SERVER['DOCUMENT_ROOT'].'/elfinder/files/2014/71909-106.jpg';
+		$waterMarkingPath = $_SERVER['DOCUMENT_ROOT']."/images/logo_waterMark.png"
 		$config['source_image']	= $imagePath;
 		$config['wm_overlay_path'] = $waterMarkingPath;
 		$config['wm_type'] = 'overlay';
@@ -135,18 +139,22 @@ class Imglib
 		$config['wm_hor_alignment'] = 'right';
 		$config['wm_padding'] = '20';
 
-		$this->image_lib->initialize($config); 
+		//$this->image_lib->initialize($config); 
+		$this->CI->load->library('image_lib', $config); 
+		$this->CI->image_lib->initialize($config);
 
-		$this->image_lib->watermark();
+		$this->CI->image_lib->watermark();
 
 	}
 
+	*/
+/*
 	function getImagesFromFolder()
 	{
 		$imageList = array();
 		if ($handle = opendir($_SERVER['DOCUMENT_ROOT'].'/elfinder/files/')) 
 		{
-			/* This is the correct way to loop over the directory. */
+			// This is the correct way to loop over the directory. 
 			while (false !== ($folder = readdir($handle))) 
 			{
 				if ($folder[0] != "." ) 
@@ -170,5 +178,6 @@ class Imglib
 			closedir($handle);
 		}
 	}
+	*/
 }
 ?>
