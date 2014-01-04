@@ -123,5 +123,52 @@ class Imglib
 		
 	}
 	
+	function addWaterMarking($imagePath, $waterMarkingPath)
+	{
+		$config['source_image']	= $imagePath;
+		$config['wm_overlay_path'] = $waterMarkingPath;
+		$config['wm_type'] = 'overlay';
+		$config['wm_opacity'] = 50;
+		$config['wm_x_transp']	= 4;
+		$config['wm_y_transp'] = 4;
+		$config['wm_vrt_alignment'] = 'bottom';
+		$config['wm_hor_alignment'] = 'right';
+		$config['wm_padding'] = '20';
+
+		$this->image_lib->initialize($config); 
+
+		$this->image_lib->watermark();
+
+	}
+
+	function getImagesFromFolder()
+	{
+		$imageList = array();
+		if ($handle = opendir($_SERVER['DOCUMENT_ROOT'].'/elfinder/files/')) 
+		{
+			/* This is the correct way to loop over the directory. */
+			while (false !== ($folder = readdir($handle))) 
+			{
+				if ($folder[0] != "." ) 
+				{
+					echo "$folder<br/>";
+					//$imageList
+					if($dir = opendir($_SERVER['DOCUMENT_ROOT'].'/elfinder/files/'.$folder))
+					while (false !== ($img = readdir($dir))) 
+					{
+						if ($img[0] != "." ) 
+						{
+							echo "$img<br/>";
+						}
+						
+					}
+					closedir($dir);
+
+				}
+				
+			}
+			closedir($handle);
+		}
+	}
 }
 ?>
