@@ -146,38 +146,52 @@ class Imglib
 
 	}
 
-	
-
-	function getImagesFromFolder()
+	function getAlbums()
 	{
-		$imageList = array();
-		if ($handle = opendir($_SERVER['DOCUMENT_ROOT'].'/elfinder/files/')) 
+		$albumList = array();
+		if ($handle = opendir($_SERVER['DOCUMENT_ROOT'].'/elfinder/files'))
 		{
-			// This is the correct way to loop over the directory. 
-			while (false !== ($folder = readdir($handle))) 
+			while (false !== ($album = readdir($handle))) 
 			{
-				if ($folder[0] != "." ) 
+				if ($album[0] != "." ) 
 				{
-					//echo "$folder<br/>";
-					//$imageList
-					if($dir = opendir($_SERVER['DOCUMENT_ROOT'].'/elfinder/files/'.$folder))
-					while (false !== ($img = readdir($dir))) 
-					{
-						if ($img[0] != "." ) 
-						{
-							array_push($imageList, $img);
-							//echo "$img<br/>";
-						}
-						
-					}
-					closedir($dir);
-
+					array_push($albumList, $album);
 				}
 				
 			}
 			closedir($handle);
 		}
-		return $imageList;
+		return $albumList;
 	}
+
+	function getImagesForAlbum($album)
+	{
+		$imageList = array();
+		// check, the album path cannot be null or hidden folder
+		$album = trim($album);
+		if( $album== "" || $album[0] == ".") return false;
+
+		if ($handle = opendir($_SERVER['DOCUMENT_ROOT'].'/elfinder/files/'.$album)) 
+		{
+			// This is the correct way to loop over the directory. 
+			while (false !== ($image = readdir($handle))) 
+			{
+				if ($image[0] != "." ) 
+				{
+					array_push($imageList, $image);
+				}
+				
+			}
+			closedir($handle);
+
+			return $imageList;
+		}
+		else
+		{
+			return false;
+		}
+		
+	}
+	
 }
 ?>
