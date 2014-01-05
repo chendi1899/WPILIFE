@@ -142,6 +142,21 @@ class Cssa extends CI_Controller
 		
 	}
 
+	function imageProcessAlbum($album)
+	{
+		$this->load->library('imglib');
+		$album = trim($album);
+		$images =  $this->imglib->getImagesForAlbum($album);
+		if($album != "")
+		{
+			foreach($images as $image)
+			{
+				$path = "/elfinder/files/".$album."/";
+				$this->imglib->createThumb($image, $path, 220, 147, ".");
+			}
+		}
+	}
+
 	function officers($year = 0)
 	{
 		

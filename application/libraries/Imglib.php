@@ -39,9 +39,19 @@ class Imglib
 		}
 	}
 
-	function createThumb( $image, $path='/images/', $width=400, $height=325)
+	function createThumb( $image, $path='/images/', $width=400, $height=325, $prefix = "")
 	{
-		$newImages = substr_replace($image, '_small', -4, 0);
+		$prefix = trim($prefix);
+		if($prefix == "")
+		{
+			$newImages = substr_replace($image, '_small', -4, 0);
+		}
+		else
+		{
+			$newImages = $prefix.$image;
+		}
+
+		//$newImages = substr_replace($image, '_small', -4, 0);
 		$ResizedImage = substr_replace($image, '_resize', -4, 0);
 		
 		$pathToImages = $_SERVER['DOCUMENT_ROOT'].$path.$image;

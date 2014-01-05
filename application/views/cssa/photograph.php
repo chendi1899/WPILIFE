@@ -58,7 +58,7 @@
 			<div class="four columns isotope-item">
 				<a class="portfolio-item isotope woocommerce-main-image zoom"  href="<?php echo base_url();?>/elfinder/files/<?php echo $album; ?>/<?php echo $image; ?>" rel="fancybox-gallery" title="<?php echo $album; ?>">
 					<figure>
-						<img src="<?php echo base_url();?>elfinder/files/<?php echo $album; ?>/<?php echo $image; ?>" alt=""/>
+						<img src="<?php echo base_url();?>elfinder/files/<?php echo $album; ?>/.<?php echo $image; ?>" alt=""/>
 					</figure>
 				</a>
 			</div>
