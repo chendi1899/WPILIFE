@@ -153,8 +153,13 @@ class Cssa extends CI_Controller
 			{
 				$path = "/elfinder/files/".$album."/";
 				$this->imglib->createThumb($image, $path, 220, 147, ".");
+				$imagePath = $album."/".$image;
+				
+				$this->imglib->addWaterMarking($imagePath);
 			}
 		}
+
+		echo "done!";
 	}
 
 	function officers($year = 0)

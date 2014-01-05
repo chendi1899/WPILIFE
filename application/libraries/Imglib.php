@@ -137,7 +137,7 @@ class Imglib
 	
 	function addWaterMarking($imagePath)
 	{
-		$imagePath = $_SERVER['DOCUMENT_ROOT'].'/elfinder/files/2014/360wallpaper (3).jpg';
+		$imagePath = $_SERVER['DOCUMENT_ROOT'].'/elfinder/files/'.$imagePath;
 		$waterMarkingPath = $_SERVER['DOCUMENT_ROOT']."/images/logo_waterMark.png";
 		$config['source_image']	= $imagePath;
 		$config['wm_overlay_path'] = $waterMarkingPath;
