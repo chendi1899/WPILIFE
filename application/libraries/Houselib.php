@@ -138,5 +138,26 @@ class Houselib
 	{
 		$this->CI->db->insert('house',$dataArray);
 	}
+
+	public function get_house_by_keyword($keyword)
+	{
+		$keyword = $this->CI->security->xss_clean($keyword);
+		$this->CI->db->where('isAvailable',1);
+		$this->CI->db->like('addr', $keyword);
+		$this->CI->db->or_like('des', $keyword); 
+		$this->CI->db->select('house.*, users.users_firstname, users.users_lastname');
+		$this->CI->db->from('house');
+		$this->CI->db->join('users', 'house.user_id = users.users_id');
+		$query = $this->CI->db->get();
+		if ($query->num_rows() > 0)
+		{
+			$result = $query->result(); 
+			return $result; 
+		}		
+		else
+		{
+			return false;
+		}		
+	}
 }
 ?>

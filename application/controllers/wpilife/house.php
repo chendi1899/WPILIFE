@@ -48,12 +48,12 @@ class House extends CI_Controller
 		$keyword = $this->input->get('keyword');
 		if($keyword == '')
 		{
-			redirect('wpilife/shop','refresh');
+			redirect('wpilife/house','refresh');
 		}
-		$data['title'] = "Products List for Keyword: <span style='color:#169fe6;'> ".$keyword." </span>| WPILIFE";
-		$data['house_list'] = $this->shoplib->get_products_list_by_keyword($keyword);
+		$data['title'] = "Result for Keyword: <span style='color:#169fe6;'> ".$keyword." </span>| WPILIFE";
+		$data['house_list'] = $this->houselib->get_house_by_keyword($keyword);
 		$data['pagination'] = "";
-		$this->load->view('wpilife/shop',$data);
+		$this->load->view('wpilife/house',$data);
 	}
 	
 }
