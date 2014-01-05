@@ -15,7 +15,7 @@ class Recs extends CI_Controller
 		$listCount = $this->bloglib->get_list_count('SELL');
 		$data['blog_list'] = $this->bloglib->get_blog_list('SELL',true, $pageSize*($page-1),$pageSize);
 		$data['pagination'] = $this->paginationlib->get_pagination(base_url().'wpilife/shop/', $listCount, $pageSize);
-		$this->load->view('wpilife/shop',$data);
+		$this->load->view('wpilife/recs',$data);
 	}
 
 	public function product($id)
