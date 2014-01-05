@@ -119,13 +119,27 @@ class Cssa extends CI_Controller
 		
 	}
 
-	function photograph()
+	function photograph($album = "")
 	{
-		$data['title'] = "Photograph | CSSA";
+		$album = trim($album);
 		$this->load->library('imglib');
-		//$this->imglib->addWaterMarking("1");
-		$data['images'] = $this->imglib->getImagesFromFolder();
-		$this->load->view('cssa/photograph',$data);
+		if($album == "")
+		{
+			$data['title'] = "Album | CSSA";
+			//$this->imglib->addWaterMarking("1");
+			$data['albums'] = $this->imglib->getAlbums();
+			$this->load->view('cssa/albums',$data);
+		}
+		else
+		{
+
+			$data['title'] = "Photograph | CSSA";
+			$data['album'] = $album;
+			$data['images'] = $this->imglib->getImagesForAlbum($album);
+			if($data['images'] == false) redirect('cssa/photograph','refresh');
+			$this->load->view('cssa/photograph',$data);
+		}
+		
 	}
 
 	function officers($year = 0)

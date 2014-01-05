@@ -58,7 +58,7 @@
 			<div class="four columns isotope-item">
 				<a class="portfolio-item isotope"  href="<?php echo base_url();?>cssa/photograph/<?php echo $album; ?>" title="<?php echo $album; ?>">
 					<figure>
-						<img src="<?php echo base_url();?>/elfinder/files/<?php echo $album; ?>/<?php echo $album; ?>.jpg" alt=""/>
+						<img src="<?php echo base_url();?>elfinder/files/<?php echo $album; ?>/<?php echo $album; ?>.jpg" alt=""/>
 						<figcaption class="item-description">
 							<h5><?php echo $album; ?></h5>
 						</figcaption>
