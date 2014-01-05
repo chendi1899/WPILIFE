@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>SHOP | WPILIFE</title>
+	<title>Shop | WPILIFE</title>
 	<?php $this->load->view('includes/import');?>
 	<script type="text/javascript">
 		$(document).ready(function() 

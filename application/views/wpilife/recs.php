@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>SHOP | WPILIFE</title>
+	<title>Recommendation | WPILIFE</title>
 	<?php $this->load->view('includes/import');?>
 	<script type="text/javascript">
 		$(document).ready(function() 
@@ -24,13 +24,13 @@
 
 	<div class="sixteen floated page-title">
 
-		<h2>Shop</h2>
+		<h2>Recommendation</h2>
 
 		<nav id="breadcrumbs">
 			<ul>
 				<li>You are here:</li>
 				<li><a href="<?php echo base_url();?>">Home</a></li>
-				<li>Shop</li>
+				<li>Recommendation</li>
 			</ul>
 		</nav>
 
