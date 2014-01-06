@@ -61,7 +61,7 @@
 		<!-- Copyrights -->
 		<div class="eight columns">
 			<div class="copyright">
-				&copy; Copyright 2013 by <a href="<?php echo base_url();?>">WPILIFE</a>. All Rights Reserved.
+				&copy; Copyright <?php echo date("Y"); ?> by <a href="<?php echo base_url();?>">WPILIFE</a>. All Rights Reserved.
 			</div>
 		</div>
 
