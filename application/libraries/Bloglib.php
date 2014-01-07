@@ -56,6 +56,7 @@ class Bloglib
 		$query = $this->CI->db->query("SELECT blogs_id, blogs_title, blogs_month, blogs_day, blogs_image_cover, blogs_price 
 									   FROM blogs 
 									   WHERE blogs_type = '".$type."' and blogs.blogs_available = 1 
+									   ORDER BY blogs_id DESC 
 									   limit 0 ,".$count);
 		if ($query->num_rows() > 0)
 		{
