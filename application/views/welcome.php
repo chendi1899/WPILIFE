@@ -190,38 +190,7 @@
 
 <!-- 960 Container -->
 <div class="container">
-
-	<!-- Recent News -->
-	<div class="eight columns index_list">
-
-		<a href="<?php echo base_url();?>cssa/activity_list"><h3 class="margin-1">Recent Events / CSSA <span>more</span></h3></a>
-		<?php
-		if($activity_list)
-		{
-			foreach($activity_list as $row)
-			{
-		?>
-		<div class="four columns alpha">
-			<article class="recent-blog">
-				<section class="date">
-					<span class="day"><?php echo $row->activities_day; ?></span>
-					<span class="month"><?php echo substr($row->activities_month, 0, 3); ?></span>
-				</section>
-				<h4><a href="<?php echo base_url()?>cssa/activity/<?php echo $row->activities_id; ?>"><?php echo $row->activities_title; ?></a></h4>
-				<p><?php echo mb_substr(strip_tags($row->activities_content), 0, 100); ?>...</p>
-			</article>
-		</div>
-		<?php
-			}
-		}
-		?>
-		
-
-	</div>
-
-	<!-- Testimonials -->
-	<div class="eight columns index_list">
-
+	<div class="sixteen columns index_list">
 		<a href="<?php echo base_url();?>cssa/blog_list"><h3 class="margin-1">Recent Blogs / CSSA <span>more</span></h3></a>
 		<?php
 		if($blog_list)
