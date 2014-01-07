@@ -122,7 +122,7 @@
 		<div class="four columns carousel-intro">
 
 			<section class="entire">
-				<h3>SHOP <i class="icon-arrow-right"></i></h3>
+				<h3>Shop <i class="icon-arrow-right"></i></h3>
 				<p>These are the items you can buy from others. And you can also publish your items which you want to sell here after your registration. </p>
 			</section>
 
