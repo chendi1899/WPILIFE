@@ -34,14 +34,12 @@
 
 		<!-- Twitter -->
 		<div class="four columns">
-			<h4>Twitter</h4>
-			<ul id="twitter"></ul>
-				<script type="text/javascript">
-					jQuery(document).ready(function($){
-					$.getJSON('<?echo base_url();?>twitter.php?url='+encodeURIComponent('statuses/user_timeline.json?screen_name=Iamzhouhao&count=1'), function(tweets){
-						$("#twitter").html(tz_format_twitter(tweets));
-					}); });
-				</script>
+			<h4>Link</h4>
+			<ul id="link" style="font-size:larger; padding-bottom: 5px;">
+				<li><i class="halflings white link"></i> <a href="http://mitchief.org/">MIT-CHIEF</a></li>
+				<li><i class="halflings white link"></i> <a href="http://sbzhouhao.net/">CrazyEgg</a></li>
+			</ul>
+				
 			<div class="clearfix"></div>
 		</div>
 
