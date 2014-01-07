@@ -20,9 +20,9 @@ So, if you want to keep this theme, you'd better buy it. $15, it deserves, I thi
 [x] Add vote page for singers     
 [X] Add page for sponsors       
 [ ] temporary house provide to live for new students       
-[ ] Add officers info      
-[ ] Add email template          
-[ ] Add Photo Module for WPILIFE so that new students can know WPI better          
+[X] Add officers info      
+[X] Add email template          
+[X] Add Photo Module for WPILIFE so that new students can know WPI better          
 
 ###Note:
 **Voting rules:**     
