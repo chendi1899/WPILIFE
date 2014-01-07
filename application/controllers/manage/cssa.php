@@ -136,8 +136,8 @@ class Cssa extends CI_Controller
 		if($this->session->userdata('users_id') != null)
 		{
 			$dataArray = array(
-						'blogs_title' 	=> $this->input->post('blogs_title', TRUE),
-						'blogs_content' => $this->input->post('content', TRUE),
+						'blogs_title' 	=> $this->input->post('blogs_title', FALSE),
+						'blogs_content' => $this->input->post('content', FALSE),
 						'blogs_year'	=> date("Y"),
 						'blogs_month'	=> date("F"),
 						'blogs_day'		=> date("d"),
@@ -157,8 +157,8 @@ class Cssa extends CI_Controller
 	{
 		$blogs_id = $this->input->post('blogs_id'); 
 		$dataArray = array(
-			'blogs_title' 	=> $this->input->post('blogs_title', TRUE),
-			'blogs_content' => $this->input->post('content', TRUE),
+			'blogs_title' 	=> $this->input->post('blogs_title', FALSE),
+			'blogs_content' => $this->input->post('content', FALSE),
 			'blogs_date' 	=> date("Y-m-d H:i:s"),
 		);
 		$this->blogcssalib->blog_update($blogs_id, $dataArray);
