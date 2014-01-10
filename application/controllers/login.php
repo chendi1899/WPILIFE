@@ -7,6 +7,10 @@ class Login extends CI_Controller
 	{
  		parent::__construct();
 		$this->load->database();
+		if($this->session->userdata('users_id') != null)
+		{
+			redirect('','refresh');
+		}
 	}
 
 	function index()
