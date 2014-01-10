@@ -3,12 +3,9 @@ class Users
 {
 
 	public $CI = NULL;
-
-
 	public function __construct()
 	{	
 		$this->CI =& get_instance();
-		$this->CI->load->helper('security');
 	}
 
 	public function isEmailExist($email)
@@ -56,6 +53,14 @@ class Users
 		$this->CI->db->insert('users',$userDataArray);
 	}
 
+	public function updateRecentLoginTime($user_id)
+	{
+		$dataArray = array('recent_login' => date("Y-m-d H:i:s") );
+		$this->CI->db->where('users_id', $user_id);
+		$this->CI->db->update('users', $dataArray);
+	}
+
+
 	public function login($email, $password)
 	{
 		$this->CI->db->where('users_email_address', $email);
@@ -81,7 +86,8 @@ class Users
 			{
 				$cssa_row = $cssa_query->row_array(); 
 				$this->CI->session->set_userdata('cssa_id', $cssa_row['id']);
-			}								    
+			}
+			$this->updateRecentLoginTime($row['users_id']);
 			return true;	
 		}
 		else
@@ -194,6 +200,54 @@ class Users
 		$this->CI->db->where('id', $id);
 		$this->CI->db->update('cssa_manager_list', $dataArray);
 	}
+
+	/**
+	 * Do not open the code below, it will bring disaster
+	 */
+	
+	/*
+	public function updateUserNameandPassword()
+	{
+		$query = $this->CI->db->get('users');
+
+		if ($query->num_rows() > 0)
+		{
+			$dataArray = array();
+			$result = $query->result(); 
+			foreach($result as $row)
+			{
+				
+				echo $row->users_id."<br/>";
+
+				$salt = $this->CI->config->item('encryption_key');
+				$password = $row->users_password;
+				$passwordMD5 = do_hash($salt.$password, 'md5'); // MD5
+				
+				$dataArray['users_password'] = $passwordMD5;
+
+				if($row->users_firstname == "member")
+				{
+					$name = explode("@", $row->users_email_address);
+					$dataArray['users_firstname'] = $name[0];
+				}
+				else
+				{
+					$dataArray['users_firstname'] = $row->users_firstname;
+				}
+				$this->justUpdate($row->users_id, $dataArray);
+				unset($dataArray);
+				//break;
+			}
+			
+		}
+	}
+
+	public function justUpdate($id, $dataArray)
+	{
+		$this->CI->db->where('users_id', $id);
+		$this->CI->db->update('users', $dataArray);
+	}
+	*/
 }
 
 ?>
