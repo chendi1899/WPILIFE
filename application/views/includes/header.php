@@ -33,7 +33,7 @@
 			<?php
 				if($this->session->userdata('users_id') == null)
 				{
-					echo "<a href='".base_url()."login'>Login</a> | "."
+					echo "<a href='".base_url()."login?ref=".current_url()."'>Login</a> | "."
 						  <a href='".base_url()."signup'>Register</a>";
 				}
 				else
