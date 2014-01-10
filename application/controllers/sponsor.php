@@ -6,6 +6,7 @@ class Sponsor extends CI_Controller
 	function __construct()
 	{
  		parent::__construct();
+ 		$this->output->cache(17);
 	}	
 	function index()
 	{	

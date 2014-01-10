@@ -6,6 +6,7 @@ class SurvivalGuide extends CI_Controller
 	function __construct()
 	{
  		parent::__construct();
+ 		$this->output->cache(137);
 	}	
 	function index()
 	{	
