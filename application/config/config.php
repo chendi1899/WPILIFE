@@ -358,6 +358,7 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
+$config['adminEmail'] = 'wpilife@gmail.com';
 
 /* End of file config.php */
 /* Location: ./application/config/config.php */

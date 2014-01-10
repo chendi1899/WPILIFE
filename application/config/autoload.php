@@ -1,4 +1,6 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+date_default_timezone_set('America/New_York');
 /*
 | -------------------------------------------------------------------
 | AUTO-LOADER
@@ -66,7 +68,7 @@ $autoload['libraries'] = array( 'database', 'session', 'faqlib', 'sg', 'blogcssa
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url','html', 'security');
+$autoload['helper'] = array('url','html', 'security', 'form');
 
 
 /*
