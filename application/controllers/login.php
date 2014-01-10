@@ -6,80 +6,41 @@ class Login extends CI_Controller
 	function __construct()
 	{
  		parent::__construct();
-		$this->load->library('form_validation');
 		$this->load->database();
-		$this->load->helper('form');
-		$this->load->helper('url');
-		$this->load->helper('security');
-		$this->load->library('users');
-	}	
+	}
+
 	function index()
 	{					
-		$this->form_validation->set_rules('users_email_address', 'users_email_address', 'valid_email|max_length[96]');				
-		$this->form_validation->set_rules('users_password', 'users_password', 'required|xss_clean|max_length[40]');			
-		$this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
-	
-		if ($this->form_validation->run() == FALSE) // validation hasn't been passed
-		{
-			$data['title'] = "WPILIFE | EXTEND YOUR LIFE IN WPI";
-			$data['show_form'] = true;
-			$this->load->view('login',$data);
-		}
-		else // passed validation proceed to post success logic
-		{
-			$password = do_hash(set_value('users_password'), 'md5'); // MD5
-			$form_data = array(
-					       	'users_email_address' => set_value('users_email_address'),
-					       	'users_password' => $password
-						);
-			$this->users->generate_session($form_data);
-			if($this->session->userdata('users_id') != null)
-			{
-				redirect(base_url(),'refresh');
-			}
-			else
-			{
-				echo "<script>alert('Account not Activated or  not Exist! :-)');</script>";
-				echo "<script>location.reload();</script>";
-				//redirect('login/quickLogin?ref=' + $ref,'refresh');
-			}
-			
-		}
+		$data['title'] = "Login | WPILIFE";
+		$data['account'] = $this->input->get("account");
+		$data['ref'] = $this->input->get("ref");
+		$this->load->view('login',$data);
 	}
-	function quickLogin()
+
+	function submit()
 	{
-		$this->form_validation->set_rules('users_email_address', 'users_email_address', 'valid_email|max_length[96]');				
-		$this->form_validation->set_rules('users_password', 'users_password', 'required|xss_clean|max_length[40]');			
-		$this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
-	
-		if ($this->form_validation->run() == FALSE) // validation hasn't been passed
+		$ref = $this->input->post("ref");
+		$email = trim($this->input->post('users_email_address'));
+		// generate password
+		$salt = $this->config->item('encryption_key');
+		$password = $this->input->post('users_password');
+		$tmp = do_hash($password, 'md5');
+		$passwordMD5 = do_hash($salt.$tmp, 'md5'); // MD5
+
+		$this->users->login($email, $passwordMD5);
+		if($this->session->userdata('users_id') != null)
 		{
-			$data['title'] = "WPILIFE | EXTEND YOUR LIFE IN WPI";
-			$data['show_form'] = true;
-			$this->load->view('quicklogin',$data);
+			redirect($ref,'refresh');
 		}
-		else // passed validation proceed to post success logic
+		else
 		{
-			$ref = $this->input->get("ref");
-			$password = do_hash(set_value('users_password'), 'md5'); // MD5
-			$form_data = array(
-					       	'users_email_address' => set_value('users_email_address'),
-					       	'users_password' => $password
-						);
-			$this->users->generate_session($form_data);
-			if($this->session->userdata('users_id') != null)
-			{
-				redirect($ref,'refresh');
-			}
-			else
-			{
-				echo "<script>alert('Account not Activated or  not Exist! :-)');</script>";
-				echo "<script>location.reload();</script>";
-				//redirect('login/quickLogin?ref=' + $ref,'refresh');
-			}
-			
+			echo "<script>alert('Email or Password Error! =(');</script>";
+			echo "<script>window.location.href = '".base_url()."login/?ref=".$ref."';</script>";
 		}
 	}
+
+	// This function is not used in my new version
+	// And I will send the user the password through email
 	function activation($activation_string)
 	{
 		$data['title'] = 'WPILIFE';
@@ -106,14 +67,60 @@ class Login extends CI_Controller
 		$this->load->view('login',$data);
 		
 	}
+
+	function forgetPassword()
+	{
+		$data['title'] = "Password Recovery| WPILIFE";
+		$this->load->view('base/forgetPassword',$data);
+	}
+
+	function passwordRecovery()
+	{
+		$salt = $this->config->item('encryption_key');
+		$password = random_string('alnum', 8);
+		$tmp = do_hash($password, 'md5');
+		$passwordMD5 = do_hash($salt.$tmp, 'md5'); // MD5
+
+		$email = $this->input->post('email');
+		$email = trim($email);
+
+		// update new password into database
+		$this->users->passwordUpdatebyEmail($email, $passwordMD5);
+
+		$this->sendPasswordRecoveryEmail($email, $password);
+
+		$data['title'] = "Password Recovery | WPILIFE";
+		$data['info'] = "New password has been sent to your email, please have a check!<br/>Have fun :-)";
+		$this->load->view('templates/msgDisplay',$data);
+	}
+
 	function logout()
 	{
 		$this->session->sess_destroy();
-		$data['title'] = "WPILIFE | EXTEND YOUR LIFE IN WPI";
-		$data['show_form'] = false;
+		$data['title'] = "Logout | WPILIFE";
 		$data['info'] = "Thank you!<br/> You are logout now!";
-		$this->load->view('login',$data);
+		$this->load->view('templates/msgDisplay',$data);
 	}
 	
+	function sendPasswordRecoveryEmail($to_email, $password)
+	{
+		$this->load->library('parser');
+		$this->load->library('email');
+		$this->email->from('no-reply@wpilife.com', 'WPILIFE');
+		$this->email->to($to_email); 
+		$this->email->subject('Your Passcode has been reset | WPILIFE');
+
+		$data = array(
+			'email' 	=> $to_email,
+			'password' 	=> $password,
+			'year'		=> date('Y'),
+			'baseUrl'	=> base_url(),
+			'loginLink' => base_url() ."login/?account=".$to_email
+			);
+		$message = $this->parser->parse('templates/activationEmail', $data, TRUE);
+		$this->email->message($message);	
+		$this->email->send();
+		
+	}
 }
 ?>
