@@ -2,22 +2,22 @@
 
 class Login extends CI_Controller 
 {
-               
 	function __construct()
 	{
  		parent::__construct();
 		$this->load->database();
+	}
+
+	function index()
+	{
 		if($this->session->userdata('users_id') != null)
 		{
 			redirect('','refresh');
 		}
-	}
 
-	function index()
-	{					
 		$data['title'] = "Login | WPILIFE";
 		$data['account'] = $this->input->get("account");
-		$data['ref'] = $this->input->get("ref");
+		$data['ref'] = str_replace('logout', '', $this->input->get("ref"));
 		$this->load->view('login',$data);
 	}
 
