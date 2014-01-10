@@ -35,15 +35,34 @@ class Users
 		$this->CI->db->update('users', $dataArray);
 	}
 
-	public function generate_session($form_data)
+	public function isEmailDuplicated($email)
 	{
-		$email = $form_data['users_email_address'];
-		$password = $form_data['users_password'];
-		$query = $this->CI->db->query("SELECT users_id, users_firstname, users_photo 
-									   FROM users 
-									   WHERE users_email_address = '". $email ."' and 
-									   		 users_password = '". $password ."' and 
-									   		 users_activated = 1 ");
+		$email = trim($email);
+		$email = $this->CI->security->xss_clean($email);
+		$this->CI->db->where('users_email_address', $email);
+		$query = $this->CI->db->get('users');
+		if ($query->num_rows() > 0)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	public function addNewUser($userDataArray)
+	{
+		$this->CI->db->insert('users',$userDataArray);
+	}
+
+	public function login($email, $password)
+	{
+		$this->CI->db->where('users_email_address', $email);
+		$this->CI->db->where('users_password', $password);
+		$this->CI->db->where('users_activated',1);
+		$this->CI->db->select('users_id, users_firstname, users_photo');
+		$query = $this->CI->db->get('users');
 
 		if ($query->num_rows() > 0)
 		{
