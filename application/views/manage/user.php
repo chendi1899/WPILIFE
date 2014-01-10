@@ -3,7 +3,7 @@
 <head>
 	<?php session_start(); ?>
 	<meta charset="utf-8">
-	<title>WPILIFE</title>
+	<title><?php echo $title; ?></title>
 	<?php $this->load->view('includes/import');?>
 </head>
 <body>
@@ -192,7 +192,7 @@
 								<td><input name="newPasswordConfirm" type="password" placeholder="new password confirm" id="newPasswordConfirm" required="required" /></td>
 							</tr>
 							<tr>
-								<td><input type="submit" class="submit" id="submit" value=" Save " />
+								<td><input type="submit" class="submit" id="submit" value=" Submit " />
 									<br/>
 	                    			<?php echo validation_errors();?>
 								</td>

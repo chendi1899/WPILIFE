@@ -36,7 +36,7 @@ class User extends CI_Controller
 		if ($this->form_validation->run() == FALSE) // validation hasn't been passed
 		{
 			$data = $this->users->get_user_info($this->session->userdata('users_id'));
-			$data['title'] = "Account Center";
+			$data['title'] = "Account Center | WPILIFE";
 			$data['page_title'] = "Personal Info:";
 			$data['page_intro'] = "Hey, just convince us you are coming from Earth. Because mom says it is too dangerous to live with aliens.";
 			$data['show_form'] = 1;
@@ -56,11 +56,12 @@ class User extends CI_Controller
 					       	'users_gender' => set_value('gender'),
 					       	'users_description' => set_value('comment'),
 						);
-			//print_r($dataArray);
+
 			$this->users->user_info_update($dataArray, $this->session->userdata('users_id'));
 			redirect('manage/user','refresh');
 		}
 	}
+
 	function passwordModify()
 	{			
 		$this->form_validation->set_rules('oldPassword', 'oldPassword', 'required|xss_clean|max_length[40]');	
@@ -79,7 +80,7 @@ class User extends CI_Controller
 			{
 				$data['page_intro'] = "It's a good habit to change your password regularly!";
 			}
-			$data['title'] = "Account Center";
+			$data['title'] = "Password Modify | WPILIFE";
 			$data['page_title'] = "Password Modification:";
 			
 			$data['show_form'] = 2;
@@ -87,13 +88,25 @@ class User extends CI_Controller
 		}
 		else // passed validation proceed to post success logic
 		{
-		 	$this->users->user_password_update(set_value('newPassword'), $this->session->userdata('users_id')); 
+			// generate password
+			$salt = $this->config->item('encryption_key');
+			$password = set_value('newPassword');
+			$tmp = do_hash($password, 'md5'); 
+			$passwordMD5 = do_hash($salt.$tmp, 'md5');
+
+		 	$this->users->user_password_update($passwordMD5, $this->session->userdata('users_id')); 
 		 	redirect('manage/user/passwordModify?action=succeed','refresh');
 		}
 	}
+
 	function oldPassord_check($str)
 	{
-		if($this->users->oldPassword_check($str, $this->session->userdata('users_id'))==true)
+		$salt = $this->config->item('encryption_key');
+		$password = $str;
+		$tmp = do_hash($password, 'md5'); 
+		$passwordMD5 = do_hash($salt.$tmp, 'md5');
+
+		if($this->users->oldPassword_check($passwordMD5, $this->session->userdata('users_id')) == true)
 		{
 			return true;
 		}
@@ -104,6 +117,7 @@ class User extends CI_Controller
 		}
 		
 	}
+
 	function avatarModify()
 	{
 		$data['title'] = "Account Center";
@@ -112,6 +126,7 @@ class User extends CI_Controller
 		$data['show_form'] = 3;
 		$this->load->view('manage/user',$data);
 	}
+
 	function avatarUpdate()
 	{
 		$this->users->user_avatar_update($this->session->userdata('users_id'));

@@ -132,8 +132,6 @@ class Users
 
 	public function user_password_update($newPassword, $users_id)
 	{
-		$newPassword = $this->CI->security->xss_clean($newPassword);
-		$newPassword = do_hash($newPassword, 'md5'); // MD5
 		$dataArray = array('users_password'=>$newPassword);
 		$users_id = $this->CI->security->xss_clean($users_id);
 		$this->CI->db->where('users_id', $users_id);
@@ -143,12 +141,11 @@ class Users
 	public function oldPassword_check($oldPassword, $users_id)
 	{
 		$users_id = $this->CI->security->xss_clean($users_id);
-		$oldPassword = $this->CI->security->xss_clean($oldPassword);
-		$oldPassword = do_hash($oldPassword, 'md5'); // MD5
-		$query = $this->CI->db->query("SELECT users_id
-									   FROM users 
-									   WHERE users_id = ". $users_id. "
-									   		 AND users_password ='".$oldPassword."' ");
+
+		$this->CI->db->where('users_id',$users_id);
+		$this->CI->db->where('users_password',$oldPassword);
+		$query = $this->CI->db->get('users');
+
 		if ($query->num_rows() > 0)
 		{
 			return true; 
