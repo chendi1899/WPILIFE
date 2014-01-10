@@ -10,12 +10,36 @@
 
 /* Client-specific Styles & Reset */
 
+#outlook a { 
+  padding:0; 
+} 
+
 body{ 
   width:100% !important; 
   -webkit-text-size-adjust:100%; 
   -ms-text-size-adjust:100%; 
   margin:0; 
   padding:0;
+}
+
+.ExternalClass { 
+  width:100%;
+} 
+
+.ExternalClass, 
+.ExternalClass p, 
+.ExternalClass span, 
+.ExternalClass font, 
+.ExternalClass td, 
+.ExternalClass div { 
+  line-height: 100%; 
+} 
+
+#backgroundTable { 
+  margin:0; 
+  padding:0; 
+  width:100% !important; 
+  line-height: 100% !important; 
 }
 
 img { 
@@ -32,6 +56,10 @@ img {
 center {
   width: 100%;
   min-width: 580px;
+}
+
+a img { 
+  border: none;
 }
 
 p {
@@ -55,6 +83,13 @@ table, tr, td {
   padding: 0;
   vertical-align: top;
   text-align: left;
+}
+
+hr {
+  color: #d9d9d9; 
+  background-color: #d9d9d9; 
+  height: 1px; 
+  border: none;
 }
 
 /* Responsive Grid */
@@ -111,14 +146,80 @@ table.container td.last {
   padding-right: 0px;
 }
 
+table.one { width: 30px; }
+table.two { width: 80px; }
+table.three { width: 130px; }
+table.four { width: 180px; }
+table.five { width: 230px; }
 table.six { width: 280px; }
+table.seven { width: 330px; }
+table.eight { width: 380px; }
+table.nine { width: 430px; }
+table.ten { width: 480px; }
+table.eleven { width: 530px; }
 table.twelve { width: 580px; }
+
+table.one center { min-width: 30px; }
+table.two center { min-width: 80px; }
+table.three center { min-width: 130px; }
+table.four center { min-width: 180px; }
+table.five center { min-width: 230px; }
+table.six center { min-width: 280px; }
+table.seven center { min-width: 330px; }
+table.eight center { min-width: 380px; }
+table.nine center { min-width: 430px; }
+table.ten center { min-width: 480px; }
+table.eleven center { min-width: 530px; }
 table.twelve center { min-width: 580px; }
 
 .body .columns td.one,
 .body .column td.one, { width: 8.333333% !important; }
+.body .columns td.two,
+.body .column td.two { width: 16.666666% !important; }
+.body .columns td.three,
+.body .column td.three { width: 25% !important; }
+.body .columns td.four,
+.body .column td.four { width: 33.333333% !important; }
+.body .columns td.five,
+.body .column td.five { width: 41.666666% !important; }
 .body .columns td.six,
 .body .column td.six { width: 50% !important; }
+.body .columns td.seven,
+.body .column td.seven { width: 58.333333% !important; }
+.body .columns td.eight,
+.body .column td.eight { width: 66.666666% !important; }
+.body .columns td.nine,
+.body .column td.nine { width: 75% !important; }
+.body .columns td.ten,
+.body .column td.ten { width: 83.333333% !important; }
+.body .columns td.eleven,
+.body .column td.eleven { width: 91.666666% !important; }
+.body .columns td.twelve,
+.body .column td.twelve { width: 100% !important; }
+
+td.offset-by-one { padding-left: 50px; }
+td.offset-by-two { padding-left: 100px; }
+td.offset-by-three { padding-left: 150px; }
+td.offset-by-four { padding-left: 200px; }
+td.offset-by-five { padding-left: 250px; }
+td.offset-by-six { padding-left: 300px; }
+td.offset-by-seven { padding-left: 350px; }
+td.offset-by-eight { padding-left: 400px; }
+td.offset-by-nine { padding-left: 450px; }
+td.offset-by-ten { padding-left: 500px; }
+td.offset-by-eleven { padding-left: 550px; }
+
+td.sub-offset-by-one { padding-left: 5.172413% !important; }
+td.sub-offset-by-two { padding-left: 13.793102% !important; }
+td.sub-offset-by-three { padding-left: 22.413791% !important; }
+td.sub-offset-by-four { padding-left: 31.034480% !important; }
+td.sub-offset-by-five { padding-left: 39.655169% !important; }
+td.sub-offset-by-six { padding-left: 48.275858% !important; }
+td.sub-offset-by-seven { padding-left: 56.896547% !important; }
+td.sub-offset-by-eight { padding-left: 65.517236% !important; }
+td.sub-offset-by-nine { padding-left: 74.137925% !important; }
+td.sub-offset-by-ten { padding-left: 82.758614% !important; }
+td.sub-offset-by-eleven { padding-left: 91.379303% !important; }
 
 td.expander {
   visibility: hidden;
@@ -126,6 +227,11 @@ td.expander {
   padding: 0 !important;
 }
 
+table.columns .text-pad,
+table.column .text-pad {
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
 table.columns .left-text-pad,
 table.columns .text-pad-left,
@@ -141,12 +247,76 @@ table.column .text-pad-right {
   padding-right: 10px;
 }
 
+/* Block Grid */
+
+.block-grid {
+  width: 100%;
+  max-width: 580px;
+}
+
+.block-grid td {
+  display: inline-block;
+  padding:10px;
+}
+
+.two-up td {
+  width:270px;
+}
+
+.three-up td {
+  width:173px;
+}
+
+.four-up td {
+  width:125px;
+}
+
+.five-up td {
+  width:96px;
+}
+
+.six-up td {
+  width:76px;
+}
+
+.seven-up td {
+  width:62px;
+}
+
+.eight-up td {
+  width:52px;
+}
+
 /* Alignment & Visibility Classes */
 
 table.center, td.center {
   text-align: center;
 }
 
+h1.center,
+h2.center,
+h3.center,
+h4.center,
+h5.center,
+h6.center {
+  text-align: center;
+}
+
+span.center {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+img.center {
+  margin: 0 auto;
+  float: none;
+}
+
+.show-for-small,
+.hide-for-desktop {
+  display: none;
+}
 
 /* Typography */
 
@@ -164,13 +334,20 @@ h1, h2, h3, h4, h5, h6 {
   word-break: normal;
 }
 
+h1 {font-size: 40px;}
+h2 {font-size: 36px;}
 h3 {font-size: 32px;}
+h4 {font-size: 28px;}
 h5 {font-size: 24px;}
-
+h6 {font-size: 20px;}
 body, table.body, p {font-size: 14px;line-height:19px;}
 
 p { 
   padding-bottom: 10px;
+}
+
+small {
+  font-size: 10px;
 }
 
 a {
@@ -189,6 +366,33 @@ a:active {
 a:visited { 
   color: #2ba6cb !important;
 }
+
+h1 a, 
+h2 a, 
+h3 a, 
+h4 a, 
+h5 a, 
+h6 a {
+  color: #2ba6cb;
+}
+
+h1 a:active, 
+h2 a:active,  
+h3 a:active, 
+h4 a:active, 
+h5 a:active, 
+h6 a:active { 
+  color: #2ba6cb !important; 
+} 
+
+h1 a:visited, 
+h2 a:visited,  
+h3 a:visited, 
+h4 a:visited, 
+h5 a:visited, 
+h6 a:visited { 
+  color: #2ba6cb !important; 
+} 
 
 /* Panels */
 
@@ -227,6 +431,17 @@ table.tiny-button td {
   padding: 5px 0 4px;
 }
 
+table.small-button td {
+  padding: 8px 0 7px;
+}
+
+table.medium-button td {
+  padding: 12px 0 10px;
+}
+
+table.large-button td {
+  padding: 21px 0 18px;
+}
 
 table.button td a,
 table.tiny-button td a,
@@ -243,6 +458,18 @@ table.large-button td a {
 table.tiny-button td a {
   font-size: 12px;
   font-weight: normal;
+}
+
+table.small-button td a {
+  font-size: 16px;
+}
+
+table.medium-button td a {
+  font-size: 20px;
+}
+
+table.large-button td a {
+  font-size: 24px;
 }
 
 table.button:hover td,
@@ -283,6 +510,63 @@ table.large-button td a:visited {
   color: #ffffff !important; 
 }
 
+table.secondary td {
+  background: #e9e9e9;
+  border-color: #d0d0d0;
+  color: #555;
+}
+
+table.secondary td a {
+  color: #555;
+}
+
+table.secondary:hover td {
+  background: #d0d0d0 !important;
+  color: #555;
+}
+
+table.secondary:hover td a,
+table.secondary td a:visited,
+table.secondary:active td a {
+  color: #555 !important;
+}
+
+table.success td {
+  background: #5da423;
+  border-color: #457a1a;
+}
+
+table.success:hover td {
+  background: #457a1a !important;
+}
+
+table.alert td {
+  background: #c60f13;
+  border-color: #970b0e;
+}
+
+table.alert:hover td {
+  background: #970b0e !important;
+}
+
+table.radius td {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+table.round td {
+  -webkit-border-radius: 500px;
+  -moz-border-radius: 500px;
+  border-radius: 500px;
+}
+
+/* Outlook First */
+
+body.outlook p {
+  display: inline !important;
+}
+
 /*  Media Queries */
 
 @media only screen and (max-width: 600px) {
@@ -320,12 +604,29 @@ table.large-button td a:visited {
 	display: block !important;
   }
 
+  table[class="body"] .wrapper.first .columns,
+  table[class="body"] .wrapper.first .column {
+	display: table !important;
+  }
 
   table[class="body"] table.columns td,
   table[class="body"] table.column td {
 	width: 100% !important;
   }
 
+  table[class="body"] td.offset-by-one,
+  table[class="body"] td.offset-by-two,
+  table[class="body"] td.offset-by-three,
+  table[class="body"] td.offset-by-four,
+  table[class="body"] td.offset-by-five,
+  table[class="body"] td.offset-by-six,
+  table[class="body"] td.offset-by-seven,
+  table[class="body"] td.offset-by-eight,
+  table[class="body"] td.offset-by-nine,
+  table[class="body"] td.offset-by-ten,
+  table[class="body"] td.offset-by-eleven {
+	padding-left: 0 !important;
+  }
 
   table[class="body"] .expander {
 	width: 9999px !important;
@@ -340,7 +641,18 @@ table.large-button td a:visited {
   table[class="body"] .text-pad-left {
 	padding-right: 10px !important;
   }
+
+  table[class="body"] .hide-for-small,
+  table[class="body"] .show-for-desktop {
+	display: none !important;
+  }
+
+  table[class="body"] .show-for-small,
+  table[class="body"] .hide-for-desktop {
+	display: inherit !important;
+  }
 }
+
   </style>
   <style>
 	
@@ -443,7 +755,7 @@ table.large-button td a:visited {
 							  <img src="<?php echo base_url();?>images/logo200.png">
 							</td>
 							<td class="six sub-columns last" align="right" style="text-align:right; vertical-align:middle;">
-							  <span class="template-label">Auto-Send Email</span>
+							  <span class="template-label">Activation Email</span>
 							</td>
 							<td class="expander"></td>
 							
@@ -474,8 +786,8 @@ table.large-button td a:visited {
 						  <td>
 
 							<h3>Hi, </h3>
-							<p>Thanks for signing up for WPILIFE, your login is:<b> {email} </b></p>
-							<p>And the passcode for login is <b style="color:red; font-size: 20px;"> {password} </b> [Take care of your passcode].</p>
+							<p>Thanks for signing up for WPILIFE, your login is: {email}</p>
+							<p>To activate your account, please click the link below.</p>
 
 						  </td>
 						  <td class="expander"></td>
@@ -498,7 +810,7 @@ table.large-button td a:visited {
 							<table class="button">
 							  <tr>
 								<td>
-								  <a href="{loginLink}">Click to Log in</a>
+								  <a href="{activationLink}">Click to Activate Your Account</a>
 								</td>
 							  </tr>
 							</table>
@@ -521,8 +833,8 @@ table.large-button td a:visited {
 						  <td class="panel">
 
 							<p>
-							If the link above is not clickable, please copy the link into your bowser to log in! Thanks! Have fun :-)<br/>
-							{loginLink}
+							If the link above is not clickable, please copy the link into your bowser to activate it! Thanks! Have fun :-)<br/>
+							{activationLink}
 							</p>
 
 						  </td>
@@ -596,7 +908,7 @@ table.large-button td a:visited {
 						  <td align="center">
 							<center>
 							  <p style="text-align:center;">
-								&copy Copyright {year} by <a href="{baseUrl}">WPILIFE</a>. All Rights Reserved.
+								&copy Copyright 2013 by <a href="http://wpilife.org/">WPILIFE</a>. All Rights Reserved.
 							  </p>
 							</center>
 						  </td>
