@@ -8,9 +8,6 @@ class Blog extends CI_Controller
  		parent::__construct();
 		$this->load->library('form_validation');
 		$this->load->library('email');
-		$this->load->helper('form');
-		$this->load->helper('security');
-		$this->load->library('users');
 		if($this->session->userdata('users_id')==null)
 		{
 			redirect('','refresh');
