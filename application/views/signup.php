@@ -12,6 +12,10 @@
 		});
 		
 	</script>
+	<style type="text/css">
+		#log_reg input[type="text"] {width:117px; display: inline;}
+		#log_reg img {display: inline; vertical-align: bottom;}
+	</style>
 </head>
 <body>
 <!-- Wrapper / Start -->
@@ -19,46 +23,38 @@
 	<?php $this->load->view('includes/header');?>
 	<div id="content">
 	<?php 
-	echo br(2);
-	if($show_form == true)
-	{
+		echo br(2);
+		echo form_open("signup/submit");
 	?>	
-	
-		<form action="" method="post">
-            <table cellpadding="0" cellspacing="0" border="0"  id="log_reg">
-                <tr>
-                    <td class="form-input-name">E-mail</td>
-                    <td class="input"><input type="email" name="users_email_address" placeholder="Your E-mail @wpi.edu" autocomplete="off" required="required" /></td>
-                </tr>
-                <tr>
-                    <td class="form-input-name">Password</td>
-                    <td class="input"><input type="password" name="users_password" placeholder="Your password " autocomplete="off" required="required" /></td>
-                </tr>
-                <tr>
-                    <td class="form-input-name">Retype Password</td>
-                    <td class="input"><input type="password" name="users_password_confirm" placeholder="Retype your password" autocomplete="off" required="required" /></td>
-                </tr>
-                <tr>
-                    <td class="form-input-name"></td>
-                    <td><input type="submit" value="Register" />
-	                    <br/><br/>
-	                    <?php echo validation_errors();?></td>
-                </tr>
-            </table>
-            
-        </form>
-        <?php 
-        }
-        else
-        {
-        ?>
-        <div style="width:800px; margin:30px auto; text-align: center;">
-        	<h2>Congratulations! We have send your email, which contains the activation link(If you do not get this in 5 minutes, just send <b>"activate  me"</b> to <a href=""mailto:hzhou@wpi.edu">hzhou@wpi.edu</a>), please click here to launch: <a href="https://exchange.wpi.edu/owa/">WPI Email</a></h2>
-        </div>
-        <?php 
-        }
-        echo br(2);
-        ?>
+			<table cellpadding="0" cellspacing="0" border="0"  id="log_reg">
+				<tr>
+					<td class="form-input-name">Name</td>
+					<td class="input">
+						<input type="text" name="users_firstname" placeholder="First Name" autocomplete="off" required="required" />
+						<input type="text" name="users_lastname" placeholder="Last Name" autocomplete="off" required="required" />
+					</td>
+				</tr>
+				<tr>
+					<td class="form-input-name">E-mail</td>
+					<td class="input"><input type="email" name="users_email_address" placeholder="Your E-mail @wpi.edu" autocomplete="off" required="required" /></td>
+				</tr>
+				<tr>
+					<td class="form-input-name"></td>
+					<td class="input">
+						<input type="text" name="captcha" placeholder="Input the code" autocomplete="off" required="required" />
+						<?php echo $captcha['image'];?>
+					</td>
+				</tr>
+				<tr>
+					<td class="form-input-name"></td>
+					<td>
+						<input type="submit" value="Register" />
+						<br/><br/>
+						Password will be sent to your email
+					</td>
+				</tr>
+			</table>
+		<?php echo form_close(br(2)); ?>
 	</div>
 </div>
 <?php $this->load->view('includes/footer');?>
