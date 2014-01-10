@@ -2,15 +2,37 @@
 class Users 
 {
 
-	public $CI 					= NULL;
-	public $users_id 			= 0;
-	public $users_email			= NULL;
-	public $users_first_name	= NULL;
+	public $CI = NULL;
+
 
 	public function __construct()
 	{	
 		$this->CI =& get_instance();
 		$this->CI->load->helper('security');
+	}
+
+	public function isEmailExist($email)
+	{
+		$email = trim($email);
+		$email = $this->CI->security->xss_clean($email);
+		$this->CI->db->where('users_email_address', $email);
+		$query = $this->CI->db->get('users');
+		if ($query->num_rows() > 0)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	public function passwordUpdatebyEmail($email, $password)
+	{
+		$dataArray['users_password'] = $password;
+		$email = trim($email);
+		$this->CI->db->where('users_email_address', $email);
+		$this->CI->db->update('users', $dataArray);
 	}
 
 	public function generate_session($form_data)
@@ -26,8 +48,7 @@ class Users
 		if ($query->num_rows() > 0)
 		{
 			$row = $query->row_array(); 
-			//print_r( $query->row_array());
-			//die("<br/>stop here");
+
 			$this->CI->session->set_userdata('users_email', $email);
 			$this->CI->session->set_userdata('users_id', $row['users_id']);
 			$this->CI->session->set_userdata('users_firstname', $row['users_firstname']);
@@ -49,6 +70,7 @@ class Users
 			return false;
 		}	
 	}
+
 	public function get_user_info($users_id)
 	{
 		$users_id = $this->CI->security->xss_clean($users_id);
@@ -57,8 +79,6 @@ class Users
 									   WHERE users_id = ". $users_id);
 		if ($query->num_rows() > 0)
 		{
-			//print_r($query->row_array());
-			//die("<br/>stop here");
 			return $query->row_array(); 
 		}		
 		else
@@ -67,6 +87,7 @@ class Users
 		}					   
 		
 	}
+
 	public function user_info_update($dataArray, $users_id)
 	{
 		$this->CI->session->set_userdata('users_firstname', $dataArray['users_firstname']);// Re-assign a value to users_firstname, in case it will be updated(because users_firstname will display in right up corner)
@@ -74,6 +95,7 @@ class Users
 		$this->CI->db->where('users_id', $users_id);
 		$this->CI->db->update('users', $dataArray);
 	}
+
 	public function user_avatar_update($users_id)
 	{
 		$users_photo = 'wpilife_'.$users_id.'.jpg';
@@ -82,6 +104,7 @@ class Users
 		$this->CI->db->where('users_id', $users_id);
 		$this->CI->db->update('users', $dataArray);
 	}
+
 	public function user_password_update($newPassword, $users_id)
 	{
 		$newPassword = $this->CI->security->xss_clean($newPassword);
@@ -91,6 +114,7 @@ class Users
 		$this->CI->db->where('users_id', $users_id);
 		$this->CI->db->update('users', $dataArray);
 	}
+
 	public function oldPassword_check($oldPassword, $users_id)
 	{
 		$users_id = $this->CI->security->xss_clean($users_id);
