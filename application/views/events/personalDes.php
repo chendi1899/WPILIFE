@@ -49,7 +49,8 @@
 		    	}
 		    	else
 		    	{
-					echo anchor('login/quickLogin?ref=events/singerInfo/'.$singer['singerID'], "Login to Vote :  ".$count["count"], 'class="button medium light" style="text-align:center; line-height: 50px;float: none;width: 200px;height: 50px;"');
+		    		// this code will not work 01092014
+					echo anchor('login?ref=events/singerInfo/'.$singer['singerID'], "Login to Vote :  ".$count["count"], 'class="button medium light" style="text-align:center; line-height: 50px;float: none;width: 200px;height: 50px;"');
 		    	}
 				*/
 		    	
