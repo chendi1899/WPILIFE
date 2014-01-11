@@ -92,7 +92,7 @@
 			<article class="icon-box">
 				<i class="icon-group"></i>
 				<h3>We are listening</h3>
-				<p>Your wish is my demand. You can give any advice and we will take care to implemented it!</p>
+				<p>Your wish is my demand. You can give any advice and we will take care to implement it!</p>
 			</article>
 		</div>
 		<!-- Icon Box End -->
