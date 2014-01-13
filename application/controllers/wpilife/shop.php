@@ -10,7 +10,7 @@ class Shop extends CI_Controller
 	
 	public function index($page = 1)
 	{
-		$data['title'] = "SHOP | CSSA";
+		$data['title'] = "Shop | WPILIFE";
 		$pageSize = 10;
 		$listCount = $this->bloglib->get_list_count('SELL');
 		$data['blog_list'] = $this->bloglib->get_blog_list('SELL',true, $pageSize*($page-1),$pageSize);
@@ -22,7 +22,7 @@ class Shop extends CI_Controller
 	{
 		if(is_numeric($id))
 		{
-			$data['title'] = "WPILIFE | EXTEND YOUR LIFE IN WPI";
+			$data['title'] = "Product | WPILIFE";
 			$data['product'] = $this->bloglib->get_blog_by_ID($id, 'SELL');
 			if($data['product'] == false)
 			{

@@ -15,6 +15,7 @@ class Bloglib
 		$this->CI->db->select('blogs.*, users.users_firstname, users.users_lastname');
 		$this->CI->db->from('blogs');
 		$this->CI->db->join('users', 'blogs.blogs_author = users.users_id');
+		$this->CI->db->order_by("blogs_id", "desc"); 
 		//$this->CI->db->select('blogs_id, blogs_title, blogs_image_cover, blogs_price');
 		if($enablePagination == true)
 		{

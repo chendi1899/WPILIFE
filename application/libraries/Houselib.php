@@ -87,6 +87,7 @@ class Houselib
 		$this->CI->db->select('house.*, users.users_firstname, users.users_lastname');
 		$this->CI->db->from('house');
 		$this->CI->db->join('users', 'house.user_id = users.users_id');
+		$this->CI->db->order_by("house_id", "desc"); 
 		$this->CI->db->limit($size, $from);
 		
 		$query = $this->CI->db->get();
