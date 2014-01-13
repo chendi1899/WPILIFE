@@ -58,7 +58,7 @@
 
 		<section class="date">
 			<span class="day"><?php echo  date("d", strtotime($row->available_date)); ?></span>
-			<span class="month"><?php echo date("m", strtotime($row->available_date)); ?></span>
+			<span class="month"><?php echo date("M", strtotime($row->available_date)); ?></span>
 		</section>
 
 		<div class="medium-content">

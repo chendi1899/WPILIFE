@@ -145,12 +145,12 @@
 			?>
 				<!-- Recent Item -->
 				<li class="four columns">
-					<a href="<?php echo base_url().'wpilife/shop/product/'.$row->blogs_id;?>" class="portfolio-item">
+					<a href="<?php echo base_url().'wpilife/shop/product/'.$row->shop_id;?>" class="portfolio-item">
 						<figure>
-							<img src="<?php echo base_url().'images/shop/'.substr_replace($row->blogs_image_cover, '_small', -4, 0);?>" alt=""/>
+							<img src="<?php echo base_url().'images/shop/'.substr_replace($row->shop_image_cover, '_small', -4, 0);?>" alt=""/>
 							<figcaption class="item-description">
-								<h5><?php echo $row->blogs_title; ?></h5>
-								<span><?php echo $row->blogs_price; ?></span>
+								<h5><?php echo $row->shop_title; ?></h5>
+								<span><?php echo $row->shop_price; ?></span>
 							</figcaption>
 						</figure>
 					</a>

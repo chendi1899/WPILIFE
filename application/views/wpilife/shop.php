@@ -49,19 +49,19 @@
 		<!-- Isotope -->
 		<div id="portfolio-wrapper">
 		<?php 
-			if($blog_list)
+			if($shop_list)
 			{
-				foreach($blog_list as $row)
+				foreach($shop_list as $row)
 				{
 		?>
 			<!-- Shop Item -->
 			<div class="four-shop columns isotope-item">
 				<div class="shop-item">
 					<figure>
-						<a href="<?php echo base_url();?>wpilife/shop/product/<?php echo $row->blogs_id;?>"><img src="<?php echo base_url().'images/shop/'.substr_replace($row->blogs_image_cover, '_small', -4, 0);?>" alt="" /></a>
+						<a href="<?php echo base_url();?>wpilife/shop/product/<?php echo $row->shop_id;?>"><img src="<?php echo base_url().'images/shop/'.substr_replace($row->shop_image_cover, '_small', -4, 0);?>" alt="" /></a>
 						<figcaption class="item-description" style="height:60px;">
-							<a href="<?php echo base_url();?>wpilife/shop/product/<?php echo $row->blogs_id;?>"><h5><?php echo $row->blogs_title;?></h5></a>
-							<span><?php echo $row->blogs_price; ?></span>
+							<a href="<?php echo base_url();?>wpilife/shop/product/<?php echo $row->shop_id;?>"><h5><?php echo $row->shop_title;?></h5></a>
+							<span><?php echo $row->shop_price; ?></span>
 						</figcaption>
 					</figure>
 				</div>

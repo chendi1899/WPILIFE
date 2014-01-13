@@ -12,8 +12,8 @@ class Shop extends CI_Controller
 	{
 		$data['title'] = "Shop | WPILIFE";
 		$pageSize = 10;
-		$listCount = $this->bloglib->get_list_count('SELL');
-		$data['blog_list'] = $this->bloglib->get_blog_list('SELL',true, $pageSize*($page-1),$pageSize);
+		$listCount = $this->shoplib->get_list_count('SELL');
+		$data['shop_list'] = $this->shoplib->get_shop_list('SELL',true, $pageSize*($page-1),$pageSize);
 		$data['pagination'] = $this->paginationlib->get_pagination(base_url().'wpilife/shop/', $listCount, $pageSize);
 		$this->load->view('wpilife/shop',$data);
 	}
@@ -23,7 +23,7 @@ class Shop extends CI_Controller
 		if(is_numeric($id))
 		{
 			$data['title'] = "Product | WPILIFE";
-			$data['product'] = $this->bloglib->get_blog_by_ID($id, 'SELL');
+			$data['product'] = $this->shoplib->get_shop_by_ID($id, 'SELL');
 			if($data['product'] == false)
 			{
 				redirect('wpilife/shop','refresh');
@@ -49,7 +49,7 @@ class Shop extends CI_Controller
 			redirect('wpilife/shop','refresh');
 		}
 		$data['title'] = "Products List for Keyword: <span style='color:#169fe6;'> ".$keyword." </span>| WPILIFE";
-		$data['blog_list'] = $this->shoplib->get_products_list_by_keyword($keyword);
+		$data['shop_list'] = $this->shoplib->get_products_list_by_keyword($keyword);
 		$data['pagination'] = "";
 		$this->load->view('wpilife/shop',$data);
 	}

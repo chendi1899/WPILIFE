@@ -21,8 +21,8 @@
 					{
 			?>
 			<div class="latest-shop-items">
-				<a href="<?php echo base_url();?>wpilife/shop/product/<?php echo $item->blogs_id;?>"><img src="<?php echo base_url().'images/shop/'.substr_replace($item->blogs_image_cover, '_small', -4, 0);?>" alt="" /></a>
-				<p><a href="<?php echo base_url();?>wpilife/shop/product/<?php echo $item->blogs_id;?>"><?php echo $item->blogs_title;?></a> <span><?php echo $item->blogs_price;?></span></p>
+				<a href="<?php echo base_url();?>wpilife/shop/product/<?php echo $item->shop_id;?>"><img src="<?php echo base_url().'images/shop/'.substr_replace($item->shop_image_cover, '_small', -4, 0);?>" alt="" /></a>
+				<p><a href="<?php echo base_url();?>wpilife/shop/product/<?php echo $item->shop_id;?>"><?php echo $item->shop_title;?></a> <span><?php echo $item->shop_price;?></span></p>
 			</div>
 					
 			<?php 

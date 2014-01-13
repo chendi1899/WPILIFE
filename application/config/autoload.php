@@ -55,8 +55,8 @@ $autoload['packages'] = array();
 */
 
 $autoload['libraries'] = array( 'database', 'session', 'faqlib', 'sg', 'blogcssalib',
-								'activitycssalib', 'image_lib', 'bloglib','users', 
-								'sponsorlib', 'shoplib');
+								'activitycssalib', 'image_lib', 'shoplib','users', 
+								'sponsorlib');
 
 
 /*

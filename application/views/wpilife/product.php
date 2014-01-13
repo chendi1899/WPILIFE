@@ -48,16 +48,16 @@
 			<div class="six columns">
 				<section class="flexslider shop">
 					<ul class="slides">
-						<li><a href="<?php echo base_url().'images/shop/'.$product['blogs_image_cover'] ?>" rel="fancybox-gallery" title="<?php echo $product['blogs_title']?>">
-						<img src="<?php echo base_url().'images/shop/'.substr_replace($product['blogs_image_cover'], '_small', -4, 0);?>" alt="" /></a></li>
+						<li><a href="<?php echo base_url().'images/shop/'.$product['shop_image_cover'] ?>" rel="fancybox-gallery" title="<?php echo $product['shop_title']?>">
+						<img src="<?php echo base_url().'images/shop/'.substr_replace($product['shop_image_cover'], '_small', -4, 0);?>" alt="" /></a></li>
 					</ul>
 				</section>
 			</div>
 
 			<div class="five columns">
 				<div class="product-info">
-					<h3 class="title"><?php echo $product['blogs_title']?></h3>
-					<span class="price"><?php echo $product['blogs_price']?></span>
+					<h3 class="title"><?php echo $product['shop_title']?></h3>
+					<span class="price"><?php echo $product['shop_price']?></span>
 					<p><strong>Attention</strong>: WPILIFE website just provide a platform. Everyone in WPI can register with his/her WPI email, and can submit what he/she want to sell. We try to make things as easy as possible.<br/>
 					<strong>If this item interests you, you can contact the owner directly! [You can find the contact info of Owner below]</strong><br/>
 					Thanks for your support!</p>
@@ -78,7 +78,7 @@
 				<!-- Tabs Content -->
 				<div class="tabs-container">
 					<div class="tab-content" id="tab1">
-						<?php echo $product['blogs_content']; ?>
+						<?php echo $product['shop_content']; ?>
 
 					</div>
 
