@@ -13,7 +13,7 @@
 		
 	</script>
 	<style type="text/css">
-		#log_reg input[type="text"] {width:117px; display: inline;}
+		#log_reg input[type="text"] {width:113px; display: inline;}
 		#log_reg img {display: inline; vertical-align: bottom;}
 	</style>
 </head>
@@ -28,25 +28,21 @@
 	?>	
 			<table cellpadding="0" cellspacing="0" border="0"  id="log_reg">
 				<tr>
-					<td class="form-input-name">Name</td>
 					<td class="input">
 						<input type="text" name="users_firstname" placeholder="First Name" autocomplete="off" required="required" />
 						<input type="text" name="users_lastname" placeholder="Last Name" autocomplete="off" required="required" />
 					</td>
 				</tr>
 				<tr>
-					<td class="form-input-name">E-mail</td>
 					<td class="input"><input type="email" name="users_email_address" placeholder="Your E-mail @wpi.edu" autocomplete="off" required="required" /></td>
 				</tr>
 				<tr>
-					<td class="form-input-name"></td>
 					<td class="input">
 						<input type="text" name="captcha" placeholder="Input the code" autocomplete="off" required="required" />
-						<?php echo $captcha['image'];?>
+						<span id="captchaCode"><?php echo $captcha['image'];?></span>
 					</td>
 				</tr>
 				<tr>
-					<td class="form-input-name"></td>
 					<td>
 						<input type="submit" value="Register" />
 						<br/><br/>
@@ -58,5 +54,11 @@
 	</div>
 </div>
 <?php $this->load->view('includes/footer');?>
+<script type="text/javascript">
+	function codeRefresh(){
+		$("#captchaCode").load("<?php echo base_url()?>captchaCodeRefresh");
+		//alert("Hello");
+	}
+</script>
 </body>
 </html>
