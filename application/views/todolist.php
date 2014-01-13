@@ -92,6 +92,16 @@
 		<li>Comments of articles -- Maybe use plugin in first version</li>
 		</ol>
 		</div>
+		<div class="sixteen columns">
+		<br/>
+		<h1>Change Log:</h1>
+		<hr style="border-top: 2px solid #000;">
+		<h2>Sign Up 01-09-2014</h2>
+		<ol>
+			<li>No activation link, but password will be sent through email</li>
+			<li>Password security enhancement!</li>
+		</ol>
+		</div>
 	
 	</div>
 	<!-- 960 Container / End -->
