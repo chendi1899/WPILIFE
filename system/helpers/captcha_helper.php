@@ -39,9 +39,9 @@
  */
 if ( ! function_exists('create_captcha'))
 {
-	function create_captcha($data = '', $img_path = '', $img_url = '', $font_path = '')
+	function create_captcha($data = '', $img_path = '', $img_url = '', $font_path = '', $ajax_func = '')
 	{
-		$defaults = array('word' => '', 'img_path' => '', 'img_url' => '', 'img_width' => '150', 'img_height' => '30', 'font_path' => '', 'expiration' => 7200);
+		$defaults = array('word' => '', 'img_path' => '', 'img_url' => '', 'img_width' => '150', 'img_height' => '30', 'font_path' => '', 'expiration' => 7200, 'ajax_func' =>'codeRefresh()' );
 
 		foreach ($defaults as $key => $val)
 		{
@@ -232,7 +232,7 @@ if ( ! function_exists('create_captcha'))
 
 		ImageJPEG($im, $img_path.$img_name);
 
-		$img = "<img src=\"$img_url$img_name\" width=\"$img_width\" height=\"$img_height\" style=\"border:0;\" alt=\" \" />";
+		$img = "<img src=\"$img_url$img_name\" width=\"$img_width\" height=\"$img_height\" style=\"border:0;\" alt=\"Captcha Code\" onclick=\"$ajax_func;\"/>";
 
 		ImageDestroy($im);
 
