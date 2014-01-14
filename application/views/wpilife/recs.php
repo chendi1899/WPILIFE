@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Recommendation | WPILIFE</title>
+	<title><?php echo $title; ?></title>
 	<?php $this->load->view('includes/import');?>
 	<script type="text/javascript">
 		$(document).ready(function() 
@@ -43,20 +43,56 @@
 <div class="container floated">
 <!-- Page Content -->
 	<div class="eleven floated">
-		<div class="shop-page page-content">
-			<!-- Shop Item -->
-			<div class="four-shop columns isotope-item">
-				<div class="shop-item">
-					<figure>
-						<img src="<?php echo base_url();?>images/shop/noItem.jpg" alt="" />
-						<figcaption class="item-description">
-							<h5>Under Construction! :-) </h5>						
-						</figcaption>
-					</figure>
-				</div>
-			</div>
+		<?php 
+		if($recs_list)
+		{
+			foreach($recs_list as $row)
+			{
+	?>
+		<!-- Post -->
+		<article class="post medium">
+
+		<section class="date">
+			<span class="day"><?php echo  date("d", strtotime($row->recs_date)); ?></span>
+			<span class="month"><?php echo date("M", strtotime($row->recs_date)); ?></span>
+		</section>
+
+		<div class="medium-content">
+
+			<header class="meta">
+				<h2><a href="<?php echo base_url()?>wpilife/recs/<?php echo $row->recs_id; ?>"><?php echo $row->recs_title; ?></a></h2>
+				<span><i class="halflings tag"></i> <?php echo anchor( "wpilife/recs/type/".$row->recs_type_id,$row->name); ?></span>
+			</header>
+			<p>
+			<?php echo word_limiter(strip_tags($row->recs_content), 20); ?>...
+			</p>
+			<a href="<?php echo base_url()?>wpilife/recs/<?php echo $row->recs_id; ?>" class="button color">Read More</a>
+
 		</div>
-		<!-- Isotope / End -->
+
+		</article>
+
+		<!-- Divider -->
+		<div class="line"></div>
+
+	<?php
+			}
+		}
+		else
+		{
+	?>
+			<!-- Post -->
+		<article class="post medium">
+
+			=(<br/>No Content Now!
+
+		</article>
+
+		<!-- Divider -->
+		<div class="line"></div>
+	<?php
+		}
+	?>
 
 		<div class="sixteen columns">
 			<!-- Pagination -->
@@ -73,7 +109,7 @@
 
 	<!-- Sidebar -->
 	<div class="four floated sidebar right">
-	<?php $this->load->view('includes/shop_right_menu');?>
+	<?php $this->load->view('includes/recs_right_menu');?>
 	</div>
 	<!-- Page Content / End -->
 

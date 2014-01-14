@@ -56,7 +56,7 @@ $autoload['packages'] = array();
 
 $autoload['libraries'] = array( 'database', 'session', 'faqlib', 'sg', 'blogcssalib',
 								'activitycssalib', 'image_lib', 'shoplib','users', 
-								'sponsorlib');
+								'sponsorlib', 'recslib');
 
 
 /*
@@ -68,7 +68,7 @@ $autoload['libraries'] = array( 'database', 'session', 'faqlib', 'sg', 'blogcssa
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url','html', 'security', 'form');
+$autoload['helper'] = array('url','html', 'security', 'form', 'text');
 
 
 /*
