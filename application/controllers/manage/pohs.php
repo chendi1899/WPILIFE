@@ -6,7 +6,6 @@ class Pohs extends CI_Controller
 	function __construct()
 	{
  		parent::__construct();
-		$this->load->helper('form');
 		if($this->session->userdata('users_id')==null)
 		{
 			redirect('','refresh');
@@ -23,22 +22,19 @@ class Pohs extends CI_Controller
 	function add()
 	{
 		$dataArray = array(
-			'blogs_type'		=> $this->input->post('blogs_type'),
-			'blogs_title' 		=> $this->input->post('blogs_title'),
-			'blogs_content' 	=> $this->input->post('content'),
-			'blogs_author'		=> $this->session->userdata('users_id'),
-			'blogs_year'		=> date("Y"),
-			'blogs_month'		=> date("F"),
-			'blogs_day'			=> date("d"),
-			'blogs_date' 		=> date("Y-m-d H:i:s"),
+			'shop_type'			=> $this->input->post('shop_type'),
+			'shop_title' 		=> $this->input->post('shop_title'),
+			'shop_content' 		=> $this->input->post('content'),
+			'user_id'			=> $this->session->userdata('users_id'),
+			'shop_date' 		=> date("Y-m-d H:i:s"),
 		);
-		$this->bloglib->blog_add($dataArray);
+		$this->shoplib->shop_add($dataArray);
 		redirect('manage/pohs/myList','refresh');
 	}
 
 	function myList()
 	{
-		$data['list'] = $this->bloglib->get_blog_by_userID($this->session->userdata('users_id'), 'BUY');
+		$data['list'] = $this->shoplib->get_shop_by_userID($this->session->userdata('users_id'), 'BUY');
 		//print_r($data['list']);
 		$this->load->view('manage/wpilife_pohs', $data);
 	}
@@ -47,7 +43,7 @@ class Pohs extends CI_Controller
 	{
 		if(is_numeric($id))
 		{
-			$data['product'] = $this->bloglib->get_blog_by_two_ID($id, $this->session->userdata('users_id'));
+			$data['product'] = $this->shoplib->get_shop_by_two_ID($id, $this->session->userdata('users_id'));
 			//print_r($data['product']);
 			$this->load->view('manage/wpilife_pohs_update',$data);
 		}
@@ -55,40 +51,40 @@ class Pohs extends CI_Controller
 
 	function item_updates()
 	{
-		$blogs_id = $this->input->post('blogs_id');
+		$shop_id = $this->input->post('shop_id');
 		$dataArray = array(
-			'blogs_title' 		=> $this->input->post('blogs_title'),
-			'blogs_content' 	=> $this->input->post('content'),
+			'shop_title' 		=> $this->input->post('shop_title'),
+			'shop_content' 	=> $this->input->post('content'),
 		);
 		
-		$this->bloglib->blog_update($blogs_id, $dataArray);
+		$this->shoplib->shop_update($shop_id, $dataArray);
 		redirect('manage/pohs/myList','refresh');
 	}
 	
 	
-	function item_delete($blogs_id)
+	function item_delete($shop_id)
 	{
-		if(is_numeric($blogs_id))
+		if(is_numeric($shop_id))
 		{
-			$dataArray = array('blogs_id' => $blogs_id, 'blogs_author' => $this->session->userdata('users_id'));
-			$this->db->delete('blogs', $dataArray);
+			$dataArray = array('shop_id' => $shop_id, 'user_id' => $this->session->userdata('users_id'));
+			$this->db->delete('shop', $dataArray);
 		}
 		redirect('manage/pohs/myList','refresh');
 	}
 
-	function item_close($blogs_id)
+	function item_close($shop_id)
 	{
-		$whereArray = array('blogs_id' => $blogs_id, 'blogs_author' => $this->session->userdata('users_id'));
-		$dataArray = array('blogs_available' => 0);
-		$this->bloglib->blog_available($whereArray, $dataArray);
+		$whereArray = array('shop_id' => $shop_id, 'user_id' => $this->session->userdata('users_id'));
+		$dataArray = array('shop_available' => 0);
+		$this->shoplib->shop_available($whereArray, $dataArray);
 		redirect('manage/pohs/myList','refresh');
 	}
 
-	function item_open($blogs_id)
+	function item_open($shop_id)
 	{
-		$whereArray = array('blogs_id' => $blogs_id, 'blogs_author' => $this->session->userdata('users_id'));
-		$dataArray = array('blogs_available' => 1);
-		$this->bloglib->blog_available($whereArray, $dataArray);
+		$whereArray = array('shop_id' => $shop_id, 'user_id' => $this->session->userdata('users_id'));
+		$dataArray = array('shop_available' => 1);
+		$this->shoplib->shop_available($whereArray, $dataArray);
 		redirect('manage/pohs/myList','refresh');
 	}
 

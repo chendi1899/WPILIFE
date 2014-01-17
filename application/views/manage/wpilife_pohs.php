@@ -55,15 +55,15 @@
 								
 								echo "<tr>";
 								echo "<td>".$count."</td>";
-								echo "<td>".anchor('manage/pohs/item_update/'.$row->blogs_id,$row->blogs_title)."</td>";
-								echo "<td>".anchor('manage/pohs/item_delete/'.$row->blogs_id,'Delete','onclick="return confirm(\'sure to delete this?\')"')."</td>";
-								if($row->blogs_available == 1)
+								echo "<td>".anchor('manage/pohs/item_update/'.$row->shop_id,$row->shop_title)."</td>";
+								echo "<td>".anchor('manage/pohs/item_delete/'.$row->shop_id,'Delete','onclick="return confirm(\'sure to delete this?\')"')."</td>";
+								if($row->shop_available == 1)
 								{
-									echo "<td><a href='".base_url()."manage/pohs/item_close/".$row->blogs_id."' >Close it</a></td>";
+									echo "<td><a href='".base_url()."manage/pohs/item_close/".$row->shop_id."' >Close it</a></td>";
 								}
 								else
 								{
-									echo "<td><a href='".base_url()."manage/pohs/item_open/".$row->blogs_id."' >Re-Open it</a></td>";
+									echo "<td><a href='".base_url()."manage/pohs/item_open/".$row->shop_id."' >Re-Open it</a></td>";
 								}
 								echo "</tr>";
 								$count = $count+1;
