@@ -61,17 +61,17 @@
 					<?php 
 						$attibutes = array('id'=>'kindeditor', 'name'=>'kindeditor');
 						echo form_open('manage/pohs/item_updates',$attibutes);
-						echo form_hidden('blogs_id', $product['blogs_id']);
+						echo form_hidden('shop_id', $product['shop_id']);
 					?>
 						<fieldset>
 						<table width="100%">
 							<tr>
 								<td>
-									<input type="text" name="blogs_title" id="blogs_title" maxlength="50" value="<?php echo $product['blogs_title']; ?>" placeholder="Item Name, such as bike, desk lamp..." style="width:632px;" />
+									<input type="text" name="shop_title" id="shop_title" maxlength="50" value="<?php echo $product['shop_title']; ?>" placeholder="Item Name, such as bike, desk lamp..." style="width:632px;" />
 								</td>
 							</tr>
 							<tr>
-								<td><textarea name="content" cols="40" rows="3" id="content"><?php echo $product['blogs_content']; ?></textarea></td>
+								<td><textarea name="content" cols="40" rows="3" id="content"><?php echo $product['shop_content']; ?></textarea></td>
 							</tr>
 							<tr>
 								<td style="float: right;"><input type="submit" class="submit" id="submit" value=" Submit " /></td>
@@ -103,14 +103,14 @@
 	$(document).ready(function(){
         $('input#defaultconfig').maxlength()
 
-		$('input#blogs_title').maxlength({
+		$('input#shop_title').maxlength({
 					alwaysShow: true,
 		            warningClass: "label label-success",
 		            limitReachedClass: "label label-important",
 		            placement: 'left'
 			});
 
-		$('input#blogs_price').maxlength({
+		$('input#shop_price').maxlength({
 					alwaysShow: true,
 		            warningClass: "label label-success",
 		            limitReachedClass: "label label-important",

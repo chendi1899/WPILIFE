@@ -61,13 +61,13 @@
 					<?php 
 						$attibutes = array('id'=>'kindeditor', 'name'=>'kindeditor');
 						echo form_open_multipart('manage/pohs/add',$attibutes);
-						echo form_hidden('blogs_type', 'BUY');
+						echo form_hidden('shop_type', 'BUY');
 					?>
 						<fieldset>
 						<table width="100%">
 							<tr>
 								<td>
-									<input type="text" name="blogs_title" id="blogs_title" maxlength="80" placeholder="Item Name, such as bike, desk lamp..." style="width:632px;" />
+									<input type="text" name="shop_title" id="shop_title" maxlength="80" placeholder="Item Name, such as bike, desk lamp..." style="width:632px;" />
 								</td>
 							</tr>
 							<tr>
@@ -103,14 +103,14 @@
 	$(document).ready(function(){
         $('input#defaultconfig').maxlength()
 
-		$('input#blogs_title').maxlength({
+		$('input#shop_title').maxlength({
 					alwaysShow: true,
 		            warningClass: "label label-success",
 		            limitReachedClass: "label label-important",
 		            placement: 'left'
 			});
 
-		$('input#blogs_price').maxlength({
+		$('input#shop_price').maxlength({
 					alwaysShow: true,
 		            warningClass: "label label-success",
 		            limitReachedClass: "label label-important",
