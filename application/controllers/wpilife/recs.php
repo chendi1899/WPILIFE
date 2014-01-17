@@ -51,7 +51,7 @@ class Recs extends CI_Controller
 			if($type_name)
 			{
 				$data['recs_list'] = $this->recslib->get_recs_list_by_type(true, $pageSize*($page-1),$pageSize,$type);
-				$data['pagination'] = $this->paginationlib->get_pagination(base_url().'wpilife/recs/type/', $listCount, $pageSize);
+				$data['pagination'] = $this->paginationlib->get_pagination(base_url().'wpilife/recs/type/'.$type.'/', $listCount, $pageSize);
 				$data['title'] = $type_name." | WPILIFE";
 				$this->load->view('wpilife/recs',$data);
 			}

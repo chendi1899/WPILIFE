@@ -41,25 +41,25 @@
 
 
 <div class="container floated">
-	<?php //print_r($blog);?>
+	<?php print_r($detail);?>
 	<!-- Page Content -->
 	<div class="eleven floated">
 		<!-- Post -->
 		<article class="post">
 			<section class="date">
-				<span class="day"><?php echo $detail['blogs_day']; ?></span>
-				<span class="month"><?php echo substr($detail['blogs_month'], 0, 3); ?></span>
+				<span class="day"><?php echo  date("d", strtotime($detail['shop_date']); ?></span>
+			<span class="month"><?php echo date("M", strtotime($detail['shop_date']); ?></span>
 			</section>
 
 			<section class="post-content">
 
 				<header class="meta">
-					<h2><?php echo $detail['blogs_title'];?></h2>
+					<h2><?php echo $detail['shop_title'];?></h2>
 					<span><i class="halflings user"></i>By <?php echo $detail['users_firstname']." ".$detail['users_lastname']; ?></span>
 					<span><i class="halflings comments"></i>With 0 Comments</span>
 				</header>
 
-				<?php echo $detail['blogs_content']; ?>
+				<?php echo $detail['shop_content']; ?>
 
 			
 				<!-- Baidu Button BEGIN -->

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>POHS | WPILIFE</title>
+	<title><?php echo $title; ?></title>
 	<?php $this->load->view('includes/import');?>
 	<script type="text/javascript">
 		$(document).ready(function() 
@@ -41,34 +41,34 @@
 
 
 <div class="container floated">
-	<?php //print_r($blog);?>
+	<?php //print_r($shop);?>
 	<!-- Page Content -->
 	<div class="eleven floated">
 		<!-- Post -->
 	<?php 
-		if($blog_list)
+		if($shop_list)
 		{
-			foreach($blog_list as $row)
+			foreach($shop_list as $row)
 			{
 	?>
 		<!-- Post -->
 		<article class="post medium">
 
 		<section class="date">
-			<span class="day"><?php echo $row->blogs_day; ?></span>
-			<span class="month"><?php echo substr($row->blogs_month, 0, 3); ?></span>
+			<span class="day"><?php echo  date("d", strtotime($row->shop_date)); ?></span>
+			<span class="month"><?php echo date("M", strtotime($row->shop_date)); ?></span>
 		</section>
 
 		<div class="medium-content">
 
 			<header class="meta">
-				<h2><a href="<?php echo base_url()?>wpilife/pohs/detail/<?php echo $row->blogs_id; ?>"><?php echo $row->blogs_title; ?></a></h2>
+				<h2><a href="<?php echo base_url()?>wpilife/pohs/detail/<?php echo $row->shop_id; ?>"><?php echo $row->shop_title; ?></a></h2>
 				<span><i class="halflings user"></i>By <?php echo $row->users_firstname." ".$row->users_lastname; ?></span>
 			</header>
 			<p>
-			<?php echo mb_substr(strip_tags($row->blogs_content), 0, 140); ?>...
+			<?php echo mb_substr(strip_tags($row->shop_content), 0, 140); ?>...
 			</p>
-			<a href="<?php echo base_url()?>wpilife/pohs/detail/<?php echo $row->blogs_id; ?>" class="button color">Read More</a>
+			<a href="<?php echo base_url()?>wpilife/pohs/detail/<?php echo $row->shop_id; ?>" class="button color">Read More</a>
 
 		</div>
 

@@ -64,13 +64,13 @@
 		<div class="medium-content">
 
 			<header class="meta">
-				<h2><a href="<?php echo base_url()?>wpilife/house/<?php echo $row->house_id; ?>"><?php echo $row->addr." [$".$row->month_rent." for ".$row->bedrooms_count ."]"; ?></a></h2>
+				<h2><a href="<?php echo base_url()?>wpilife/house/getHouse/<?php echo $row->house_id; ?>"><?php echo $row->addr." [$".$row->month_rent." for ".$row->bedrooms_count ."]"; ?></a></h2>
 				<span><i class="halflings user"></i>By <?php echo $row->users_firstname." ".$row->users_lastname; ?></span>
 			</header>
 			<p>
 			<?php echo mb_substr(strip_tags($row->des), 0, 140); ?>...
 			</p>
-			<a href="<?php echo base_url()?>wpilife/house/<?php echo $row->house_id; ?>" class="button color">Read More</a>
+			<a href="<?php echo base_url()?>wpilife/house/getHouse/<?php echo $row->house_id; ?>" class="button color">Read More</a>
 
 		</div>
 

@@ -21,7 +21,7 @@
 					{
 			?>
 			<div class="latest-house-items">
-				<p><a href="<?php echo base_url();?>wpilife/house/<?php echo $item->house_id;?>"><?php echo $item->addr;?></a> 
+				<p><a href="<?php echo base_url();?>wpilife/house/getHouse/<?php echo $item->house_id;?>"><?php echo $item->addr;?></a> 
 				<br/>
 				<span><?php echo $item->bedrooms_count;?> bedroom(s) - $<?php echo $item->month_rent;?></span></p>
 			</div>

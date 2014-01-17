@@ -60,13 +60,13 @@
 		<div class="medium-content">
 
 			<header class="meta">
-				<h2><a href="<?php echo base_url()?>wpilife/recs/<?php echo $row->recs_id; ?>"><?php echo $row->recs_title; ?></a></h2>
+				<h2><a href="<?php echo base_url()?>wpilife/recs/item/<?php echo $row->recs_id; ?>"><?php echo $row->recs_title; ?></a></h2>
 				<span><i class="halflings tag"></i> <?php echo anchor( "wpilife/recs/type/".$row->recs_type_id,$row->name); ?></span>
 			</header>
 			<p>
 			<?php echo mb_substr(strip_tags($row->recs_content), 0, 140); ?>...
 			</p>
-			<a href="<?php echo base_url()?>wpilife/recs/<?php echo $row->recs_id; ?>" class="button color">Read More</a>
+			<a href="<?php echo base_url()?>wpilife/recs/item/<?php echo $row->recs_id; ?>" class="button color">Read More</a>
 
 		</div>
 
