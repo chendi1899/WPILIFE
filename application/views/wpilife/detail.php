@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
 	<title><?php echo $title;?></title>
 	<?php $this->load->view('includes/import');?>
 	<script type="text/javascript">
@@ -24,13 +23,13 @@
 
 	<div class="sixteen floated page-title">
 
-		<h2>Item Detail</h2>
+		<h2>Item in Demand</h2>
 
 		<nav id="breadcrumbs">
 			<ul>
 				<li>You are here:</li>
-				<li><a href="<?php echo base_url();?>">Home</a></li>
-				<li>Item Detail</li>
+				<li><a href="<?php echo base_url(); ?>">Home</a></li>
+				<li>shop</li>
 			</ul>
 		</nav>
 
@@ -41,25 +40,24 @@
 
 
 <div class="container floated">
-	<?php print_r($detail);?>
+	<?php //print_r($item);?>
 	<!-- Page Content -->
 	<div class="eleven floated">
 		<!-- Post -->
 		<article class="post">
 			<section class="date">
-				<span class="day"><?php echo  date("d", strtotime($detail['shop_date']); ?></span>
-			<span class="month"><?php echo date("M", strtotime($detail['shop_date']); ?></span>
+				<span class="day"><?php echo  date("d", strtotime($item['shop_date'])); ?></span>
+			<span class="month"><?php echo date("M", strtotime($item['shop_date'])); ?></span>
 			</section>
 
 			<section class="post-content">
 
 				<header class="meta">
-					<h2><?php echo $detail['shop_title'];?></h2>
-					<span><i class="halflings user"></i>By <?php echo $detail['users_firstname']." ".$detail['users_lastname']; ?></span>
-					<span><i class="halflings comments"></i>With 0 Comments</span>
+					<h2><?php echo $item['shop_title'];?></h2>
+					<span><i class="halflings user"></i>By <?php echo anchor('wpilife/pohs/detail/'.$item['user_id'],$item['users_firstname']." ".$item['users_lastname']); ?></span>
 				</header>
 
-				<?php echo $detail['shop_content']; ?>
+				<?php echo $item['shop_content']; ?>
 
 			
 				<!-- Baidu Button BEGIN -->

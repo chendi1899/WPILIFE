@@ -1,4 +1,4 @@
-	
+	<meta charset="utf-8">
 	<meta name="keywords" content="WPILIFE, WPI CSSA, CSSA" />
 	<meta name="description" content="WPILIFE-EXTEND YOUR LIFE IN WPI" />
 	<base href="<?php echo base_url(); ?>" />

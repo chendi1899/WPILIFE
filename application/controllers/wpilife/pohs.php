@@ -22,16 +22,16 @@ class Pohs extends CI_Controller
 	{
 		if(is_numeric($id))
 		{
-
-			$data['title'] = "Detail | WPILIEF";
-			$data['detail'] = $this->shoplib->get_shop_by_ID($id, 'BUY');
-			if($data['detail'] == false)
+			$data['item'] = $this->shoplib->get_shop_by_ID($id, 'BUY');
+			if($data['item'] == false)
 			{
 				redirect('wpilife/pohs','refresh');
 			}
 			else
 			{
-				echo $this->load->view('wpilife/detail',$data, TRUE);
+				$data['title'] = $data['item']['shop_title']." | WPILIEF";
+				//var_dump($data['detail']);
+				$this->load->view('wpilife/detail',$data);
 			}
 		}
 		else
