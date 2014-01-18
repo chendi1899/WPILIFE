@@ -46,6 +46,7 @@
 	<div class="eleven floated">
 		<div class="shop-page page-content">
 		
+
 		<!-- Isotope -->
 		<div id="portfolio-wrapper">
 		<?php 

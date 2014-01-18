@@ -6,6 +6,7 @@ class Shop extends CI_Controller
 	{
  		parent::__construct();
  		$this->load->library('paginationlib');
+ 		
 	}	
 	
 	public function index($page = 1)
