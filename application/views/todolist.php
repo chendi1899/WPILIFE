@@ -101,6 +101,8 @@
 			<li>No activation link, but password will be sent through email</li>
 			<li>Password security enhancement!</li>
 		</ol>
+		<h3>Add post new item entry to shop page 01-17-2014</h3>
+
 		</div>
 	
 	</div>
