@@ -15,7 +15,7 @@
 		 		}
 		 		else
 		 		{
-		 			$link = "href='".base_url()."manage/pohs'";
+		 			$link = "href='".base_url()."manage/shop'";
 		 		}
 			?>
 			<a class="button medium color" <?php echo $link;?> style="width:185px;">

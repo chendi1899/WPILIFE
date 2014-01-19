@@ -24,13 +24,13 @@
 
 	<div class="sixteen floated page-title">
 
-		<h2><?php echo $title; ?></h2>
+		<h2>Items in Demand (<?php echo anchor("wpilife/shop","Back to Shop"); ?>)</h2>
 
 		<nav id="breadcrumbs">
 			<ul>
 				<li>You are here:</li>
 				<li><a href="<?php echo base_url();?>">Home</a></li>
-				<li>Pohs</li>
+				<li>Shop</li>
 			</ul>
 		</nav>
 
