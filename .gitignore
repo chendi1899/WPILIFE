@@ -8,6 +8,7 @@ images/officers/*
 images/shop/*
 kindeditor/attached/
 application/config/database.php
+application/config/email.php
 10a4d5d0d9.txt
 phpinfo.php
 php.ini
