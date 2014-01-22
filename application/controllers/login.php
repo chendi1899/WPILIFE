@@ -110,7 +110,7 @@ class Login extends CI_Controller
 	{
 		$this->load->library('parser');
 		$this->load->library('email');
-		$this->email->from('no-reply@wpilife.com', 'WPILIFE');
+		$this->email->from('no-reply@wpilife.org', 'WPILIFE');
 		$this->email->to($to_email); 
 		$this->email->subject('Your Passcode has been reset | WPILIFE');
 

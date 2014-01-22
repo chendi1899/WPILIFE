@@ -83,7 +83,7 @@ class Signup extends CI_Controller
 	function sendPasswordEmail($to_email, $password)
 	{
 		$this->load->library('parser');
-		$this->email->from('no-reply@wpilife.com', 'WPILIFE');
+		$this->email->from('no-reply@wpilife.org', 'WPILIFE');
 		$this->email->to($to_email); 
 		$this->email->subject('Your Passcode Has Been Set | WPILIFE');
 

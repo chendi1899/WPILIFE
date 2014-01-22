@@ -17,11 +17,9 @@
 	?>
 			<table cellpadding="0" cellspacing="0" border="0" id="log_reg">
 				<tr>
-					<td class="form-input-name">E-mail</td>
 					<td class="input"><input type="email" name="email" placeholder="Your E-mail @wpi.edu" autocomplete="off" required="required" /></td>
 				</tr>
 				<tr>
-					<td class="form-input-name"></td>
 					<td><input type="submit" value="Password Reset" /></td>
 				</tr>
 			</table>

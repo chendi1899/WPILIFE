@@ -11,7 +11,7 @@
 			<?php 
 				if($this->session->userdata('users_id') == null)
 		 		{
-		 			$link = "href='javascript:void(0)' onclick='javascript:alert(\"Please Login fisrt!\");'";
+		 			$link = "href='javascript:void(0)' onclick='javascript:alert(\"Please Login first!\");'";
 		 		}
 		 		else
 		 		{

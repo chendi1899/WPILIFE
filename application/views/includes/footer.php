@@ -27,7 +27,7 @@
 		<div class="four columns">
 			<h4>Photo Stream</h4>
 			<div class="flickr-widget">
-				<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=6&amp;display=latest&amp;size=s&amp;layout=x&amp;source=user&amp;user=86294173@N08"></script>
+				<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=6&amp;display=latest&amp;size=s&amp;layout=x&amp;source=user&amp;user=99257653@N03"></script>
 				<div class="clearfix"></div>
 			</div>
 		</div>
