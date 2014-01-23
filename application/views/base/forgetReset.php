@@ -13,14 +13,20 @@
 	<div id="content">
 	<?php 
 		echo br(2);
-		echo form_open("login/passwordRecovery");
+		echo form_open("login/reset");
+		echo form_hidden('email', $email);
+		echo form_hidden('id', $user_id);
+		echo form_hidden('code', $hashStr);
 	?>
 			<table cellpadding="0" cellspacing="0" border="0" id="log_reg">
 				<tr>
-					<td class="input"><input type="email" name="email" placeholder="Your E-mail @wpi.edu" autocomplete="off" required="required" /></td>
+					<td class="input"><input type="password" name="newpasswd" placeholder="New Password" autocomplete="off" required="required" /></td>
 				</tr>
 				<tr>
-					<td><input type="submit" value="Send reset link to email" /></td>
+					<td class="input"><input type="password" name="cfmpasswd" placeholder="Confirm Password" autocomplete="off" required="required" /></td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="Password Reset" title="Password Reset for <?php echo $email; ?>" /></td>
 				</tr>
 			</table>
 		<?php echo form_close(br(2)); ?>

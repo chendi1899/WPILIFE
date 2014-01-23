@@ -113,6 +113,40 @@ class Users
 		
 	}
 
+	// update data filed which will be used to generate password reset link
+	public function userPasswdInfoUpdate($dataArray, $email){
+		$email = trim($email);
+		$this->CI->db->where('users_email_address', $email);
+		$this->CI->db->update('users', $dataArray);
+		return $this->CI->db->affected_rows();
+	}
+
+	public function hashStrCheckAndReturnEmail($hashStr){
+		$hashStr = trim($hashStr);
+		if(strlen($hashStr) != 32 ){
+			return array(false, 1);
+		} else {
+			$this->CI->db->where('extra_field', $hashStr);
+			$query = $this->CI->db->get('users');
+			if ($query->num_rows() > 0)	{
+				$row = $query->row_array();
+
+				$user_id = $row['users_id'];
+				$email = $row['users_email_address'];
+				$randStr = $row['random_string'];
+
+				$today = date('Ymd');
+
+				$extraAuth = $email.do_hash($today, 'md5').$randStr;
+
+				if(do_hash($extraAuth, 'md5') == $hashStr)	return array($email, $user_id);
+													else	return array(false, 2);
+			} else {
+				return array(false, 1);
+			}
+		}
+	}
+
 	public function user_info_update($dataArray, $users_id)
 	{
 		$this->CI->session->set_userdata('users_firstname', $dataArray['users_firstname']);// Re-assign a value to users_firstname, in case it will be updated(because users_firstname will display in right up corner)
@@ -136,6 +170,14 @@ class Users
 		$users_id = $this->CI->security->xss_clean($users_id);
 		$this->CI->db->where('users_id', $users_id);
 		$this->CI->db->update('users', $dataArray);
+	}
+
+	public function userPasswordUpdate($passwordArray, $user_id, $email){
+		
+		$user_id = $this->CI->security->xss_clean($user_id);
+		$this->CI->db->where('users_id', $user_id);
+		$this->CI->db->where('users_email_address', $email);
+		$this->CI->db->update('users', $passwordArray);
 	}
 
 	public function oldPassword_check($oldPassword, $users_id)

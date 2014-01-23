@@ -43,32 +43,24 @@ class Login extends CI_Controller
 		}
 	}
 
-	// This function is not used in my new version
-	// And I will send the user the password through email
-	function activation($activation_string)
-	{
-		$data['title'] = 'WPILIFE';
-		$data['show_form'] = false;
-		$param = explode("_", $activation_string);
-		$email = $param[0];
-		$password = $param[1];
-		$query = $this->db->query("SELECT users_id 
-								   FROM users 
-								   WHERE users_email_address = '". $email ."' and 
-								   		 users_password = '". $password ."'");
 
-		if ($query->num_rows() > 0)
-		{
-			$query = $this->db->query("UPDATE users 
-								   	   SET users_activated = 1 
-								   	   WHERE users_email_address = '". $email ."'");
-			$data['info'] = "Your account has beem activated! Now, click here to <a href='http://wpilife.org/login'>login</a>";
-		}
-		else
-		{
-			$data['info'] = "Sorry, it seems that the actvation link is wrong. If you have any question, please contact wpilife@gmail.com";
-		}
-		$this->load->view('login',$data);
+	function sendPasswordResetEmail($to_email, $hashStr)
+	{
+		$this->load->library('email');
+		$this->load->library('parser');
+		$this->email->from('no-reply@wpilife.org', 'WPILIFE');
+		$this->email->to($to_email); 
+		$this->email->subject('Your Passcode Reset Link | WPILIFE');
+
+		$data = array(
+			'email' 	=> $to_email,
+			'year'		=> date('Y'),
+			'baseUrl'	=> base_url(),
+			'resetLink' => base_url() ."login/passwdReset/".$hashStr
+			);
+		$message = $this->parser->parse('templates/passwordResetEmail', $data, TRUE);
+		$this->email->message($message);	
+		$this->email->send();
 		
 	}
 
@@ -80,22 +72,30 @@ class Login extends CI_Controller
 
 	function passwordRecovery()
 	{
-		$salt = $this->config->item('encryption_key');
-		$password = random_string('alnum', 8);
-		$tmp = do_hash($password, 'md5');
-		$passwordMD5 = do_hash($salt.$tmp, 'md5'); // MD5
-
 		$email = $this->input->post('email');
 		$email = trim($email);
 
-		// update new password into database
-		$this->users->passwordUpdatebyEmail($email, $passwordMD5);
+		$today = date('Ymd');
+		$randString = random_string('alnum', 8);
+		$extraAuth = $email.do_hash($today, 'md5').$randString;
+		$hashStr = do_hash($extraAuth, 'md5');
 
-		$this->sendPasswordRecoveryEmail($email, $password);
+		$dataArray= array(
+				'random_string' => $randString,
+				'extra_field'	=> $hashStr
+			);
+		if($this->users->userPasswdInfoUpdate($dataArray, $email) == 1){
+			$this->sendPasswordResetEmail($email, $hashStr);
 
-		$data['title'] = "Password Recovery | WPILIFE";
-		$data['info'] = "New password has been sent to your email, please have a check!<br/>Have fun :-)";
-		$this->load->view('templates/msgDisplay',$data);
+			$data['title'] = "Password Reset Link | WPILIFE";
+			$data['info'] = "New password reset link has been sent to your email, please have a check!<br/>Have fun :-)";
+			$this->load->view('templates/msgDisplay',$data);
+		} else {
+			echo "<script>alert('No account for this email!');</script>";
+			echo "<script>window.location.href = '".base_url()."login/forgetPassword/';</script>";
+		}
+
+		
 	}
 
 	function logout()
@@ -124,7 +124,60 @@ class Login extends CI_Controller
 		$message = $this->parser->parse('templates/activationEmail', $data, TRUE);
 		$this->email->message($message);	
 		$this->email->send();
-		
+	}
+
+	function passwdReset($hashStr){
+		list($email, $user_id) = $this->users->hashStrCheckAndReturnEmail($hashStr);
+		if($email){
+
+			$data['title'] = "Password Reset| WPILIFE";
+			$data['hashStr'] = $hashStr;
+			$data['email'] = $email;
+			$data['user_id'] = $user_id;
+			$this->load->view('base/forgetReset',$data);
+			//echo $email . " " .$user_id;
+		} else {
+			switch ($user_id) {
+				case '2':
+					$data['info'] = "You password reset link is expired!";
+					break;
+
+				default:
+					$data['info'] = "You password reset link is wrong!";
+					break;
+			}
+			$data['title'] = "Error Link | WPILIFE";
+			$this->load->view('templates/msgDisplay',$data);
+		}
+	}
+
+	function reset(){
+		$code = $this->input->post('code');
+		$newPasswd = $this->input->post('newpasswd');
+		$cfmPasswd = $this->input->post('cfmpasswd');
+
+		if($newPasswd != $cfmPasswd){
+			echo "<script>alert('Passwords are not the same!');</script>";
+			echo "<script>window.location.href = '".base_url()."login/passwdReset/".$code."';</script>";
+		} else {
+			$user_id = $this->input->post('id', TRUE);
+			$email = $this->input->post('email');
+
+			$salt = $this->config->item('encryption_key');
+			$tmp = do_hash($newPasswd, 'md5'); 
+			$passwordMD5 = do_hash($salt.$tmp, 'md5'); 
+
+			$dataArray = array(
+				'users_password'=>$passwordMD5,
+				'extra_field' 	=> ''
+				);
+			$this->users->userPasswordUpdate($dataArray, $user_id, $email);
+
+			$data['title'] = "Password Reset Successfully | WPILIFE";
+			$data['info'] = "Your password has been updated successfully!";
+			$this->load->view('templates/msgDisplay',$data);
+		}
+
 	}
 }
 ?>
