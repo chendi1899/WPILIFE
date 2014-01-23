@@ -50,7 +50,7 @@
 		<p>I have made this website open source at Github: <a href="https://github.com/WPILIFE/WPILIFE" target="_blank">https://github.com/WPILIFE/WPILIFE</a>
 		</p>
 		<p><h3>I highly recommend you browse this website with <a href="https://www.google.com/intl/en/chrome/browser/" title="Click to download Chrome"><span style="color:red;">Chrome</span></a> or <a href="http://www.mozilla.org/en-US/firefox/new/" title="Click to download Firefox"><span style="color:red;">Firefox</span></a>! </h3></p>
-		<p>If you have any question or need get some help, please contact me: <br/><?php echo safe_mailto('hzhou@wpi.edu', 'hzhou[at]wpi.edu');?> or <?php echo safe_mailto('wpilife@gmail.com', 'wpilife[at]gmail.com');?></p>
+		<p>If you have any question or need help, please contact me: <br/><?php echo safe_mailto('zhouhao@wpilife.org', 'zhouhao[at]wpilife.org');?></p>
 	</div>
 
 	<div class="one-third column">
