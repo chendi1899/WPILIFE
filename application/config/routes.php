@@ -44,6 +44,8 @@ $route['wpilife/pohs/(:num)'] = "wpilife/pohs/index/$1";
 $route['wpilife/house/(:num)'] = "wpilife/house/index/$1";
 $route['wpilife/recs/(:num)'] = "wpilife/recs/index/$1";
 
+$route['manual/(:num)'] = "manual/index/$1";
+
 $route['default_controller'] = "welcome";
 $route['404_override'] = 'error404';
 

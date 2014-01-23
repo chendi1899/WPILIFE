@@ -53,7 +53,8 @@
 			<article class="icon-box">
 				<i class="icon-bullhorn"></i>
 				<h3>Our Goal</h3>
-				<p>You can do anything here, which can be done in mail list. Trust me, and this is the goal why I am developing it!<br/><a href="<?php echo base_url();?>todolist">Click and see what you can do now.</a> </p>
+				<p>WPILIFE is a platform, on which you can share information with others. Its goal is to make life easier in WPI.
+				<br/><a href="<?php echo base_url();?>manual">Manual</a> </p>
 			</article>
 		</div>
 		<!-- Icon Box End -->
@@ -73,7 +74,7 @@
 			<article class="icon-box">
 				<i class="icon-user"></i>
 				<h3>Sign Up</h3>
-				<p>Want to join us and share your life with other? Just <a href="<?php echo base_url();?>signup">sign up</a> now</p>
+				<p>Want to join us and share your life with other? Take 13 seconds to <a href="<?php echo base_url();?>signup">sign up</a> now</p>
 			</article>
 		</div>
 		<!-- Icon Box End -->

@@ -89,7 +89,7 @@
 		<!-- Second Level / End -->
 	</li>
 
-	<li><a href="javascript:void(0)" onclick="false" class="wpilife_tab" ><i class="halflings white map-marker"></i> Life@WPI</a>
+	<li><a href="<?php echo base_url(); ?>wpilife/shop" onclick="false" class="wpilife_tab" ><i class="halflings white map-marker"></i> Life@WPI</a>
 	<!-- Mega Menu / Start -->
 		<ul class="cols3">
 			<li class="col3">
