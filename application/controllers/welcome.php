@@ -6,11 +6,13 @@ class Welcome extends CI_Controller
 	{
  		parent::__construct();
  		$this->load->library('shoplib');
+ 		$this->load->library('slidelib');
 	}
 	public function index()
 	{
 		$data['title'] = "WPILIFE | EXTEND YOUR LIFE IN WPI";
 		$data['items'] =  $this->shoplib->get_shop_list_by_count(9,'SELL');
+		$data['slides'] =  $this->slidelib->getSlides();
 		//$data['activity_list'] = $this->activitycssalib->get_activity_list_by_count(2);
 		$data['blog_list'] =  $this->blogcssalib->get_blog_list_by_count(4);
 		$this->load->view('welcome',$data);

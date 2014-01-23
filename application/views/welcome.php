@@ -27,36 +27,7 @@
 <!-- LayerSlider  -->
 <section id="layerslider-container">
 	<div id="layerslider" style="width: 1020px; height: 300px; margin: 0 auto;">
-
-		<!-- Slide 1 -->
-		<article class="ls-layer" style="slidedelay: 10000;">
-			<img src="images/slide-01.jpg" class="ls-bg" alt="">
-			<h3 class="ls-s1 caption-transparent" style="top: 200px; left: 756px; slidedirection: right; slideoutdirection: right; durationin: 400; durationout: 1000; easingin: easeOutExpo; delayin: 1000;">IKEA TRIP 08-21-2013 | CSSA </h3>
-		</article>
-
-		<!-- Slide 2 -->
-		<article class="ls-layer" style="slidedelay: 7000;">
-			<img src="images/slide_CSSA.jpg" class="ls-bg" alt="">
-			<h3 class="ls-s1 caption-transparent" style="top:200px; left: 40px;">CSSA Recruit 08-28-2013 | CSSA</h3>
-		</article>
-		
-		<!-- Slide 2 -->
-		<article class="ls-layer" style="slidedelay: 10000; slidedirection: top;">
-			<img src="images/slide-02.jpg" class="ls-bg">
-		</article>
-
-		<!-- Slide 3 -->
-		<article class="ls-layer" style="slidedelay: 7000;">
-			<img src="images/slide-03.jpg" class="ls-bg" alt="">
-			<h3 class="ls-s1 caption-transparent" style="top:200px; left: 40px;">Outside International House (IH)</h3>
-		</article>
-
-		<!-- Slide 4 -->
-		<article class="ls-layer" style="slidedelay: 7000;">
-			<img src="images/slide-04.jpg" class="ls-bg" alt="">
-			<h3 class="ls-s1 caption-transparent" style="top:100px; left: 40px;">CSSA Officers Barbecue</h3>
-		</article>
-
+	<?php $this->load->view('includes/slides');?>
 	</div>
 </section>
 <!-- LayerSlider / End -->
