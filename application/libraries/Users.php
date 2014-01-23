@@ -153,6 +153,7 @@ class Users
 		$users_id = $this->CI->security->xss_clean($users_id);
 		$this->CI->db->where('users_id', $users_id);
 		$this->CI->db->update('users', $dataArray);
+		return $this->CI->db->affected_rows();
 	}
 
 	public function user_avatar_update($users_id)
@@ -162,6 +163,7 @@ class Users
 		$users_id = $this->CI->security->xss_clean($users_id);
 		$this->CI->db->where('users_id', $users_id);
 		$this->CI->db->update('users', $dataArray);
+		return $this->CI->db->affected_rows();
 	}
 
 	public function user_password_update($newPassword, $users_id)
@@ -170,6 +172,7 @@ class Users
 		$users_id = $this->CI->security->xss_clean($users_id);
 		$this->CI->db->where('users_id', $users_id);
 		$this->CI->db->update('users', $dataArray);
+		return $this->CI->db->affected_rows();
 	}
 
 	public function userPasswordUpdate($passwordArray, $user_id, $email){
@@ -178,6 +181,7 @@ class Users
 		$this->CI->db->where('users_id', $user_id);
 		$this->CI->db->where('users_email_address', $email);
 		$this->CI->db->update('users', $passwordArray);
+		return $this->CI->db->affected_rows();
 	}
 
 	public function oldPassword_check($oldPassword, $users_id)
@@ -238,6 +242,7 @@ class Users
 	{
 		$this->CI->db->where('id', $id);
 		$this->CI->db->update('cssa_manager_list', $dataArray);
+		return $this->CI->db->affected_rows();
 	}
 
 	/**
