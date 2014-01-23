@@ -7,6 +7,7 @@ class Cssa extends CI_Controller
 	{
  		parent::__construct();
 		$this->load->library('form_validation');
+		$this->load->library('manuallib');
 		$this->load->helper('form');
 		
 		if($this->session->userdata('users_id')==null || $this->session->userdata('cssa_id')==null)
@@ -262,6 +263,30 @@ class Cssa extends CI_Controller
 		);
 		$this->users->officer_title_update($id, $dataArray);
 		redirect('manage/cssa/officerList','refresh');
+	}
+
+	function manual($id = 1)
+	{
+		$data['id'] = $id;
+		$data['list'] = $this->manuallib->getTitleList();
+		$data['content'] = $this->manuallib->getContent($id);
+		$data['content'] = $data['content']['text'];
+
+		$data['title'] = "Manual Update | CSSA";
+		$data['page_title'] = "Manual Update:";
+		$data['page_intro'] = "Manual information Update.";
+		$this->load->view('manage/cssa_manual',$data);
+	}
+	function manualUpdate()
+	{
+		$dataArray = array(
+			'text' => $this->input->post('content'),		
+		);
+
+		$id = $this->input->post('id');
+		$this->manuallib->contentUpdate($id, $dataArray);
+		redirect('manage/cssa/manual/'.$id,'refresh');
+		
 	}
 }
 ?>

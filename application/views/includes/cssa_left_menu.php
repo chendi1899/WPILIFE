@@ -26,14 +26,13 @@
 					<li><a href="<?php echo base_url();?>manage/cssa/blog_add"> Blog Add</a></li>
 				</ul>
 			</div>
-			<!--
+			
 			<div class="widget">
-				<h4>Activity</h4>
+				<h4>Manual Update</h4>
 				<ul class="check-list">
-					<li><a href="<?php echo base_url();?>manage/cssa/activity"> Activity Manage</a></li>
-					<li><a href="<?php echo base_url();?>manage/cssa/activity_add"> Activity Add</a></li>
+					<li><a href="<?php echo base_url();?>manage/cssa/manual"> Manual Update</a></li>
 				</ul>
-			</div> -->
+			</div> 
 		</aside>
 	</div>
 	<!-- Sidebar / End -->

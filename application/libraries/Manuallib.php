@@ -31,5 +31,11 @@ class Manuallib
 			return false;
 		}
 	}
+
+	function contentUpdate($id, $dataArray){
+		$this->CI->db->where('id', $id);
+		$this->CI->db->update('manual', $dataArray);
+		return $this->CI->db->affected_rows();
+	}
 }
 ?>
