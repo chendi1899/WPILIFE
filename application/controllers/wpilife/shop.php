@@ -31,6 +31,7 @@ class Shop extends CI_Controller
 			}
 			else
 			{
+				$data['title'] = $data['product']['shop_title']." | WPILIFE";
 				$this->load->view('wpilife/product',$data);
 			}
 			
