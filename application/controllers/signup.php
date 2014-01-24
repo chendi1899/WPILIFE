@@ -70,7 +70,7 @@ class Signup extends CI_Controller
 		$email_subfix = explode("@", $email);
 
 		//check whether it is a wpi email address
-		if($email_subfix[1] == 'wpi.edu')
+		if(isset($email_subfix[1]) && $email_subfix[1] == 'wpi.edu')
 		{
 			if (valid_email($email) && !$this->users->isEmailDuplicated($email))
 			{
