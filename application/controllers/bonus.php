@@ -7,10 +7,15 @@ class Bonus extends CI_Controller {
  		$this->load->library('bonuslib');
 	}
 
-	function index($hashCode) {		
-		$data['title'] = "Love U Forver";
-		$data['love'] = $this->bonuslib->getLover($hashCode);
-		$this->load->view('bonus/bonus',$data);
+	function index($hashCode = '') {	
+		$hashCode = trim($hashCode);
+		if($hashCode == ''){
+			redirect('bonus/add','refresh');
+		} else {
+			$data['title'] = "Love U Forver";
+			$data['love'] = $this->bonuslib->getLover($hashCode);
+			$this->load->view('bonus/bonus',$data);
+		}
 	}
 
 	function add(){

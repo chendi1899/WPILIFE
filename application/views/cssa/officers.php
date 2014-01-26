@@ -41,6 +41,7 @@
 	<?php
 	if($officers)
 	{
+		$count = 0;
 		foreach($officers as $officer)
 		{
 			//print_r($officer->directors);
@@ -55,6 +56,8 @@
 	</div>
 
 	<?php
+			$count = $count + 1;
+			if( $count % 3 == 0) echo '<div class="clearfix"></div>';
 			}
 		}
 

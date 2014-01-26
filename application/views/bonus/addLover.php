@@ -32,7 +32,7 @@
 					<td class="input"><input type="text" name="to" placeholder="To:" autocomplete="off" required="required" /></td>
 				</tr>
 				<tr>
-					<td class="input">Love Start Date: <input type="date" name="startDate" placeholder="When you failed in love with each other" autocomplete="off" required="required" /></td>
+					<td class="input">Love Start Date: <input type="date" name="startDate" placeholder="现在只支持Chrome" autocomplete="off" required="required" /></td>
 				</tr>
 				<tr>
 					<td><input type="submit" value="Get Love Link" /></td>
