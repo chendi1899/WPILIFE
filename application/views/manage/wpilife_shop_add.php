@@ -67,17 +67,17 @@
 						<table width="100%">
 							<tr>
 								<td>
-								    Set your Item image cover: <br/><input type="file" name="userfile"/>
+								    Set your Item image cover: <br/><input type="file" name="userfile" required="required" />
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<input type="text" name="shop_title" id="shop_title" maxlength="50" placeholder="Item Name, such as bike, desk lamp..." style="width:632px;" />
+									<input type="text" name="shop_title" id="shop_title" maxlength="50" required="required"  placeholder="Item Name, such as bike, desk lamp..." style="width:632px;" />
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<input type="text" name="shop_price" id="shop_price" maxlength="20" placeholder="Give a price if you can, which will make other know your item better, such as $45, $23~$111..." style="width:632px;" />
+									<input type="text" name="shop_price" id="shop_price" maxlength="20" required="required"  placeholder="Give a price if you can, which will make other know your item better, such as $45, $23~$111..." style="width:632px;" />
 								</td>
 							</tr>
 							<tr>

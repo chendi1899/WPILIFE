@@ -24,6 +24,7 @@ class Sponsorlib
 			{
 				$this->CI->db->select('id, name');
 				$this->CI->db->where('enable', 1);
+				$this->CI->db->where('type', $row->type);
 				$sub_query = $this->CI->db->get('sponsor');
 				if ($sub_query->num_rows() > 0)
 				{
