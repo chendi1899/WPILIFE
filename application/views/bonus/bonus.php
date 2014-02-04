@@ -74,8 +74,8 @@
 var offsetX = $("#loveHeart").width() / 2;
 var offsetY = $("#loveHeart").height() / 2 - 55;
 var together = new Date();
-together.setFullYear(<?php echo  date("Y", strtotime($love['startDate'])); ?>, <?php echo  date("n", strtotime($love['startDate'])); ?>, <?php echo  date("j", strtotime($love['startDate'])); ?>);
-together.setHours(20);
+together.setFullYear(<?php echo  date("Y", strtotime($love['startDate'])); ?>, <?php echo  date("n", strtotime($love['startDate']))-1; ?>, <?php echo  date("j", strtotime($love['startDate'])); ?>);
+together.setHours(0);
 together.setMinutes(0);
 together.setSeconds(0);
 together.setMilliseconds(0);

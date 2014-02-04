@@ -26,10 +26,10 @@
 					<td class="input"><input type="text" name="girlName" placeholder="Girl Name" autocomplete="off" required="required" /></td>
 				</tr>
 				<tr>
-					<td class="input"><input type="text" name="from" placeholder="From:" autocomplete="off" required="required" /></td>
+					<td class="input"><input type="text" name="from" placeholder="From whom" autocomplete="off" required="required" /></td>
 				</tr>
 				<tr>
-					<td class="input"><input type="text" name="to" placeholder="To:" autocomplete="off" required="required" /></td>
+					<td class="input"><input type="text" name="to" placeholder="To whom" autocomplete="off" required="required" /></td>
 				</tr>
 				<tr>
 					<td class="input">Love Start Date: <input type="date" name="startDate" placeholder="现在只支持Chrome" autocomplete="off" required="required" /></td>
