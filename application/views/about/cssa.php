@@ -42,7 +42,7 @@
 		<div class="sixteen columns">
 		<p>WPI CSSA is a voluntary club, serving to help Chinese students and scholars. </p>
 		<p>Now we have more than 300 members, including students, professors, visiting scholars and their relatives. We are glad to enrich the spare life of our Chinese students, and offer a platform for us to communicate and help with each other. Come and join us, let’s share our growth and progress in our harmonious WPI Chinese Community.</p>
-
+		<?php echo img('images/cssa/horseyear.png');?>
 		</div>
 
 	</div>

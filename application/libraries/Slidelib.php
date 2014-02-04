@@ -27,7 +27,7 @@ class Slidelib
 						$htmlOutput .= '<article class="ls-layer" style="slidedelay: 7000;">';
 						$htmlOutput .= '<img src="images/slides/'.$file.'" class="ls-bg" alt="">';
 						if(file_exists($din.$txtFile)){
-							$txt = file_get_contents($din.$txtFile,NULL, NULL, 0, 40);
+							$txt = file_get_contents($din.$txtFile,NULL, NULL, 0, 60);
 							if($txt){
 								if(rand(1, 77) % 2 == 1) $left = 40 ; else  $left = 756;
 								$htmlOutput .= '<h3 class="ls-s1 caption-transparent" style="top:200px; left:'.$left.'px;">'.$txt.'</h3>';
