@@ -202,7 +202,7 @@
 		</ul>
 		<!-- Second Level / End -->
 	</li>
-	
+	<li><a href="<?php echo base_url(); ?>manual" class="manual_tab"><i class="halflings white hand-right"></i> Manual</a>
 </ul>
 </nav>
 <div class="clearfix"></div>

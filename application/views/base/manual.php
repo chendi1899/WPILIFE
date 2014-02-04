@@ -3,6 +3,12 @@
 <head>
 	<title><?php echo $title ?></title>
 	<?php $this->load->view('includes/import');?>
+	<script type="text/javascript">
+		$(document).ready(function() 
+		{
+			$('.manual_tab').attr('id', 'current');
+		});
+	</script>
 </head>
 <body>
 <!-- Wrapper / Start -->
