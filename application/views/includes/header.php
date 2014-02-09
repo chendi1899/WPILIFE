@@ -88,7 +88,12 @@
 		</ul>
 		<!-- Second Level / End -->
 	</li>
-
+	<li><a href="<?php echo base_url(); ?>wpilife/shop" class="shop_tab"><i class="halflings white shopping-cart"></i> Shop </a>
+		<ul>
+			<li><a href="<?php echo base_url(); ?>wpilife/shop">Sell List</a></li>
+			<li><a href="<?php echo base_url(); ?>wpilife/pohs">Demand List</a></li>
+		</ul>
+	</li>
 	<li><a href="<?php echo base_url(); ?>wpilife/shop" onclick="false" class="wpilife_tab" ><i class="halflings white map-marker"></i> Life@WPI</a>
 	<!-- Mega Menu / Start -->
 		<ul class="cols3">
@@ -98,8 +103,6 @@
 			<li class="col1">
 				<h5>Under Construction</h5>
 				<ol>
-					<!--<li><a href="<?php echo base_url(); ?>wpilife">House Find & Demand</a></li>-->
-					<li><a href="<?php echo base_url(); ?>wpilife/shop">Shop</a></li>
 					<li><a href="<?php echo base_url(); ?>wpilife/house">House</a></li>
 					<li><a href="<?php echo base_url(); ?>wpilife/recs">Recommendation</a></li>
 				</ol>
@@ -169,27 +172,26 @@
 			<li><a href="<?php echo base_url(); ?>about/cssa">Introduction</a></li>
 			<li><a href="<?php echo base_url(); ?>cssa/officers">Officers</a></li>
 			<li><a href="javascript:void(0)">Committee</a></li>
-			<li><a href="javascript:void(0)">Subscription</a></li>
+			<li><a href="<?php echo base_url(); ?>sponsor">Sponsors</a>
+				<!-- Second Level / Start -->
+				<?php 
+					$sponsor_list = $this->sponsorlib->get_name();
+					if($sponsor_list)
+					{
+						echo "<ul>";
+						foreach($sponsor_list as $item)
+						{
+							echo "<li><a href='".base_url()."sponsor/".$item->id."'>".$item->name."</a></li>";
+						}
+						echo "</ul>";
+					}
+				
+				?>
+				<!-- Second Level / End -->
+			</li>
 		</ul>
 	</li>
 		
-	</li>
-	<li><a href="<?php echo base_url(); ?>sponsor" class="sponsor_tab"><i class="halflings white bookmark"></i> Sponsor</a>
-		<!-- Second Level / Start -->
-		<?php 
-			$sponsor_list = $this->sponsorlib->get_name();
-			if($sponsor_list)
-			{
-				echo "<ul>";
-				foreach($sponsor_list as $item)
-				{
-					echo "<li><a href='".base_url()."sponsor/".$item->id."'>".$item->name."</a></li>";
-				}
-				echo "</ul>";
-			}
-		
-		?>
-		<!-- Second Level / End -->
 	</li>
 	<li><a href="<?php echo base_url(); ?>contact" class="contact_tab"><i class="halflings white envelope"></i> Contact</a>
 		<!-- Second Level / Start -->

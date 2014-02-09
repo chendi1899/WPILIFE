@@ -6,7 +6,7 @@
 	<script type="text/javascript">
 		$(document).ready(function() 
 		{
-			$('.wpilife_tab').attr('id', 'current');
+			$('.shop_tab').attr('id', 'current');
 		});
 		
 	</script>
