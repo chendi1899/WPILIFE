@@ -50,7 +50,7 @@ class Signup extends CI_Controller
 			else
 			{
 				$data['title'] = "Sign Up failed | WPILIFE";
-				$data['info'] = "Failed<br/>Email is not valid!";
+				$data['info'] = "Failed<br/>Email is not valid <br/>Or<br/> you have registered before!";
 			}
 		}
 		else
@@ -67,16 +67,16 @@ class Signup extends CI_Controller
 	function isEmailValid($email)
 	{
 		$this->load->helper('email');
-		$email_subfix = explode("@", $email);
+		//$email_subfix = explode("@", $email);
 
 		//check whether it is a wpi email address
-		if(isset($email_subfix[1]) && $email_subfix[1] == 'wpi.edu')
-		{
+		//if(isset($email_subfix[1]) && $email_subfix[1] == 'wpi.edu')
+		//{
 			if (valid_email($email) && !$this->users->isEmailDuplicated($email))
 			{
 				return true;
 			}
-		}
+		//}
 		return false;
 	}
 
