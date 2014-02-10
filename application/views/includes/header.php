@@ -197,6 +197,7 @@
 		<!-- Second Level / Start -->
 		<ul>
 			<li><a href="<?php echo base_url(); ?>about/website">About Website</a></li>
+			<li><a href="<?php echo base_url(); ?>changelog">Change log</a></li>
 			<!--
 			<li><a href="<?php echo base_url(); ?>about/us">About Us</a></li>
 			<li><a href="<?php echo base_url(); ?>todolist">TO-DO List</a></li>
