@@ -18,7 +18,6 @@
 			<h4>Contact Details</h4>
 			<ul class="contact-details-alt">
 				<li><i class="halflings white map-marker"></i> <p><strong>Address:</strong> 100 Institute Road, Worcester, MA</p></li>
-				<li><i class="halflings white user"></i> <p><strong>Phone:</strong> +1 508 335 9815</p></li>
 				<li><i class="halflings white envelope"></i> <p><strong>Email:</strong> <a href="mailto:wpilife@gmail.com">wpilife@gmail.com</a></p></li>
 			</ul>
 		</div>
