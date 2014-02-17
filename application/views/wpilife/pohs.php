@@ -24,7 +24,7 @@
 
 	<div class="sixteen floated page-title">
 
-		<h2>Items in Demand (<?php echo anchor("wpilife/shop","Back to Shop"); ?>)</h2>
+		<h2>Items in Demand</h2>
 
 		<nav id="breadcrumbs">
 			<ul>
