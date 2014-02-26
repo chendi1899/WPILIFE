@@ -25,7 +25,7 @@
 	?>
 			<table cellpadding="0" cellspacing="0" border="0" id="log_reg">
 				<tr>
-					<td class="input"><input type="email" name="users_email_address" value="<?php echo $account; ?>" placeholder="Your E-mail @wpi.edu" autocomplete="off" required="required" /></td>
+					<td class="input"><input type="email" name="users_email_address" value="<?php echo $account; ?>" placeholder="Your E-mail" autocomplete="off" required="required" /></td>
 				</tr>
 				<tr>
 					<td class="input"><input type="password" name="users_password" placeholder="Your password " autocomplete="off" required="required" /></td>

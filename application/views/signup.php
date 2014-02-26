@@ -34,7 +34,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td class="input"><input type="email" name="users_email_address" placeholder="Your E-mail @wpi.edu" autocomplete="off" required="required" /></td>
+					<td class="input"><input type="email" name="users_email_address" placeholder="Your E-mail" autocomplete="off" required="required" /></td>
 				</tr>
 				<tr>
 					<td class="input">
