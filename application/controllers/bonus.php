@@ -12,14 +12,14 @@ class Bonus extends CI_Controller {
 		if($hashCode == ''){
 			redirect('bonus/add','refresh');
 		} else {
-			$data['title'] = "Love U Forver";
+			$data['title'] = "Love U Forever";
 			$data['love'] = $this->bonuslib->getLover($hashCode);
 			$this->load->view('bonus/bonus',$data);
 		}
 	}
 
 	function add(){
-		$data['title'] = "Love U Forver";
+		$data['title'] = "Love U Forever";
 		$this->load->view('bonus/addLover',$data);
 	}
 
