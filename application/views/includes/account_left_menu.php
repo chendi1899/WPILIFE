@@ -31,6 +31,7 @@
 							<li><?php echo anchor('manage/shop/myList','Sell List'); ?></li>
 							<li><?php echo anchor('manage/pohs/myList','Buy List'); ?></li>
 							<li><?php echo anchor('manage/house/myList','house List'); ?></li>
+							<li><?php echo anchor('manage/bbs/myList','BBS List'); ?></li>
 						</ul>
 					</li>
 				</ul>

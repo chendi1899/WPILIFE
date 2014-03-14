@@ -27,5 +27,11 @@ class Bbs extends CI_Controller {
 		$this->load->view('bbs/index',$data);
 	}
 
+	public function show($bbsID){
+		if(!is_numeric($bbsID)) redirect('bbs','refresh');
+		$data["bbs"] = $this->bbslib->getBBSByID($bbsID);
+		$data['title'] = $data["bbs"]['bbs_title'];
+		$this->load->view('bbs/show',$data);
+	}
 
 }
