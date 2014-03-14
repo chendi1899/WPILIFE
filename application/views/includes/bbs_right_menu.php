@@ -27,7 +27,7 @@
 		<div class="widget">
 			<h4 style="color:red;">Attention:</h4>
 			<p>
-				As WPILIFE website is open to the public, and most of the contend is provided by public, we cannot guarantee everything information is valid. 
+				As WPILIFE website is open to the public, and most of the content is provided by the public, we cannot guarantee everything information is valid. 
 			</p>
 
 			
