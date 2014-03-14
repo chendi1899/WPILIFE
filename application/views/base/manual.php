@@ -6,7 +6,7 @@
 	<script type="text/javascript">
 		$(document).ready(function() 
 		{
-			$('.manual_tab').attr('id', 'current');
+			$('.docs_tab').attr('id', 'current');
 		});
 	</script>
 </head>

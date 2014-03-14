@@ -96,8 +96,8 @@
 	</li>
 	<li><a href="<?php echo base_url(); ?>wpilife/house" class="house_tab"><i class="halflings white home"></i> House </a></li>
 	<li><a href="<?php echo base_url(); ?>bbs" class="bbs_tab"><i class="halflings white user"></i> BBS </a></li>
+	<!--
 	<li><a href="<?php echo base_url(); ?>wpilife/shop" onclick="false" class="wpilife_tab" ><i class="halflings white map-marker"></i> Life@WPI</a>
-	<!-- Mega Menu / Start -->
 		<ul class="cols3">
 			<li class="col3">
 				<h4>We will provide interesting features one by one</h4>
@@ -123,13 +123,13 @@
 				<p>Do you want to make some contributions to this website? <br/>Please contact <a href="mailto:wpilife@gmail.com">wpilife@gmail.com</a></p>
 			</li>
 		</ul>
-		<!-- Mega Menu / End -->
+		 
 	</li>
-	
+	-->
 	<li><a href="<?php echo base_url(); ?>survivalGuide" class="new_students_tab"><i class="halflings white plane"></i>New Students</a>
 		<!-- Second Level / Start -->
 		<ul>
-			<li><a href="<?php echo base_url(); ?>survivalGuide">新生手册</a>
+			<li><a href="<?php echo base_url(); ?>survivalGuide">Survival Guide</a>
 				<!-- Second Level / Start -->
 				<?php 
 					$root_list = $this->sg->get_root_index();
@@ -164,8 +164,8 @@
 				?>
 				<!-- Second Level / End -->
 			</li>
-			<li><a href="javascript:void(0)">接机报名</a></li>
-			<li><a href="javascript:void(0)">临时住房</a></li>
+			<li><a href="<?php echo base_url(); ?>service/airportPicker">Airport Pickup</a></li>
+			<li><a href="<?php echo base_url(); ?>service/tmpHouse">Temporary Residence</a></li>
 		</ul>
 		<!-- Second Level / End -->
 	</li>
@@ -196,12 +196,17 @@
 				<!-- Second Level / End -->
 			</li>
 			<li><a href="<?php echo base_url(); ?>contact">Contact</a></li>
-			<li><a href="<?php echo base_url(); ?>changelog">Change log</a></li>
 		</ul>
 	</li>
 		
 	</li>
-	<li><a href="<?php echo base_url(); ?>manual" class="manual_tab"><i class="halflings white hand-right"></i> Manual</a>
+	<li><a href="<?php echo base_url(); ?>docs/api" class="docs_tab"><i class="halflings white list-alt"></i> Docs</a>
+		<ul>
+			<li><a href="<?php echo base_url(); ?>manual">Manual</a></li>
+			<li><a href="<?php echo base_url(); ?>docs/api">API</a></li>
+			<li><a href="<?php echo base_url(); ?>changelog">Change log</a></li>
+		</ul>
+	</li>
 </ul>
 </nav>
 <div class="clearfix"></div>

@@ -8,6 +8,7 @@ class Changeloglib
 	}
 
 	public function getAll(){
+		$this->CI->db->order_by("date", "desc"); 
 		$query = $this->CI->db->get('changelog');
 		if ($query->num_rows() > 0)	{
 			$result = $query->result(); 

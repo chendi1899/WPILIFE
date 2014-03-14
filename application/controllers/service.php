@@ -9,5 +9,16 @@ class Service extends CI_Controller {
 		
 	}
 
+	public function airportPicker(){
+		$data['title'] = "Airport Pickup  | CSSA";
+		$data['info'] = "The Airport Pickup Page is Under Construction!";
+		$this->load->view('templates/msgDisplay',$data);
+	}
+
+	public function tmpHouse(){
+		$data['title'] = "Temporary Residence | CSSA";
+		$data['info'] = "The Temporary Residence Page is Under Construction!";
+		$this->load->view('templates/msgDisplay',$data);
+	}
 
 }
