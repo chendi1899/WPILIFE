@@ -17,7 +17,7 @@
 	?>
 			<table cellpadding="0" cellspacing="0" border="0" id="log_reg">
 				<tr>
-					<td class="input"><input type="email" name="email" placeholder="Your E-mail @wpi.edu" autocomplete="off" required="required" /></td>
+					<td class="input"><input type="email" name="email" placeholder="Your E-mail" autocomplete="off" required="required" /></td>
 				</tr>
 				<tr>
 					<td><input type="submit" value="Send reset link to email" /></td>
