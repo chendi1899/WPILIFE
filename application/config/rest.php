@@ -19,10 +19,10 @@ $config['force_https'] = FALSE;
 |
 | What format should the data be returned in by default?
 |
-|	Default: xml
+|	Default: json
 |
 */
-$config['rest_default_format'] = 'xml';
+$config['rest_default_format'] = 'json';
 
 /*
 |--------------------------------------------------------------------------

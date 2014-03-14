@@ -10,7 +10,7 @@ class Docs extends CI_Controller {
 		$this->api();
 	}
 
-	public function api($id = 1){
+	public function api($id = 5){
 		$data['title'] = "API document  | WPILIFE";
 		$id =  $this->security->xss_clean($id);
 		$content = $this->docslib->getContent($id);

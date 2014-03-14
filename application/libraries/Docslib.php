@@ -10,7 +10,9 @@ class Docslib{
 	public function getTitleList(){
 		$this->CI->db->select('id, title');
 		$this->CI->db->where('deleted', 0);
+		$this->CI->db->order_by('sort', 'asc');
 		$query = $this->CI->db->get('api_doc');
+
 		if($query->num_rows() > 0){
 			return $query->result();
 		} else {
