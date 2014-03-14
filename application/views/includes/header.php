@@ -95,6 +95,7 @@
 		</ul>
 	</li>
 	<li><a href="<?php echo base_url(); ?>wpilife/house" class="house_tab"><i class="halflings white home"></i> House </a></li>
+	<li><a href="<?php echo base_url(); ?>bbs" class="bbs_tab"><i class="halflings white user"></i> BBS </a></li>
 	<li><a href="<?php echo base_url(); ?>wpilife/shop" onclick="false" class="wpilife_tab" ><i class="halflings white map-marker"></i> Life@WPI</a>
 	<!-- Mega Menu / Start -->
 		<ul class="cols3">

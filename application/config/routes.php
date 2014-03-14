@@ -43,6 +43,7 @@ $route['wpilife/shop/(:num)'] = "wpilife/shop/index/$1";
 $route['wpilife/pohs/(:num)'] = "wpilife/pohs/index/$1";
 $route['wpilife/house/(:num)'] = "wpilife/house/index/$1";
 $route['wpilife/recs/(:num)'] = "wpilife/recs/index/$1";
+$route['bbs/(:num)'] = "bbs/index/$1";
 
 $route['manual/(:num)'] = "manual/index/$1";
 

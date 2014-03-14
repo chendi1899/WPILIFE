@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
- * Example
+ * Api
  *
  * This is an example of a few basic user interaction methods you could use
  * all done with a hardcoded array.
@@ -16,7 +16,7 @@
 // This can be removed if you use __autoload() in config.php OR use Modular Extensions
 require APPPATH.'/libraries/REST_Controller.php';
 
-class Example extends REST_Controller
+class Api extends REST_Controller
 {
 	function user_get()
     {
