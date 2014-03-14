@@ -178,7 +178,15 @@ class Cssa extends CI_Controller
 		}
 		$this->load->view('cssa/officers',$data);
 	}
-	
+
+	function committee($year = 0){
+		if($year == 0) {
+			$year = $this->officerscssalib->get_lastest_years();
+		}
+		$data['title'] = "Committee | CSSA";
+		$data['info'] = "The Committee Page is Under Construction!";
+		$this->load->view('templates/msgDisplay',$data);
+	}
 	
 }
 ?>

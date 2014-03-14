@@ -72,7 +72,7 @@
 
 <ul class="menu" id="responsive">
 
-	<li><a href="<?php echo base_url(); ?>" class="home_tab"><i class="halflings white home"></i>Home</a></li>
+	<li><a href="<?php echo base_url(); ?>" class="home_tab"><i class="halflings white th"></i>Home</a></li>
 	<li><a href="<?php echo base_url(); ?>cssa" class="cssa_tab"><i class="halflings white file"></i> News&Events </a>
 		<!-- Second Level / Start -->
 		<ul>
@@ -94,6 +94,7 @@
 			<li><a href="<?php echo base_url(); ?>wpilife/pohs">Demand List</a></li>
 		</ul>
 	</li>
+	<li><a href="<?php echo base_url(); ?>wpilife/house" class="house_tab"><i class="halflings white home"></i> House </a></li>
 	<li><a href="<?php echo base_url(); ?>wpilife/shop" onclick="false" class="wpilife_tab" ><i class="halflings white map-marker"></i> Life@WPI</a>
 	<!-- Mega Menu / Start -->
 		<ul class="cols3">
@@ -167,11 +168,15 @@
 		</ul>
 		<!-- Second Level / End -->
 	</li>
-	<li><a href="<?php echo base_url(); ?>about/cssa" class="about_cssa_tab"><i class="halflings white star"></i>About CSSA</a>
+	<li><a href="<?php echo base_url(); ?>about/cssa" class="about_tab"><i class="halflings white star"></i>About</a>
 		<ul>
-			<li><a href="<?php echo base_url(); ?>about/cssa">Introduction</a></li>
-			<li><a href="<?php echo base_url(); ?>cssa/officers">Officers</a></li>
-			<li><a href="javascript:void(0)">Committee</a></li>
+			<li><a href="<?php echo base_url(); ?>about/cssa">About CSSA</a>
+				<ul>
+					<li><a href="<?php echo base_url(); ?>cssa/officers">Officers</a></li>
+					<li><a href="<?php echo base_url(); ?>cssa/committee">Committee</a></li>
+				</ul>
+			</li>
+			<li><a href="<?php echo base_url(); ?>about/website">About Website</a></li>
 			<li><a href="<?php echo base_url(); ?>sponsor">Sponsors</a>
 				<!-- Second Level / Start -->
 				<?php 
@@ -189,21 +194,11 @@
 				?>
 				<!-- Second Level / End -->
 			</li>
+			<li><a href="<?php echo base_url(); ?>contact">Contact</a></li>
+			<li><a href="<?php echo base_url(); ?>changelog">Change log</a></li>
 		</ul>
 	</li>
 		
-	</li>
-	<li><a href="<?php echo base_url(); ?>contact" class="contact_tab"><i class="halflings white envelope"></i> Contact</a>
-		<!-- Second Level / Start -->
-		<ul>
-			<li><a href="<?php echo base_url(); ?>about/website">About Website</a></li>
-			<li><a href="<?php echo base_url(); ?>changelog">Change log</a></li>
-			<!--
-			<li><a href="<?php echo base_url(); ?>about/us">About Us</a></li>
-			<li><a href="<?php echo base_url(); ?>todolist">TO-DO List</a></li>
-			-->
-		</ul>
-		<!-- Second Level / End -->
 	</li>
 	<li><a href="<?php echo base_url(); ?>manual" class="manual_tab"><i class="halflings white hand-right"></i> Manual</a>
 </ul>

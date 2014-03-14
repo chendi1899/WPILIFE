@@ -7,7 +7,7 @@
 	<script type="text/javascript">
 		$(document).ready(function() 
 		{
-			$('.about_cssa_tab').attr('id', 'current');
+			$('.about_tab').attr('id', 'current');
 		});
 		
 	</script>

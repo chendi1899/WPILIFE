@@ -7,7 +7,7 @@
 	<script type="text/javascript">
 		$(document).ready(function() 
 		{
-			$('.wpilife_tab').attr('id', 'current');
+			$('.house_tab').attr('id', 'current');
 		});
 		
 	</script>
