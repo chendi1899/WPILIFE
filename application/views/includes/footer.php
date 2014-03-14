@@ -101,6 +101,7 @@
 	$(document).ready(function() {
 		
 		$().UItoTop({ easingType: 'easeOutQuart' });
+		$( ".flickr_badge_image" ).find( "a" ).attr('target', '_blank');
 	
 	});
 </script>
