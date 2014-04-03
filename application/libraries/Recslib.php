@@ -238,26 +238,6 @@ class Recslib
 		}					   
 		
 	}
-
-	public function get_item_list_by_count($count = 3, $type = 'SELL')
-	{
-		$this->CI->db->where('recs_type', $type);
-		$this->CI->db->where('recs_available',1);
-		$this->CI->db->select('recs_id, recs_title, recs_price, recs_image_cover');
-		$this->CI->db->order_by("recs_id", "desc"); 
-		$this->CI->db->limit($count);
-		$query = $this->CI->db->get('recs');
-		if ($query->num_rows() > 0)
-		{
-			$result = $query->result(); 
-			return $result; 
-		}		
-		else
-		{
-			return false;
-		}					   
-		
-	}
 	
 }
 ?>

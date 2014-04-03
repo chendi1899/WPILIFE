@@ -198,8 +198,9 @@
 			<li><a href="<?php echo base_url(); ?>contact">Contact</a></li>
 		</ul>
 	</li>
+
+	<li><a href="<?php echo base_url(); ?>ext/job" class="job_tab"><i class="halflings white leaf"></i> Job Opp</a></li>
 		
-	</li>
 	<li><a href="<?php echo base_url(); ?>docs/api" class="docs_tab"><i class="halflings white list-alt"></i> Docs</a>
 		<ul>
 			<li><a href="<?php echo base_url(); ?>manual">Manual</a></li>
