@@ -59,7 +59,7 @@
 
 				<?php echo $job['content']; ?>
 				<br class="clearfix"/>
-				<?php echo "<b>Attachment</b>: ".anchor('files/job/'.$job['file'], $job['file'], 'target="_blank"').br(1);?>
+				<?php if(trim($job['file']) != "") echo "<b>Attachment</b>: ".anchor('files/job/'.$job['file'], $job['file'], 'target="_blank"').br(1);?>
 				<br class="clearfix"/>
 				<!-- Baidu Button BEGIN -->
 				<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
