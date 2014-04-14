@@ -30,5 +30,10 @@ class Ext extends CI_Controller  {
 		$data['job_list'] = $this->joboppolib->get_job_opportunity_list_by_type(true, 0, $listCount, $id);
 		$this->load->view('job/index',$data);
 	}
+
+	function test() {
+		$job_list = $this->joboppolib->get_job_opportunity_list(true, 0, 20);
+		var_dump($job_list);
+	}
 }
 ?>

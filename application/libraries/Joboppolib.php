@@ -20,7 +20,7 @@ class Joboppolib{
 	{
 		$this->CI->db->where('job_opportunity.isDeleted',0);
 		$this->CI->db->order_by("job_opportunity.id", "desc"); 
-		$this->CI->db->select('job_opportunity.*, job_opportunity_type.*');
+		$this->CI->db->select('job_opportunity.*, job_opportunity_type.name');
 		$this->CI->db->from('job_opportunity');
 		$this->CI->db->join('job_opportunity_type', 'job_opportunity.type_id = job_opportunity_type.id');
 
