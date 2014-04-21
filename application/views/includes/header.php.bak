@@ -78,6 +78,11 @@
 		<ul>
 			<!--<li><a href="<?php echo base_url(); ?>cssa/activity_list">Activity</a></li>-->
 			<li><a href="<?php echo base_url(); ?>cssa/blog_list">Blog</a></li>
+			<li><a href="<?php echo base_url(); ?>events">Event</a>
+				<ul>
+				<li><a href="<?php echo base_url(); ?>events">卡拉OK大赛</a></li>
+				</ul>
+			</li>
 			<li><a href="<?php echo base_url(); ?>cssa/photograph">Photo</a></li>
 			<!--<li><a href="<?php echo base_url(); ?>cssa/photograph">Photograph</a></li>-->
 		</ul>
@@ -142,6 +147,23 @@
 				?>
 				<!-- Second Level / End -->
 			</li>
+			<li><a href="<?php echo base_url(); ?>faq">FAQ's</a>
+				<!-- Second Level / Start -->
+				<?php 
+					$faq_list = $this->faqlib->get_faq_type();
+					if($faq_list)
+					{
+						echo "<ul>";
+						foreach($faq_list as $item)
+						{
+							echo "<li><a href='".base_url()."faq/filter/".$item->type."'>".$item->type."</a></li>";
+						}
+						echo "</ul>";
+					}
+					
+				?>
+				<!-- Second Level / End -->
+			</li>
 			<li><a href="<?php echo base_url(); ?>service/airportPicker">Airport Pickup</a></li>
 			<li><a href="<?php echo base_url(); ?>service/tmpHouse">Temporary Residence</a></li>
 		</ul>
@@ -152,6 +174,7 @@
 			<li><a href="<?php echo base_url(); ?>about/cssa">About CSSA</a>
 				<ul>
 					<li><a href="<?php echo base_url(); ?>cssa/officers">Officers</a></li>
+					<li><a href="<?php echo base_url(); ?>cssa/committee">Committee</a></li>
 				</ul>
 			</li>
 			<li><a href="<?php echo base_url(); ?>about/website">About Website</a></li>
@@ -177,6 +200,14 @@
 	</li>
 
 	<li><a href="<?php echo base_url(); ?>ext/job" class="job_tab"><i class="halflings white leaf"></i> Job Opp</a></li>
+		
+	<li><a href="<?php echo base_url(); ?>docs/api" class="docs_tab"><i class="halflings white list-alt"></i> Docs</a>
+		<ul>
+			<li><a href="<?php echo base_url(); ?>manual">Manual</a></li>
+			<li><a href="<?php echo base_url(); ?>docs/api">API</a></li>
+			<li><a href="<?php echo base_url(); ?>changelog">Change log</a></li>
+		</ul>
+	</li>
 </ul>
 </nav>
 <div class="clearfix"></div>

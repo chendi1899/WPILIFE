@@ -11,6 +11,7 @@
 		});
 		
 	</script>
+	<?php echo link_tag('css/officers.css'); ?>
 </head>
 <body>
 <!-- Wrapper / Start -->
@@ -38,7 +39,16 @@
 
 <!-- 960 Container -->
 <div class="container">
-	<?php
+
+
+
+
+
+
+<div  id="officer-content">
+
+ 
+ <?php
 	if($officers)
 	{
 		$count = 0;
@@ -48,13 +58,28 @@
 			foreach($officer->directors as $director)
 			{
 	?>
-	<!-- About -->
-	<div class="one-third column">
-		<img src="<?php echo base_url();?>images/officers/<?php echo $director[0]->photo;?>" alt=""/>
-		<div class="team-name"><h5><?php echo $director[0]->name;?></h5><span><?php echo $officer->title;?></span></div>
-		<div class="team-about"><p><?php echo $director[0]->des;?></p></div>
-	</div>
+ 			<div class="people-listing">
+ 				 <div class="captioned-content">
+    			<a href="#">
+      			<img src="<?php echo base_url();?>images/officers/<?php echo $director[0]->photo;?>" alt="<?php echo $director[0]->name;?>">
+   			 </a>
+    			<p><?php echo $director[0]->name;?></p>
+  			</div>
 
+ 				<div class="contact-info-container">
+    			<div class="contact-info">
+     				<h2>Contact Information:</h2>
+      			<p>WPI <?php echo $director[0]->major; ?> Department<br>
+         		<a href="mailto:wpilife@gmail.com"><?php echo $director[0]->email ?></a>
+      			</p>
+    			</div>
+  			</div>
+  			<h2><a href="#"><?php echo $director[0]->name;?></a></h2>
+  			<ul class="titles">
+    			<li><div><?php echo $officer->title;?></a></div></li>
+     		</ul>
+  			<p><?php echo $director[0]->des;?></p>
+		</div> <!--end of people listing -->
 	<?php
 			$count = $count + 1;
 			if( $count % 3 == 0) echo '<div class="clearfix"></div>';
@@ -63,6 +88,7 @@
 
 	}
 	?>
+
 </div>
 <!-- 960 Container / End -->
 
